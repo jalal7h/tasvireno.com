@@ -1,0 +1,315 @@
+
+.headertop{
+	background-color:#fff;
+	width: 100%;
+	height:202px;
+  position:relative;
+
+}
+#header_search_form{
+	float: right;
+    margin: 31px 60px 24px 0;
+    color: #a5a5a5;
+    font-family: "ProximaLight", Helvetica, Arial, sans-serif;
+}
+.form-control {
+	border: 1px solid #ccc !important;
+	margin-right:10px;
+	width:250px !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #a5a5a5;
+    height: 40px;
+    border-radius: 6px;
+    padding: 9px 12px;
+    font-size: 16px;
+   
+}
+#header_search_form > input:hover {
+  border: solid 1px #26BFF1 !important;
+  color:#000 !important;
+}
+.form-control:focus {
+      border: solid 1px #26BFF1 !important;
+     box-shadow:0px 0px 6px #26BFF1;
+}
+.lang{
+	border-radius:100px;
+	width:40px;
+}
+#pagewrap nav{
+	 width: 100%;
+	 margin-bottom:2px !important;
+	 height: 50px;
+	/*  border-bottom:0px solid #e7e7e7;
+	 border-top:2px solid #e7e7e7; */
+	  background-color:#F25826;
+	 margin: 0; padding: 0 30px 5px;
+	 position: relative;
+ }
+#pagewrap nav ul{
+	display: block;
+   /*  width: auto; */
+    width: 100%;
+    /*background-color: #26BFF1;*/
+    background-color:#F25826;
+    padding-top:0px;
+}
+#pagewrap nav ul li{
+	display: inline-block;
+	cursor:pointer;
+	transition:all 1s;
+    height: 50px;
+    padding-top:13px;
+    position: relative;
+    
+}
+#pagewrap nav ul li>a{
+	display: inline-block;
+    font: 13px/23px IRANSans;
+    color: #fff;
+    padding: 0px 60px 6px 54px;
+    
+}
+#pagewrap nav ul li:hover a{
+	color: #F25826;
+    background: -webkit-gradient(linear,left top,right top,color-stop(32%,#F25826),color-stop(100%,#27dde8));
+    background: -webkit-linear-gradient(left,#F25826 32%,#27dde8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#pagewrap nav ul li:hover{
+	background-color: #fff;
+
+	
+}
+
+#pagewrap nav ul li>a:before {
+	font-family: FontAwesome;
+	font-size: 18px;
+	content:"\f107";
+	color: #ffffff;
+	margin: 0 0px 0 7px;
+	position: relative; top: 4px;
+	display: inline-block;
+	transition: all 0.5s;
+}
+#pagewrap nav ul li:hover>a:before {
+	transform: rotate(90deg);
+	color: #F25826;
+    background: -webkit-gradient(linear,left top,right top,color-stop(32%,#F25826),color-stop(100%,#27dde8));
+    background: -webkit-linear-gradient(left,#F25826 32%,#27dde8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#menu-icon{
+	display: none;
+	margin-top:5px;
+	width: 40px;
+	height: 40px;
+	/* background:  url("../img/menu.png") center; */
+}
+.tabmenu{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-top: -1px;
+  position: relative;
+  z-index: 1111;
+  padding:20px 20px 5px 20px;
+  border-bottom: 1px solid;
+  border-bottom-color: #eee;
+  border-bottom-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 9px rgba(0, 0, 0, 0.3);
+}
+.tabmenu_rast{
+  width: 70%;
+    height: auto;
+    background-color: #fff;
+    font-family: IRANSans,B Kekan, Arial, sans-serif;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 80px;
+    padding-left: 20px;
+    height:auto;
+}
+.tabmenu_rast > h1{
+ font: normal 16px IRANSans !important;
+ margin-bottom:20px;
+}
+.cat-grid2 {
+    margin: 0 0 0 -2.16%;
+    padding: 0;
+    list-style: none;
+}
+.cat-grid2 > li{
+    width: 20.1%;
+    margin: 0 3.10% 0 1.10%;
+    display: inline-block;
+    font-size: 14px;
+
+}
+.tabmenu_chap{
+    width: 24.7%;
+    height: auto;
+    background-color: #fff;
+    font-family: BYekan;
+    display: inline-block;
+    vertical-align: top;
+    height:auto;
+    border-right: 1px solid #eee;
+}
+.tabmenu_chap > h1{
+ font: normal 16px IRANSans !important;
+ padding-right:10%;
+}
+
+.tabmenu_chap_name{
+  width: 100%;
+    color: #F25826;
+    /* text-align: left; */
+    font-size: 20px;
+    font-family: B Yekan;
+    padding: 15px 10% 25px 10%;
+}
+.tabmenu_chap_name > h2{
+  font: normal 14px IRANSans !important;
+ padding-right:20%;
+}
+.hvr-round{
+  transition:all .1s;
+  border:1px solid #fafafa;
+  border-radius:5px;
+}
+.hvr-round:hover{
+  
+  opacity:.4;
+}
+.cbp-item-wrapper{
+  position:relative;
+}
+.team-social.white {
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 5;
+    /* margin-top: -20px; */
+    opacity:0 ;
+    transition: opacity .6s cubic-bezier(0.19,1,.22,1) 0s;
+}
+
+.cbp-item-wrapper img:hover .team-social.white {
+    opacity: 1;
+    transition: opacity .6s cubic-bezier(0.19,1,.22,1) 0s;
+}
+@media only screen and (min-width: 1000px) and (max-width : 1299px) {
+#pagewrap nav ul li>a{
+	
+   padding-left:35px;
+    padding-right:35px;
+}	
+}
+@media only screen and (min-width: 801px) and (max-width : 1000px) {
+#pagewrap nav ul li>a{
+	
+    padding-left:22px;
+    padding-right:22px;
+}	
+ .cat-grid2 > li{
+    width: 25.1%;
+    margin: 0 2.10% 1.10% 2.10%;
+    
+
+}
+ 
+}
+
+@media only screen and (max-width : 800px) {
+   #menu-icon { 
+   	display:inline-block;
+   	float: right
+   }
+   .topMenu nav{
+   	position: relative;
+   	z-index: 100000;
+   	padding-top: 9px;
+   }
+  #pagewrap nav ul {
+  	display: none;
+  	position: absolute;
+  	padding: 5px 0;
+  	z-index: 100000;
+  	border: 1px solid #e7e7e7;
+  	right: 28px; top: 45px;
+  	width: 210px;
+  	border-radius: 4px 0 4px 4px;
+  }
+  #pagewrap  nav li {
+  	text-align: right;
+  	width: 100%;
+  	padding:0;
+  	margin: 0;
+  }
+   #pagewrap nav:hover ul , nav:active ul {
+    display: block;
+   }
+   .logo2{
+   	margin-right:-100px;
+   }
+   .form-control{
+    width:200px !important;
+   }
+   #header_search_form{
+	float: right;
+    margin: 81px 10px 24px 0;
+   }
+   
+   .none{
+    display:none;
+   }
+   #pagewrap nav ul li{
+  
+   margin-right:0px;
+  } 
+  .tabmenu_rast{
+    width: 100%!important;
+    padding:0;
+  } 
+  .tabmenu_chap{
+    width: 100%!important;
+    padding:0px;
+    border-right:none;
+  } 
+  .cat-grid2 > li{
+    width: 45.1%;
+    margin: 0 2.10% 1.10% 2.10%;
+  }
+ .tabmenu_chap_name{
+  padding: 15px 6% 25px 10%;
+  }
+  .tabmenu_chap_name > h2{
+     padding-right:0%;
+  }
+  .tabmenu_chap > h1{
+    
+     padding-right:0%;
+  }
+  .tabmenu_chap {
+    border-top: 1px solid #eee;
+  }
+
+}
+/* Media Queries */
+@media screen and (max-width: 800px) {
+	.container > header{ 
+		text-align: center;
+	}
+	p.temphaa-demos {
+		position: relative;
+		top: auto;
+		left: auto;
+	}
+}
+/************************************************/

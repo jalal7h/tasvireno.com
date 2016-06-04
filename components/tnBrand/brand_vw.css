@@ -1,0 +1,64 @@
+.brand{
+    width:100%;
+    height:auto;
+    background-color: #f8f8f8;
+    
+
+}
+.row{
+    width:87%;
+    margin:0 auto;
+}
+.brand h2{
+   text-align: center;
+    margin: 20px 0 46px 0;
+    font-size: 25px;
+    font-weight:bold;
+    padding-top:20px;
+    font-family:BYekan;
+}
+ 
+
+.brand-grid
+{
+    margin: 0 0 0 -2.16%;
+    padding: 0;
+    list-style: none;
+}
+
+.brand-grid li
+{
+   
+    width: 14.5%;
+    margin: 0 0 2.10% 2.10%;
+    display:inline-block;
+}
+
+.brand-grid >.flip-card 
+{
+    background: #d2d6d7;
+   
+
+}
+
+
+.img-responsive
+{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    
+}
+.img-responsive:hover
+{
+    opacity:1;
+}
+
+.brand-grid img{
+    opacity:.3;
+    transition:all 1s;
+}
+.brand-grid img:hover{
+    opacity:1;
+}
