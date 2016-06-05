@@ -8,78 +8,87 @@
 }
 #header_search_form{
 	float: right;
-    margin: 31px 60px 24px 0;
+    margin: 51px 60px 24px 0;
     color: #a5a5a5;
     font-family: "ProximaLight", Helvetica, Arial, sans-serif;
 }
 .form-control {
 	border: 1px solid #ccc !important;
 	margin-right:10px;
-	width:250px !important;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: #a5a5a5;
-    height: 40px;
-    border-radius: 6px;
-    padding: 9px 12px;
-    font-size: 16px;
+	width:150px !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #a5a5a5;
+  height: 40px;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 16px;
+  transition:all 1s;
    
 }
-#header_search_form > input:hover {
-  border: solid 1px #26BFF1 !important;
-  color:#000 !important;
-}
+
 .form-control:focus {
-      border: solid 1px #26BFF1 !important;
-     box-shadow:0px 0px 6px #26BFF1;
+  border: solid 1px #26BFF1 !important;
+  box-shadow:0px 0px 6px #26BFF1;
+  width:250px !important;
 }
 .lang{
 	border-radius:100px;
+  border:1px solid #000;
+  box-shadow:0 0 13px #cccccc inset;
+  transition:all .7s;
 	width:40px;
+  margin-bottom:10px;
+  margin-right:5px;
+  padding-top:-4px;
+}
+.lang:hover{
+  box-shadow:0 0 23px #ccc ;
+
 }
 #pagewrap nav{
-	 width: 100%;
-	 margin-bottom:2px !important;
-	 height: 50px;
-	/*  border-bottom:0px solid #e7e7e7;
-	 border-top:2px solid #e7e7e7; */
-	  background-color:#F25826;
-	 margin: 0; padding: 0 30px 5px;
-	 position: relative;
+  width: 100%;
+  margin-bottom:2px !important;
+  height: 51px;
+  background-color:#2ecc71;
+  margin: 0;
+  padding: 0 30px 5px;
+  position: relative;
  }
 #pagewrap nav ul{
-	display: block;
-   /*  width: auto; */
-    width: 100%;
-    /*background-color: #26BFF1;*/
-    background-color:#F25826;
-    padding-top:0px;
+  display: block;
+  width: 100%;
+  background-color: #2ecc71;
+  /* background-color:#F25826; */
+  padding-top:0px;
+  border-top:.2px solid #2ecc71 ;
+  box-sizing:border-box;
 }
 #pagewrap nav ul li{
 	display: inline-block;
 	cursor:pointer;
 	transition:all 1s;
-    height: 50px;
-    padding-top:13px;
-    position: relative;
-    
+  height: 50px;
+  padding-top:10px;
+  position: relative;    
 }
 #pagewrap nav ul li>a{
 	display: inline-block;
-    font: 13px/23px IRANSans;
-    color: #fff;
-    padding: 0px 60px 6px 54px;
+  font: 17px B Yekan;
+  color: #fff;
+  padding: 0px 50px 6px 64px;
     
 }
 #pagewrap nav ul li:hover a{
-	color: #F25826;
-    background: -webkit-gradient(linear,left top,right top,color-stop(32%,#F25826),color-stop(100%,#27dde8));
-    background: -webkit-linear-gradient(left,#F25826 32%,#27dde8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	color: #A90000;
+  background: -webkit-gradient(linear,left top,right top,color-stop(32%,#A90000),color-stop(100%,#27dde8));
+  background: -webkit-linear-gradient(left,#A90000 32%,#27dde8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #pagewrap nav ul li:hover{
 	background-color: #fff;
+  /* border-top:.5px solid #2ecc71; */
 
 	
 }
@@ -96,11 +105,11 @@
 }
 #pagewrap nav ul li:hover>a:before {
 	transform: rotate(90deg);
-	color: #F25826;
-    background: -webkit-gradient(linear,left top,right top,color-stop(32%,#F25826),color-stop(100%,#27dde8));
-    background: -webkit-linear-gradient(left,#F25826 32%,#27dde8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	color: #A90000;
+  background: -webkit-gradient(linear,left top,right top,color-stop(32%,#A90000),color-stop(100%,#27dde8));
+  background: -webkit-linear-gradient(left,#A90000 32%,#A90000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #menu-icon{
@@ -108,7 +117,6 @@
 	margin-top:5px;
 	width: 40px;
 	height: 40px;
-	/* background:  url("../img/menu.png") center; */
 }
 .tabmenu{
   width: 100%;
@@ -135,8 +143,10 @@
     height:auto;
 }
 .tabmenu_rast > h1{
- font: normal 16px IRANSans !important;
+ font: normal 20px B Yekan !important;
  margin-bottom:20px;
+ width:30%;
+ padding-bottom:10px;
 }
 .cat-grid2 {
     margin: 0 0 0 -2.16%;
@@ -148,8 +158,11 @@
     margin: 0 3.10% 0 1.10%;
     display: inline-block;
     font-size: 14px;
+    padding-top:7px;
+    padding-bottom:7px;
 
 }
+ 
 .tabmenu_chap{
     width: 24.7%;
     height: auto;
@@ -167,11 +180,11 @@
 
 .tabmenu_chap_name{
   width: 100%;
-    color: #F25826;
-    /* text-align: left; */
-    font-size: 20px;
-    font-family: B Yekan;
-    padding: 15px 10% 25px 10%;
+  color: #333;
+  /* text-align: left; */
+  font-size: 20px;
+  font-family: B Yekan;
+  padding: 15px 10% 25px 10%;
 }
 .tabmenu_chap_name > h2{
   font: normal 14px IRANSans !important;
@@ -190,39 +203,57 @@
   position:relative;
 }
 .team-social.white {
-    left: 0;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    z-index: 5;
-    /* margin-top: -20px; */
-    opacity:0 ;
-    transition: opacity .6s cubic-bezier(0.19,1,.22,1) 0s;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 5;
+  /* margin-top: -20px; */
+  opacity:0 ;
+  transition: opacity .6s cubic-bezier(0.19,1,.22,1) 0s;
 }
 
 .cbp-item-wrapper img:hover .team-social.white {
-    opacity: 1;
-    transition: opacity .6s cubic-bezier(0.19,1,.22,1) 0s;
+  opacity: 1;
+  transition: opacity .6s cubic-bezier(0.19,1,.22,1) 0s;
+}
+
+.cat-grid2  a:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  content: "\f060";
+  font-size: 12px;
+  color: #ccc;
+  margin: 0 12px 0 8px;
+  transition: all 0.3s;
+}
+.cat-grid2 a:hover{
+  color: #A90000;
+}
+.cat-grid2 a:hover:before {
+  color: #A90000;
+  transform: rotate(-45deg);
 }
 @media only screen and (min-width: 1000px) and (max-width : 1299px) {
 #pagewrap nav ul li>a{
 	
-   padding-left:35px;
-    padding-right:35px;
+  padding-left:35px;
+  padding-right:35px;
 }	
 }
 @media only screen and (min-width: 801px) and (max-width : 1000px) {
 #pagewrap nav ul li>a{
 	
-    padding-left:22px;
-    padding-right:22px;
+  padding-left:22px;
+  padding-right:22px;
 }	
- .cat-grid2 > li{
-    width: 25.1%;
-    margin: 0 2.10% 1.10% 2.10%;
-    
-
-}
+.cat-grid2 > li{
+  width: 25.1%;
+  margin: 0 2.10% 1.10% 2.10%;
+ }
  
 }
 

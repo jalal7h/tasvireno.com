@@ -1,0 +1,47 @@
+
+.project_management_form {
+	width: 90%;
+	margin: 60px auto 100px auto;
+}
+.project_management_form > div span.lmfe_tnit {
+	width: 30px;
+	vertical-align: top;
+	padding-top: 9px;
+}
+.project_management_form input[type=text] ,
+.project_management_form input[type=url] {
+	padding: 10px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 0 #000 ;
+	border-radius: 4px;
+	outline: none;
+	width: 450px;
+	font: normal 12px IRANSans;
+}
+.project_management_form input[type=text].clockpicker {
+	width: 120px !important;
+}
+.project_management_form textarea {
+	padding: 10px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 0 #000 ;
+	border-radius: 4px;
+	outline: none;
+	width: 450px;
+	height: 120px;
+	font: normal 12px IRANSans;
+}
+
+.project_management_form select {
+	padding: 10px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 0 #000 ;
+	border-radius: 4px;
+	outline: none;
+	font: normal 12px IRANSans;
+	height: auto;
+}
+.lmfe_inDiv{
+
+}
+

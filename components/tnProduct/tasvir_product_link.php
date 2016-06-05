@@ -1,12 +1,12 @@
 <?
 function tasvir_product_link( $rw ){
-
-	$link = _URL."/product-".$rw['id']."-".$rw['name'].".html";
+	$name = str_replace( " ", "+" , $rw['name'] );
+	$link = _URL."/product-".$rw['id']."-".$name.".html";
 	return $link;
 }
 
 function tasvir_order_link( $rw ){
-
-	$link = _URL."/order-".$rw['id']."-".$rw['name'].".html";
+	$name = str_replace( " ", "+" , $rw['name'] );
+	$link = _URL."/order-".$rw['id']."-".$name.".html";
 	return $link;
 }

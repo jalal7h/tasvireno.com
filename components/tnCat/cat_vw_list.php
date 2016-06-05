@@ -25,7 +25,7 @@ function cat_vw_list(){
 				$id=$rw['id'];
          
 			?>
-			<li class="hvr-shrink">
+			<li>
 			<a href="<?=tasvir_cat_link( table("cat", $id) );?>" class="tile-shopcat tile-category">
 			    <img src="<?=img_cat_src( table("cat", $id) );?>" alt="<?=$cat_name;?>" class="img-responsive " style="">
 			    <h2 data-mh="tile-category" style="height: 35px;"><?=$cat_name;?></h2>

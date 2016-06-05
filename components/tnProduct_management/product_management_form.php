@@ -26,11 +26,11 @@ function product_management_form(){
         '<hr>',
 		
 		['cat:cat_id*','cat_name'=>'cat','inDiv'],
-		['file:photo_small*','inDiv'],
-		['cat:field_id','cat_name'=>'field','inDiv'],
 		['file:photo_medium*','inDiv'],
-		['cat:brand_id','cat_name'=>'brand','inDiv'],
+		['cat:field_id','cat_name'=>'field','inDiv'],
 		['file:photos_large','inDiv'],
+		['cat:brand_id','cat_name'=>'brand','inDiv'],
+		
 		
 		'<hr>',
 		['textarea:description@'],

@@ -11,7 +11,7 @@ sections.mouseover(function(){
 		        content.slideDown("fast");
 				content.load("./?do_action=menu_ajax");
 				sections.css("background-color","white");
-				text.css("color","#F25826");
+				text.css("color","#A90000");
 				i=1;
 	}
 			  	
@@ -22,12 +22,12 @@ sections.mouseover(function(){
 content.each(function () {
                 $(this).hover(function () {
 				sections.css("background-color","white");
-				text.css("color","#F25826");
+				text.css("color","#A90000");
 				i=3;
 
                 }, function () {
                     content.slideUp("fast");
-					sections.css("background-color","#F25826");
+					sections.css("background-color","#2ecc71");
 					text.css("color","#fff");
 					i=0;
 				});	
@@ -35,7 +35,7 @@ content.each(function () {
 $("#hed").mouseover(function(){
 			   if (i==1) {
 			   		content.slideUp("fast");
-					sections.css("background-color","#F25826");
+					sections.css("background-color","#2ecc71");
 					text.css("color","#fff");
 					i=0;
 			   	}	
@@ -43,7 +43,7 @@ $("#hed").mouseover(function(){
 $("li").not("#gift").mouseover(function(){
 			   if (i==1) {
 			   		content.slideUp("fast");
-					sections.css("background-color","#F25826");
+					sections.css("background-color","#2ecc71");
 					text.css("color","#fff");
 					i=0;
 			   	}	
@@ -51,7 +51,7 @@ $("li").not("#gift").mouseover(function(){
 $("*").not("#gift").click(function(){
 			   if (i==1) {
 			   		content.slideUp("fast");
-					sections.css("background-color","#F25826");
+					sections.css("background-color","#2ecc71");
 					text.css("color","#fff");
 					i=0;
 			   	}	

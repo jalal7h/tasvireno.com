@@ -5,7 +5,7 @@
 	border-top: 4px solid #A90000;
 	background-color: #262626;
 	height: 320px;
-	margin: 30px 0 0 0;
+	/* margin: 30px 0 0 0; */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 	position: relative;
 	direction: rtl;

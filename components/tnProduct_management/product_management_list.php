@@ -46,7 +46,7 @@ function product_management_list(){
 	$list['setflag_url'] = true;
 
 	$list['list_array'] = array (
-		array( "tag"=>"th", "picture" => '$rw[\'photo_small\']'),
+		array( "tag"=>"th", "picture" => '$rw[\'photo_medium\']'),
 		array("head"=>lmtc("product:name"), "content" => '$rw[\'name\']'),
 		array("head"=>lmtc("product:code"), "content" => '$rw[\'code\']'),
 		array("head"=>lmtc("product:price"), "content" =>'$rw[\'price\']' ,"attr" => array("align" => 'center',"dir" => "rtl")),

@@ -6,13 +6,13 @@ function menu_ajax(){
 ?>
 <div class="tabmenu">
 <div class="tabmenu_rast">
-<h1><i class="fa fa-circle" aria-hidden="true"></i> هدایای شرکت:</h1>	
+<h1> هدایای شرکت:</h1>	
 <?tabmenu_rast_cat();?>
-<h1><i class="fa fa-circle" aria-hidden="true"></i> برندهای هدایا:</h1>	
+<h1> برندهای هدایا:</h1>	
 <?tabmenu_rast_brand();?>
 </div>
 <div class="tabmenu_chap">
-<h1><i class="fa fa-circle" aria-hidden="true"></i> کالاهای پیشنهادی:</h1>
+<h1> کالاهای پیشنهادی:</h1>
 <?tabmenu_chap();?>
 </div>	
 </div>
@@ -47,7 +47,7 @@ function tabmenu_chap(){
 			<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive hvr-round" >
 			</div>
 			<div class="tabmenu_chap_name">
-			<h2 data-mh="img-responsive" style="height: 35px;"><i class="fa fa-circle-o" aria-hidden="true"></i> <?=$name;?></h2>
+			<h2 data-mh="img-responsive" style="height: 35px;"> <?=$name;?></h2>
 			</div>
 			</a>
 			
@@ -75,7 +75,7 @@ function tabmenu_rast_cat(){
 				?>
 			<li class="">
 			<a href="<?=tasvir_cat_link( table("cat", $id) );?>" class="">
-			    <h2 data-mh="tile-category" style="height: 35px;"><i class="fa fa-circle-o" aria-hidden="true"></i> <?=$cat_name;?></h2>
+			    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
 			</a>
 			</li>
 	<?	 
@@ -107,7 +107,7 @@ function tabmenu_rast_brand(){
 				?>
 			<li class="">
 			<a href="<?=tasvir_brand_link( table("cat", $id) );?>" class="">
-			    <h2 data-mh="tile-category" style="height: 35px;"><i class="fa fa-circle-o" aria-hidden="true"></i> <?=$cat_name;?></h2>
+			    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
 			</a>
 			</li>
 	<?	 

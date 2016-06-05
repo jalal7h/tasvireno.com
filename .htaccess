@@ -33,10 +33,12 @@ RewriteRule ^rss/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_rss&feed=$1 [L]
 
 # 
 # tasvireno
-RewriteRule ^cat-([0-9]+)-([0-9]+)-(.*).html$ ./?page=102&id=$1&p=$2 [L]
-RewriteRule ^cat-([0-9]+)-(.*).html$ ./?page=102&id=$1 [L]
-RewriteRule ^brand-([0-9]+)-(.*).html$ ./?page=102&brand_id=$1 [L]
+RewriteRule ^cat-([0-9]+)-([0-9]+)-(.*).html$ ./?page=102&cat_id=$1&p=$2 [L]
+RewriteRule ^cat-([0-9]+)-(.*).html$ ./?page=102&cat_id=$1 [L]
+RewriteRule ^brand-([0-9]+)-(.*).html$ ./?page=102&brand=$1 [L]
 RewriteRule ^product-([0-9]+)-(.*).html$ ./?page=103&product_id=$1 [L]
 RewriteRule ^order-([0-9]+)-(.*).html$ ./?page=104&order_id=$1 [L]
 RewriteRule ^tag/(.*)-(.*)$ ./?page=105&q=$1&p=$2 [L]
 RewriteRule ^tag ./?page=105 [L]
+RewriteRule ^Catalog$ ./?page=108 [L]
+RewriteRule ^services$ ./?page=109 [L]

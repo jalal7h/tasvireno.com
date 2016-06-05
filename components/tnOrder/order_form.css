@@ -4,6 +4,15 @@
 }
 .order > .p_vw_cat , .order >.p_vw_cat ,.order > .table-responsive{
 	padding-right:0px !important;
+	width:49%;
+	display:inline-block;
+	vertical-align:top;
+}
+.order > .p_vw_cat{
+	margin-top:18px;
+}
+.order .table-bordered{
+	float:left;
 }
 .order_form1 {
 	direction: rtl;
@@ -143,6 +152,10 @@
 }
 } */
 @media only screen and (max-width : 1010px) {
+.order{
+	width:100%;
+	
+}	
 .order_form1 > div {
 	width:100% !important;
 	padding-right:20px;

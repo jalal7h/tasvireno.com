@@ -46,15 +46,19 @@ function shearch_product_list(){
 			} else while( $rw1 = dbf($rs1) ){
 				$cat_id = $rw1['cat_id'];
 						
-				$photo_medium = $rw1['photo_medium'];
+				$photo_medium = $rw1['photo_medium']; 
 				$name = $rw1['name'];
 				$code=$rw1['code'];
 				$size=$rw1['size'];
 				?>
 			<div class=" product-grid-spesc">
 			<div class="tile">
-			<a href="<?=tasvir_product_link($rw1);?>" class="img-responsive">
-			        <img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
+				<div class="photo">
+				<div class="tile_btn"><a href="<?=tasvir_product_link($rw1);?>" class="tasvir_button">نمایش محصول</a></div>	 
+				</div>
+				<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
+			    <a href="<?=tasvir_product_link($rw1);?>" class="img-responsive">
+			        
 			        <h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
 			        <h3 data-mh="img-responsive" style="height: 35px;"><span>کد : </span><?=$code;?></h3>
 			        <h3 data-mh="img-responsive" style="height: 35px;">
@@ -64,8 +68,8 @@ function shearch_product_list(){
 							        
 						?>
 					</h3>
-			</a>			
-					<div class="tile_btn"><a href="<?=tasvir_product_link($rw1);?>" class="tasvir_button">نمایش</a></div>	        
+				</a>			
+					       
 			
 			</div>
 			</div>

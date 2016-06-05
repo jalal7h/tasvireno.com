@@ -72,13 +72,14 @@ function product_vw(){
             
             <div class="table-responsive">
 			<table id="price-grid" class="table table-bordered">
-		      <tbody><tr id="price-qty-row">
-		        <td>حداقل سفارش</td>
-		        <td class="number1"><?=$min_order?> عدد</td>		        
+		      <tbody>
+		      <tr id="price-qty-row">
+		      	<td>حداقل سفارش</td>
+		        <td class="number1"><?=number_format($min_order);?> عدد</td>		        
 		      </tr>	
 		      <tr>
 		        <td>قیمت برای هر عدد کالا</td>
-		        <td class="number1"><?=$price?> ریال</td>		        
+		        <td class="number1"><?=number_format($price);?> ریال</td>		        
 		      </tr>
 			  
 		    </tbody></table>

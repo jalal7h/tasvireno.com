@@ -6,7 +6,12 @@ function product_filter_cat()
 	<div class="Category_cat">
 	<?
     
-    if( $_REQUEST['brands'] )              /* کلیک روی برند های هدایا در داخل لیست محصولات*/
+    if( $_REQUEST['brand'] )              /* کلیک روی برند از صفحه اصلی*/
+    {
+		$query_brand = "AND `brand_id`='".$_REQUEST['brand']."' ";
+			$brand_id=$_REQUEST['brand'];
+	
+	}else if( $_REQUEST['brands'] )              /* کلیک روی برند های هدایا در داخل لیست محصولات*/
     {
 		$query_brand = "AND `brand_id` in(SELECT `id` FROM `cat` WHERE `cat`='brand')";
 	
@@ -14,30 +19,31 @@ function product_filter_cat()
     {
 		$cat_id = $_REQUEST['cat'];
 		if ($cat_id==not_cat) {             /* کلیک بر روی برند خاص در داخل همه برندها*/
-			$query_brand = "AND `brand_id`='".$_REQUEST['id']."' ";
-			$brand_id=$_REQUEST['id'];
+			$query_brand = "AND `brand_id`='".$_REQUEST['brand_id']."' ";
+			$brand_id=$_REQUEST['brand_id'];
 		}else{                                        /* کلیک بر روی برند در داخل یک دسته خاص*/
 			$query_cat="AND `parent`='".$cat_id."'";
 		    $rw_cat = table("cat", $cat_id);
-		    $query_brand = "AND `brand_id`='".$_REQUEST['id']."' ";
-		    $brand_id=$_REQUEST['id'];
+		    $query_brand = "AND `brand_id`='".$_REQUEST['brand_id']."' ";
+		    $brand_id=$_REQUEST['brand_id'];
+		    $cat_id = $_REQUEST['cat'];
 		   
 		}
 		
 
 
-	}else if( $_REQUEST['id'] || $_REQUEST['brand_id'] )
+	}else if( $_REQUEST['cat_id'] || $_REQUEST['brand_id'] )
 	{
-		if ($_REQUEST['id']) {      /* کلیک روی دسته خاص */
+		if ($_REQUEST['cat_id']) {      /* کلیک روی دسته خاص */
 			
-			$cat_id = $_REQUEST['id'];
+			$cat_id = $_REQUEST['cat_id'];
 			$query_cat="AND `parent`='".$cat_id."'";
 			/*$query_brand = "AND `brand_id`='".$_REQUEST['id']."' ";*/
 			$rw_cat = table("cat", $cat_id);
 			
 		}else if ($_REQUEST['brand_id']) {     /* کلیک روی دسته خاص در داخل یک برند خاص */
 			$brand_id=$_REQUEST['brand_id'];
-			$cat_id = $_REQUEST['brand_id'];
+			$cat_id = $_REQUEST['cat_id'];
 			$query_brand = "AND `brand_id`='".$_REQUEST['brand_id']."' ";
 		}
 			 
@@ -49,7 +55,7 @@ function product_filter_cat()
 		echo '<h2 class="Category2">'.$rw_cat['name'].'</h2>';
 	?>
 		<label>
-			<input type="checkbox" id="<?=$rw_cat['id']?>" name="cat_<?=$rw_cat['id']?>" value="1" <?=($_REQUEST['id']== $rw_cat['id'] ?"checked": "")?> />
+			<input type="checkbox" id="<?=($cat_id== $rw_cat['id'] ?'not_cat': '$rw_cat[\'id\']')?>" class="<? if($_REQUEST['brand_id']){ echo $_REQUEST['brand_id'];}?>" name="cat_<?=$rw_cat['id']?>" value="1" <?=($cat_id== $rw_cat['id'] ?"checked": "")?> />
 			<span><?=$rw_cat['name']?></span>
 		</label>
 	<?

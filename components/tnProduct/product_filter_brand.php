@@ -4,32 +4,32 @@ function product_filter_brand(){
 	<div class="Category_brand">
 
 	<?
-	if( $_REQUEST['brand_id'] )         /*کلیک بر روی یک برند خاص از صفحه اصلی*/
+	if( $_REQUEST['brand'] )         /*کلیک بر روی یک برند خاص از صفحه اصلی*/
     {
-		$brand_name=table( "cat", $_REQUEST['brand_id'] , "name");
-		$brand_id=$_REQUEST['brand_id'];
+		$brand_name=table( "cat", $_REQUEST['brand'] , "name");
+		$brand_id=$_REQUEST['brand'];
 		$cat_id=not_cat;
 		?>	<label>
-					<input type="checkbox" id="<?=$brand_id?>" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
+					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand']==$brand_id ?"checked": "")?> />
 							<span><?=$brand_name?></span></span>
 			</label>
 					<?
 	}else if( $_REQUEST['cat'] )        /*کلیک بر روی یک برند در داخل لیست محصول*/
     {
 		$cat_id = $_REQUEST['cat'];
-		$brand_id = $_REQUEST['id'];
+		$brand_id = $_REQUEST['brand_id'];
 		if ($cat_id=='not_cat') {
-			$brand_name=table( "cat", $_REQUEST['id'] , "name");
+			$brand_name=table( "cat", $_REQUEST['brand_id'] , "name");
 			$brand_id=$_REQUEST['brand_id'];
 			$cat_id=not_cat;
 			?>	<label>
-					<input type="checkbox" id="<?=$brand_id?>" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
+					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
 					<span><?=$brand_name?></span></span>
 				</label>
 			<?
 		}else{
-		$brand_id = $_REQUEST['id'];
-		$query_brand = "AND `id`='".$_REQUEST['id']."' ";
+		$brand_id = $_REQUEST['brand_id'];
+		$query_brand = "AND `id`='".$_REQUEST['brand_id']."' ";
 		$query = " SELECT * FROM `cat` WHERE 1 $query_brand  ORDER BY `id` ASC  ";
 		if(! $rs = dbq($query) )
 		{
@@ -69,7 +69,7 @@ function product_filter_brand(){
 			
 							 
 			?>	<label>
-					<input type="checkbox" id="<?=$brand_id?>" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['id']==$brand_id ?"checked": "")?> />
+					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
 							<span><?=$brand_name?></span></span><span>(<?=$n?>)</span>
 				</label>
 					<?
@@ -77,10 +77,10 @@ function product_filter_brand(){
 		}
 	}
 
-	}else if($cat_id = $_REQUEST['id'] )  /*کلیک بر روی یک دسته در داخل لیست محصول*/
+	}else if($cat_id = $_REQUEST['cat_id'] )  /*کلیک بر روی یک دسته در داخل لیست محصول*/
 	{ 
-		if ($_REQUEST['brand']) {
-			$brand=$_REQUEST['brand'];
+		if ($_REQUEST['brand_id']) {
+			$brand=$_REQUEST['brand_id'];
 		}
 	    $query = " SELECT * FROM `cat` WHERE `cat`='brand'  ORDER BY `id` ASC  ";
 		if(! $rs = dbq($query) )
@@ -119,7 +119,7 @@ function product_filter_brand(){
 			}	}
 			if ($n!=0) {		 
 			?>	<label>
-					<input type="checkbox" id="<?=$brand_id?>" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($brand_id==$brand ?"checked": "")?> />
+					<input type="checkbox" id=<?=($brand_id==$brand ?"no_brand": "$brand_id")?> class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($brand_id==$brand ?"checked": "")?> />
 							<span><?=$brand_name?></span></span><span>(<?=$n?>)</span>
 				</label>
 					<?
