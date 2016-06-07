@@ -14,17 +14,20 @@
 }
 .product_filter .Category{
     
-     font: normal 16px IRANSans;
+     font: normal 14px IRANSans;
      height:35px;
-     border-bottom:1px solid #ececec;
      color:#2ecc71;
-     padding:0 10px 50px 0;
+     padding:0px 10px 30px 0;
      margin-bottom: 10px;
      cursor: pointer;
+     background-color:#f7f7f7;
+     border-bottom: 1px dashed #ccc;
+     border-top: 1px dashed #ccc;
+     border-radius:50px;
 }
 .product_filter .Category:before {
     font-family: FontAwesome;
-    font-size: 24px;
+    font-size: 20px;
     content: "\f107";
     color: #2ecc71;
     margin: 0 0px 0 7px;
@@ -57,16 +60,14 @@
     vertical-align: top;
     width: 100%;  
     display: inline-block;
-    margin: 15px 0px 0px 0;
-    /* border-bottom:1px solid #ececec; */
+    margin: 0px 0px 0px 0;
     
 }
 .product_filter .brands {
     vertical-align: top;
     width: 100%;   
     display: inline-block;
-    margin: 0px 0px 15px 0;
-    /* border-bottom:1px solid #eee; */
+    
 }
 .product_filter  label {
     margin: 5px 0 0 5px;
@@ -86,12 +87,14 @@
     font: normal 12px IRANSans;
 
 }
-
+.product_filter .parent{
+    padding-right: 70px;
+}
 .product_list{
     width:79%;
     height:auto;
     background-color: #fff;
-    font-family:BYekan;
+    font-family:IRANSans;
     display:inline-block;
     vertical-align:top;
     padding-right:20px;
@@ -112,7 +115,7 @@
     padding-top: 10px;
     color:#999;
     background-color:#fcfcfc;
-    margin-bottom:10px;
+    margin-bottom:20px;
 }
 .back >i{
     margin-right:5px;
@@ -120,9 +123,10 @@
 }
 .CategoryHeading{
     width:100%;
-    font-size:24px;
-    font-family: B Yekan;
+    font-size:16px;
+    font-family: IRANSans;
     margin-bottom:20px;
+    margin-top:20px;
 }
 .product-grid
 {
@@ -225,11 +229,26 @@ a.img-responsive h3 {
     opacity:1;
 }
 
-
+.Category_cat > h2{
+    color:#999;
+    margin-right:14%;
+    margin-bottom:15px;
+}
+.Category_cat > h2:before {
+    font-family: FontAwesome;
+    font-size: 15px;
+    content: "\f100";
+    color: #999;
+    margin: -1px 0px 0 4px;
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    transition: all 0.5s;
+}
 /*                        product_vw_view                        */
 .p_img_vw{
-    width:50%;
-    margin:10px auto;
+    width:45%;
+    margin:30px auto;
     background-color:#777;
 }
 .p_vw_btn{
@@ -297,6 +316,16 @@ a.img-responsive h3 {
 #price-qty-row {
     background: #efefef;
 } 
+.p_w_h{
+    text-align:right;
+    padding-right:25%;
+}
+.p_w_h > h3{
+    font-size:14px;
+}
+.p_w_h span{
+    font-size:14px;
+}
 /***********************************************************/
 @media only screen and (max-width : 900px) {
     .product-grid-spesc{

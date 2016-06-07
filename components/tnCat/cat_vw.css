@@ -12,9 +12,9 @@
 .h-cat>h2{
    text-align: center;
     margin: 20px 0 46px 0;
-    font-size: 25px;
+    font-size: 20px;
     font-weight:bold;
-    font-family:BYekan;
+    font-family:IRANSans;
 }
 
 .cat-grid
@@ -28,8 +28,12 @@
 {
    
     width: 14.1%;
+    height:204.92px;
     margin: 0 0 2.10% 2.10%;
     display:inline-block;
+    position:relative;
+    overflow:hidden;
+    
 }
 
 .cat-grid >.flip-card 
@@ -38,8 +42,11 @@
    
 
 }
-
-
+.cat-grid li  img
+{
+ position:absolute;
+ top:0px;
+}
 .img-responsive
 {
     display:block;
@@ -65,6 +72,9 @@ a.tile-category h2 {
     text-align: center;
     background: #424f57;
     padding: 10px 0;
+    position:absolute;
+    bottom:0px;
+    width:100%;
     
 }
 /* Shrink */

@@ -4,7 +4,7 @@ $(document).ready(function($) {
 
    
 	// cats click
-	$('.cats input[type="checkbox"]').on('click', function(){
+	/*$('.cats input[type="checkbox"]').on('click', function(){
 		var cat_id = this.id;
 		var brand_id = this.className;
 
@@ -23,13 +23,15 @@ $(document).ready(function($) {
 			location.href='./?page=102&cat_id='+cat_id+'&brand_id='+brand_id;
 			
 		}
-	});
+	});*/
 
 	// brands click
-	$('.brands input[type="checkbox"]').on('click', function(){
+	/*$('.brands input[type="checkbox"]').on('click', function(){
 
 		var brand_id = this.id;
 		var cat = this.className;
+		var field_id = this.val;
+		alert("field_id");
 
 		if (brand_id=='no_brand' && cat=='not_cat') {
 			location.href='./?page=102&brands=1';
@@ -41,7 +43,7 @@ $(document).ready(function($) {
 			location.href='./?page=102&brand_id='+brand_id+'&cat='+cat;
 		}
 		
-	});
+	});*/
 
 	// filter_cat
 	$('#filter_cat').on('click', function(){
@@ -53,6 +55,12 @@ $(document).ready(function($) {
 	$('#filter_brand').on('click', function(){
 		
 		$('.Category_brand').slideToggle("fast");
+	});
+
+	// filter_field
+	$('#filter_field').on('click', function(){
+		
+		$('.Category_field').slideToggle("fast");
 	});
 
 

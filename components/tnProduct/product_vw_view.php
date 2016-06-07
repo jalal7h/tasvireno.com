@@ -17,17 +17,10 @@ function product_vw_view(){
 function product_vw(){
 	?>
 	<div class="product-grid">
-	     <div class="back">  <i class="fa fa-th-large" aria-hidden="true"></i> <a href="./">صفحه اصلی</a>&nbsp;&nbsp;  / &nbsp;&nbsp; <a href="./?page=102&cats=1">هدایای شرکت</a>  &nbsp;&nbsp;/ &nbsp;&nbsp; <a href="./?page=102&brands=1">برند هدایا</a> &nbsp;&nbsp;/&nbsp;&nbsp;
-	<?
-	if(isset($_SERVER['HTTP_REFERER']))
-	echo '<a href="'.$_SERVER['HTTP_REFERER'].'">برگشت به صفحه قبل</a>';
-	else
-	echo '<a href="'.$_SERVER['SERVER_NAME'].'">برگشت به صفحه قبل</a>';
-	?>
-	</div>
-	   
+	 	   
 	<?
 
+		back();
 	    $query1 = " SELECT * FROM `product` WHERE `id`='".$_REQUEST['product_id']."' ";
 	        if(! $rs1 = dbq($query1) ){
 				e(__FUNCTION__,__LINE__);
@@ -59,9 +52,9 @@ function product_vw(){
 			<h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
 			</div> 
 			<div class="p_vw_cat">
-			<h2 data-mh="img-responsive" style="height: 35px;">دسته : <?=cat_translate($cat);?></h2>
+			<h2 data-mh="img-responsive" style="height: 35px;">دسته :&nbsp;&nbsp; <?=cat_translate($cat);?></h2>
 			</div> 
-			<?= $brand ? '<div class="p_vw_cat"><h2 data-mh="img-responsive" style="height: 35px;">برند : '.cat_translate($brand).'</h2></div> ' : ''; 
+			<?= $brand ? '<div class="p_vw_cat"><h2 data-mh="img-responsive" style="height: 35px;">برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h2></div> ' : ''; 
 							        
 			?>
 			<div class="txt"><p><?=nl2br($rw1['description'])?></p></div>

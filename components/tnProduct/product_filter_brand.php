@@ -1,88 +1,48 @@
-<?
+<? 
 function product_filter_brand(){
-	?><h2 class="Category" id="filter_brand">برند ها</h2>
+	?><h3 class="Category" id="filter_brand">برند ها</h3>
 	<div class="Category_brand">
 
 	<?
-	if( $_REQUEST['brand'] )         /*کلیک بر روی یک برند خاص از صفحه اصلی*/
-    {
-		$brand_name=table( "cat", $_REQUEST['brand'] , "name");
-		$brand_id=$_REQUEST['brand'];
-		$cat_id=not_cat;
-		?>	<label>
-					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand']==$brand_id ?"checked": "")?> />
-							<span><?=$brand_name?></span></span>
-			</label>
-					<?
-	}else if( $_REQUEST['cat'] )        /*کلیک بر روی یک برند در داخل لیست محصول*/
-    {
-		$cat_id = $_REQUEST['cat'];
-		$brand_id = $_REQUEST['brand_id'];
-		if ($cat_id=='not_cat') {
-			$brand_name=table( "cat", $_REQUEST['brand_id'] , "name");
-			$brand_id=$_REQUEST['brand_id'];
-			$cat_id=not_cat;
-			?>	<label>
-					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
-					<span><?=$brand_name?></span></span>
-				</label>
-			<?
-		}else{
-		$brand_id = $_REQUEST['brand_id'];
-		$query_brand = "AND `id`='".$_REQUEST['brand_id']."' ";
-		$query = " SELECT * FROM `cat` WHERE 1 $query_brand  ORDER BY `id` ASC  ";
-		if(! $rs = dbq($query) )
-		{
-			e( __FUNCTION__ , __LINE__ );
-
-		} else if(! dbn($rs) )
-		{
-			//
-				
-		}else while( $rw = dbf($rs) )
-		{
-			$brand_name = $rw['name'];
-			$brand_id=$rw['id'];
-			$query2 = " SELECT * FROM `cat` WHERE `id`='{$cat_id}' OR `parent`='{$cat_id}'  ORDER BY `id` ASC  ";
-			$n=0;
-			if(! $rs2 = dbq($query2) )
-			{
-				e( __FUNCTION__ , __LINE__ );
-
-			} else if(! dbn($rs2) )			
-			{} else while( $rw2 = dbf($rs2) )
-			{
-				$query_cat = " AND `cat_id`='".$rw2['id']."' ";	
-
-				$query3 = " SELECT * FROM `product` WHERE `flag`='1' AND  `brand_id`='{$brand_id}' $query_cat ";
-				if(!$rs3 = dbq($query3) )
-				{
-					e( __FUNCTION__ , __LINE__ );
-				}else if(!$num3=dbn($rs3) )
-				{
-					    continue;
-				}else
-				{
-					$n+=$num3;
-			}	}
-			if ($n!=0) {
-			
-							 
-			?>	<label>
-					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
-							<span><?=$brand_name?></span></span><span>(<?=$n?>)</span>
-				</label>
-					<?
-		    }   
-		}
+	if ($cat_id = $_REQUEST['cat']) {
+		$q_cat="AND  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id' ORDER BY `id` ASC)";
+		
+	}else
+	if ($cat_id = $_REQUEST['cat_id']) {
+		
+		$q_cat="AND `cat_id` ='$cat_id' ";
+	}
+	
+	if ($field_id = $_REQUEST['field_id']) {
+		
+		$q_field="AND `field_id` ='$field_id'";
+	}
+	if ($brand_id = $_REQUEST['brand_id']) {
+		
+		$q_brand="AND `brand_id` ='$brand_id'";
+	}else if ($brand_id = $_REQUEST['brand']) {
+		
+		$q_brand="AND `brand_id` ='$brand_id'";
 	}
 
-	}else if($cat_id = $_REQUEST['cat_id'] )  /*کلیک بر روی یک دسته در داخل لیست محصول*/
-	{ 
-		if ($_REQUEST['brand_id']) {
-			$brand=$_REQUEST['brand_id'];
-		}
-	    $query = " SELECT * FROM `cat` WHERE `cat`='brand'  ORDER BY `id` ASC  ";
+	// tuye ye brand hastim alan, 
+	if( $_REQUEST['brand'] || $_REQUEST['brand_id'] ){
+		
+		$name= table("cat", $brand_id, "name");
+		?>	
+			<label>
+					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" checked <?=($_REQUEST['brand']==$brand_id ?"checked": "")?> />
+						<a href='./?page=102&cat_id=<?=$cat_id?>&field_id=<?=$field_id?>'><?=$name?></a>
+			</label>
+			
+		<?
+
+	// age tuye brand nistim, list brand ha ro neshun bede
+	} else {
+	
+		
+		$query = " SELECT * FROM `cat` WHERE `cat`='brand' ORDER BY `id` ASC  ";
+
 		if(! $rs = dbq($query) )
 		{
 			e( __FUNCTION__ , __LINE__ );
@@ -92,21 +52,9 @@ function product_filter_brand(){
 			//
 				
 		}else while( $rw = dbf($rs) )
-		{   
-			$brand_name = $rw['name'];
-			$brand_id=$rw['id'];
-			$query2 = " SELECT * FROM `cat` WHERE `id`='{$cat_id}' OR `parent`='{$cat_id}'  ORDER BY `id` ASC  ";
-			$n=0;
-			if(! $rs2 = dbq($query2) )
-			{
-				e( __FUNCTION__ , __LINE__ );
-
-			} else if(! dbn($rs2) )			
-			{} else while( $rw2 = dbf($rs2) )
-			{
-				$query_cat = " AND `cat_id`='".$rw2['id']."' ";	
-
-				$query3 = " SELECT * FROM `product` WHERE `flag`='1' AND `brand_id`='{$brand_id}' $query_cat ";
+		{	
+			$query3 = " SELECT * FROM `product` WHERE `flag`='1' AND  `brand_id`='".$rw['id']."' $q_field  $q_cat";
+			
 				if(!$rs3 = dbq($query3) )
 				{
 					e( __FUNCTION__ , __LINE__ );
@@ -115,111 +63,23 @@ function product_filter_brand(){
 					    continue;
 				}else
 				{
-					$n+=$num3;
-			}	}
-			if ($n!=0) {		 
-			?>	<label>
-					<input type="checkbox" id=<?=($brand_id==$brand ?"no_brand": "$brand_id")?> class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($brand_id==$brand ?"checked": "")?> />
-							<span><?=$brand_name?></span></span><span>(<?=$n?>)</span>
+					$n=$num3;
+				}	
+		
+			if ($n!=0) {
+			$brand_name=$rw['name'];
+			$brand_id=$rw['id'];				 
+			?>	
+				<label>
+					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
+					<a href="./?page=102&cat_id=<?=$cat_id?>&brand_id=<?=$rw['id']?>&field_id=<?=$field_id?>"><span><?=$brand_name?></span></span><span>(<?=$n?>)</span></a>
 				</label>
-					<?
-		  }    
-		}
-    }else if($_REQUEST['brands'] )/*کلیک بر روی برند هدایا در داخل لیست محصول*/
-	{
-
-	    $query = " SELECT * FROM `cat` WHERE `cat`='brand'  ORDER BY `id` ASC  ";
-		if(! $rs = dbq($query) )
-		{
-			e( __FUNCTION__ , __LINE__ );
-
-		} else if(! dbn($rs) )
-		{
-			//
 				
-		}else while( $rw = dbf($rs) )
-		{
-			$brand_name = $rw['name'];
-			$brand_id=$rw['id'];
-			$query2 = " SELECT * FROM `cat` WHERE `cat`='cat'  ORDER BY `id` ASC  ";
-			$n=0;
-			if(! $rs2 = dbq($query2) )
-			{
-				e( __FUNCTION__ , __LINE__ );
-
-			} else if(! dbn($rs2) ){
-				//
-			} 
-			else while( $rw2 = dbf($rs2) )
-			{
-				$query_cat = " AND `cat_id`='".$rw2['id']."' ";	
-
-				$query3 = " SELECT * FROM `product` WHERE `flag`='1' AND `brand_id`='{$brand_id}' $query_cat ";
-				if(!$rs3 = dbq($query3) )
-				{
-					e( __FUNCTION__ , __LINE__ );
-				}else if(!$num3=dbn($rs3) )
-				{
-					    continue;
-				}else
-				{
-					$n+=$num3;
-			}	}
-			if ($n!=0) {		 
-			?>	<label>
-					<input type="checkbox" id="<?=$brand_id?>" class="not_cat" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['id']==$brand_id ?"checked": "")?> />
-							<span><?=$brand_name?></span></span><span>(<?=$n?>)</span>
-				</label>
-					<?
-		  }    
+			<?
+		    }   
 		}
-    }else if($_REQUEST['product_id'] || $_REQUEST['order_id'] || $_REQUEST['q'] )/*کلیک بر روی نمایش محصول یا سفارش*/
-	{
-
-	    $query = " SELECT * FROM `cat` WHERE `cat`='brand'  ORDER BY `id` ASC  ";
-		if(! $rs = dbq($query) )
-		{
-			e( __FUNCTION__ , __LINE__ );
-
-		} else if(! dbn($rs) )
-		{
-			//
-				
-		}else while( $rw = dbf($rs) )
-		{
-			$brand_name = $rw['name'];
-			$brand_id=$rw['id'];
-			$query2 = " SELECT * FROM `cat` WHERE `cat`='cat'  ORDER BY `id` ASC  ";
-			$n=0;
-			if(! $rs2 = dbq($query2) )
-			{
-				e( __FUNCTION__ , __LINE__ );
-
-			} else if(! dbn($rs2) )			
-			{} else while( $rw2 = dbf($rs2) )
-			{
-				$query_cat = " AND `cat_id`='".$rw2['id']."' ";	
-
-				$query3 = " SELECT * FROM `product` WHERE `flag`='1' AND `brand_id`='{$brand_id}' $query_cat ";
-				if(!$rs3 = dbq($query3) )
-				{
-					e( __FUNCTION__ , __LINE__ );
-				}else if(!$num3=dbn($rs3) )
-				{
-					    continue;
-				}else
-				{
-					$n+=$num3;
-			}	}
-			if ($n!=0) {		 
-			?>	<label>
-					<input type="checkbox" id="<?=$brand_id?>" class="not_cat" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['id']==$brand_id ?"checked": "")?> />
-							<span><?=$brand_name?></span></span><span>(<?=$n?>)</span>
-				</label>
-					<?
-		  }    
-		}
-    }
+}
+	
 ?>
 </div>
 <?    
