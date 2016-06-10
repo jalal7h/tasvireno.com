@@ -66,16 +66,16 @@
 .tile2 img{
     position:absolute;
     top:0px;
-   height:100%;
+    height:100%;
     transition:all 1s;
 
 }
 .tile2_btn {
     text-align:center;
     position:absolute;
-    top:40%;
-    right:43%;
-   border-radius:30px !important;  
+    top:38%;
+    right:42%;
+    border-radius:30px !important;  
     
 } 
 .tile2_btn >i{
@@ -114,7 +114,7 @@
 
  .nljxa{
 	width:100%;
-	height:28%;
+	height:23%;
 	padding-right:8% !important;
 }
 .project-grid-spesc {
@@ -130,7 +130,7 @@
  
  .nljxa{
 	width:100%;
-	height:27.7%;
+	height:24.7%;
 	padding-right:0px !important;
 }
 .project-grid-spesc{
@@ -157,10 +157,9 @@
     margin: 0 0 0 0;
     display: inline-block;
 }
-.project{
-	
-	/* height:700px; */
-   
+.tile2_btn >i{
+ font-size:20px;
+ color:#fff;
 }
 }
 /************************************************/

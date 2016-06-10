@@ -103,7 +103,11 @@
 	border: 0px;
 	color: white;
 }
-
+.p_img_vw2{
+    width:40%;
+    margin:20px auto;
+    background-color:#777;
+}
 
 
 

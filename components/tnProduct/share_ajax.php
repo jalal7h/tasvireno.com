@@ -29,7 +29,7 @@ function share_ajax(){
 	$price=$rw1['price'];
 	
 	?>
-	<div class="p_img_vw"><img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" ></div>
+	<div class="p_img_vw2"><img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" ></div>
 	<div class="sharing">
 	<div class="head">
 			<div class="dotline"></div>

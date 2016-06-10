@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2016 at 01:25 AM
+-- Generation Time: Jun 10, 2016 at 01:03 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -44,18 +44,18 @@ CREATE TABLE `cat` (
 --
 
 INSERT INTO `cat` (`id`, `name`, `desc`, `kw`, `parent`, `cat`, `ord`, `logo`, `hide`, `flag`) VALUES
-(1, 'نوشت ابزار', '', '', 0, 'cat', 0, 'data/cat/cat/0-1464437130-25765718515731697455.jpg', 0, 1),
+(1, 'نوشت ابزار', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465201717-25765718515731697455.jpg', 0, 1),
 (2, 'کلاه', '', '', 0, 'cat', 0, 'data/cat/cat/0-1464721314-201512912543923a.jpg', 0, 1),
 (3, 'فلش مموری', '', '', 0, 'cat', 0, 'data/cat/cat/0-1464721330-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 0, 1),
-(4, 'فلاسک', '', '', 0, 'cat', 0, 'data/cat/cat/0-1464076265-3521211100-01-w.jpg', 0, 1),
+(4, 'فلاسک', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465200823-3521211100-01-w.jpg', 0, 1),
 (5, 'زمینه1', '', '', 0, 'field', 0, '', 0, 1),
 (6, 'زمینه2', '', '', 0, 'field', 0, '', 0, 1),
 (7, 'پشمی', '', '', 1, 'cat', 0, '', 1, 1),
 (8, 'برند1', '', '', 0, 'brand', 0, 'data/cat/brand/0-1463991980-us-basic2.jpg', 0, 1),
 (9, 'برند2', '', '', 0, 'brand', 0, 'data/cat/brand/0-1463991991-marksman2.jpg', 0, 1),
-(10, 'قوری', '', '', 0, 'cat', 0, 'data/cat/cat/0-1464437687-SHF7570.jpg', 0, 1),
+(10, 'قوری', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465200837-SHF7570.jpg', 0, 1),
 (11, 'قوری دوتایی', '', '', 10, 'cat', 0, 'data/cat/cat/0-1464076821-falez-sarayli-black-2.jpg', 0, 1),
-(12, 'قابلمه', '', '', 0, 'cat', 0, 'data/cat/cat/0-1464437832-P_68774DC_1_4AC3D400.jpg', 0, 1),
+(12, 'قابلمه', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465200945-P_68774DC_1_4AC3D400.jpg', 0, 1),
 (13, 'قوری مسی', '', '', 10, 'cat', 0, 'data/cat/cat/0-1464175837-coinsgold_92413-5426421.jpg', 0, 1),
 (14, 'سونی', '', '', 3, 'cat', 0, 'data/cat/cat/0-1464260449-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 0, 1),
 (15, 'ترنس', '', '', 3, 'cat', 0, 'data/cat/cat/0-1464260464-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 0, 1),
@@ -103,13 +103,14 @@ CREATE TABLE `linkify` (
 --
 
 INSERT INTO `linkify` (`id`, `name`, `url`, `pic`, `flag`, `prio`, `parent`, `cat`) VALUES
-(2, 'هدایا', './', '', 1, 1, 0, 'header'),
+(2, 'هدایا', './?page=102&cats=1', '', 1, 1, 0, 'header'),
 (3, 'ارتباط با ما', './contact', '', 1, 7, 0, 'header'),
-(4, 'درباره ما', './about', '', 1, 6, 0, 'header'),
+(4, 'درباره ما', './about', '', 1, 8, 0, 'header'),
 (5, 'برند', './?page=102&brands=1', '', 1, 2, 0, 'header'),
-(6, 'زمینه', './', '', 1, 3, 0, 'header'),
+(6, 'زمینه', './?page=102&fields=1', '', 1, 3, 0, 'header'),
 (7, 'کاتالوگ', './Catalog', '', 1, 4, 0, 'header'),
-(8, 'خدمات', './services', '', 1, 5, 0, 'header');
+(8, 'خدمات', './services', '', 1, 5, 0, 'header'),
+(9, 'پروژه ها', './project', '', 1, 6, 0, 'header');
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,8 @@ INSERT INTO `orders` (`id`, `product_id`, `name`, `company`, `tell`, `cell`, `nu
 (18, 10, 'meysam', 'sam', '01143140758', '33333', 33, 'mtaghipoor13@gmail.com', '333', 1464605251),
 (19, 10, 'meysam', 'sam', '01143140758', '0911', 21222222, 'mtaghipoor13@gmail.com', 'خریدارم', 1464606068),
 (20, 10, 'meysam', 'asas', '01143140758', '33', 9118979803, 'mtaghipoor13@gmail.com', '3333', 1464606325),
-(21, 11, 'meysam', 'sam', '01143140758', '222222', 2222, 'taghipoor.meysam@gmail.com', '2222', 1465169043);
+(21, 11, 'meysam', 'sam', '01143140758', '222222', 2222, 'taghipoor.meysam@gmail.com', '2222', 1465169043),
+(22, 13, 'meysam', 'sam', '01143140758', '33', 333, 'taghipoor.meysam@gmail.com', '3333333', 1465402108);
 
 -- --------------------------------------------------------
 
@@ -194,7 +196,9 @@ INSERT INTO `page` (`id`, `name`, `meta_title`, `meta_kw`, `meta_desc`) VALUES
 (104, 'سفارش کالا', '', '', ''),
 (105, 'جستجو', '', '', ''),
 (108, 'کاتالوگ', '', '', ''),
-(109, 'خدمات', '', '', '');
+(109, 'خدمات', '', '', ''),
+(111, 'لیست پروژه ها', '', '', ''),
+(112, 'نمایش  پروژه', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -233,15 +237,17 @@ INSERT INTO `page_layer` (`id`, `page_id`, `prio`, `func`, `type`, `name`, `data
 (59, 59, 1, 'post', 'PHP5', 'ثبت نام', '<?\r\nusers_register_do();\r\n?>', 1, 1),
 (60, 60, 1, 'post', 'PHP5', 'ورود کاربر', '<?\r\nusers_login_form();\r\n?>', 1, 1),
 (63, 63, 1, 'post', 'PHP5', 'فراموشی کلمه عبور', '<?\r\nusers_forgot_form();\r\n?>', 1, 1),
-(101, 1, 4, 'brand_vw_list2', 'HTML', 'لیست بنر', '', 1, 1),
+(101, 1, 5, 'brand_vw_list2', 'HTML', 'لیست برندها', '', 1, 1),
 (102, 101, 1, 'contact_vw_form', 'HTML', 'تماس با ما', '', 1, 1),
-(103, 1, 3, 'cat_vw_list', 'HTML', 'لیست هدایا', '', 1, 1),
+(103, 1, 4, 'cat_vw_list', 'HTML', 'لیست هدایا', '', 1, 1),
 (106, 102, 1, 'product_vw_list', 'HTML', 'لیست محصولات', '', 1, 1),
 (105, 104, 1, 'order_form', 'HTML', 'فرم سفارش', '', 1, 1),
 (107, 103, 1, 'product_vw_view', 'HTML', 'نمایش محصول', '', 1, 1),
 (108, 105, 1, 'shearch', 'HTML', 'جستجو', '', 1, 1),
 (109, 109, 1, 'layout_post', 'PHP5', 'کاتالوگ', '<div class="block boxborder">\r\n<div class="blockhead boxborder">خدمات</div>\r\n\r\n<div class="blocktext">\r\n<div class="block-html-content"><center class="tx1">این صفحه در حال طراحی میباشد</center></div>\r\n</div>\r\n\r\n<div class="blockfooter"> </div>\r\n</div>', 0, 1),
-(110, 108, 1, 'layout_post', 'PHP5', 'کاتالوگ', '<div class="block boxborder">\r\n<div class="blockhead boxborder">کاتالوگ</div>\r\n\r\n<div class="blocktext">\r\n<div class="block-html-content"><center class="tx1">این صفحه در حال طراحی میباشد</center></div>\r\n</div>\r\n\r\n<div class="blockfooter"> </div>\r\n</div>', 0, 1);
+(110, 108, 1, 'layout_post', 'PHP5', 'کاتالوگ', '<div class="block boxborder">\r\n<div class="blockhead boxborder">کاتالوگ</div>\r\n\r\n<div class="blocktext">\r\n<div class="block-html-content"><center class="tx1">این صفحه در حال طراحی میباشد</center></div>\r\n</div>\r\n\r\n<div class="blockfooter"> </div>\r\n</div>', 0, 1),
+(111, 1, 3, 'baner', 'HTML', 'بنر', '', 1, 0),
+(112, 111, 1, 'project_vw_list', 'HTML', 'لیست پروژه ها', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -304,7 +310,15 @@ CREATE TABLE `project` (
 INSERT INTO `project` (`id`, `name`, `image`, `description`, `prio`, `flag`) VALUES
 (1, 'meysam', 'data/project_image/1/0-1464970164-25765718515731697455.jpg', 'میثم\r\nتقی پور\r\n20', 1, 1),
 (2, 'ابی', 'data/project_image/2/0-1464970795-Akbar-1-420x330.jpg', 'ابرام', 2, 1),
-(3, 'AMIRFAZEL', 'data/project_image/3/0-1464972596-T2CxxoXu8aXXXXXXXX_8861966031.jpg', 'AMIRFAZEL WEB DIESIGN', 0, 1);
+(3, 'AMIRFAZEL', 'data/project_image/3/0-1465537009-13355630_108229586266510_1685305416_n.jpg', 'AMIRFAZEL WEB DIESIGN', 0, 1),
+(4, 'تست', 'data/project_image/4/0-1465509886-photo_2016-06-10_02-33-58.jpg', 'این روزها برخی از بازیکنان با سوء استفاده از رقابت سالم دو باشگاه استقلال و پرسپولیس در صدد هستند تا با بالا بردن رقم قرار داد خود از این نمد کلاهی برای خود بسازند و اصلا مسائلی نظیر عشق به پیراهن و در نظر گرفتن عواطف و احساسات هواداران برایشان اهمیتی نداشته و ندارد و تنها پارامتری که در نزدشان از اهمیت وافری برخوردار است همانا دریافت پول بیشتر است و بس و تنها.\r\nپس از عقد قرار داد هم در اولین مصاحبه خود با گرفتن ژست و قیافه حق بجانب اعلام نمایند از بچگی پرسپولیسی! بودم و ارزویم پوشیدن پیراهن این یا آن تیم بوده است! \r\n????بهرحال هواداران فهیم و خونگرم استقلال در شرایط کنونی با عبور از این خط فرصت طلبانه برخی از این بازیکنان یکصدا فریاد می زنیم بازیکن پولکی نمی خوایم نمی خوایم..????\r\nاین روزها برخی از بازیکنان با سوء استفاده از رقابت سالم دو باشگاه استقلال و پرسپولیس در صدد هستند تا با بالا بردن رقم قرار داد خود از این نمد کلاهی برای خود بسازند و اصلا مسائلی نظیر عشق به پیراهن و در نظر گرفتن عواطف و احساسات هواداران برایشان اهمیتی نداشته و ندارد و تنها پارامتری که در نزدشان از اهمیت وافری برخوردار است همانا دریافت پول بیشتر است و بس و تنها.\r\nپس از عقد قرار داد هم در اولین مصاحبه خود با گرفتن ژست و قیافه حق بجانب اعلام نمایند از بچگی پرسپولیسی! بودم و ارزویم پوشیدن پیراهن این یا آن تیم بوده است! \r\n????بهرحال هواداران فهیم و خونگرم استقلال در شرایط کنونی با عبور از این خط فرصت طلبانه برخی از این بازیکنان یکصدا فریاد می زنیم بازیکن پولکی نمی خوایم نمی خوایم..????\r\n\r\nاین روزها برخی از بازیکنان با سوء استفاده از رقابت سالم دو باشگاه استقلال و پرسپولیس در صدد هستند تا با بالا بردن رقم قرار داد خود از این نمد کلاهی برای خود بسازند و اصلا مسائلی نظیر عشق به پیراهن و در نظر گرفتن عواطف و احساسات هواداران برایشان اهمیتی نداشته و ندارد و تنها پارامتری که در نزدشان از اهمیت وافری برخوردار است همانا دریافت پول بیشتر است و بس و تنها.\r\nپس از عقد قرار داد هم در اولین مصاحبه خود با گرفتن ژست و قیافه حق بجانب اعلام نمایند از بچگی پرسپولیسی! بودم و ارزویم پوشیدن پیراهن این یا آن تیم بوده است! \r\n????بهرحال هواداران فهیم و خونگرم استقلال در شرایط کنونی با عبور از این خط فرصت طلبانه برخی از این بازیکنان یکصدا فریاد می زنیم بازیکن پولکی نمی خوایم نمی خوایم..????', 0, 1),
+(5, 'فف', 'data/project_image/5/0-1465537035-13392663_143824882696754_73536807_n.jpg', 'ققققق', 0, 1),
+(6, 'یی', 'data/project_image/6/0-1465537046-13298281_1197747690248952_1840445968_n.jpg', 'یی', 0, 1),
+(7, 'قق', 'data/project_image/7/0-1465536886-13249716_1781665908714081_1614264449_n.jpg', 'ققققق', 0, 1),
+(8, 'ققق', 'data/project_image/8/0-1465536900-13256948_191995691196889_1578289484_n.jpg', 'سسس', 0, 1),
+(9, 'لل', 'data/project_image/9/0-1465536913-13257069_549570435205139_1851072903_n.jpg', 'لللللللل', 0, 1),
+(10, 'parsonline', 'data/project_image/10/0-1465536927-13392639_1610098985967484_766702017_n.jpg', '4d\r\nparsonlineاسامی برندگان قرعه کشی ماهانه اینترنت پرسرعت پارس آنلاین بر روى سایت پارس آنلاین قرار گرفت. برای مشاهده برندگان به لینک زیر \r\nمراجعه نمائید.\r\n????????????\r\nhttp://goo.gl/bLymVW\r\n\r\n#Parsonline #پارس_آنلاین \r\n#Internet #ISP #اینترنت #قرعه_کشی\r\nview all 50 comments\r\namirali1369mordadولی هوای کابران قبلی راندارید\r\nh3efat@amirali1369mordad داداش داری چت می كنی ، همه اینارو خب تو ی كامنت می نوشتی ????????\r\namirali1369mordadخب چی بگم والا آدم حرفش میگیره\r\nparsonline@amirali1369mordad دوست عزیز طرح هایی كه برای كاربران جدید و كاربران فعلی گذلشته میشه، طبیعیه كه متفاوت باشه، برای كاربران فعلی هم همانطور كه دیدید ترافیك اضافه با ٤٠ درصد بیشتر رو گذاشتیم یا همینطور تخفیف خرید از بامیلو و خیلی موارد دیگه كه قطعنا خودتون ملاحظه كردید\r\nparsonline@h3efat ????????\r\nmoien_golسلام\r\nmoien_golخواستم بدونم اینترنت رایگان شما در ایام رمضان تغیر نخواهد کرد و لطفا بگید چگونه هست؟\r\nparsonline@moien_gol خیر دوست عزیز تغییری در بازه زمانی شب که به صورت یک سوم محاسبه میشه نخواهیم داشت\r\nmoien_gol@parsonline اونوقت از ساعت چند تا چند هست؟\r\nposht_e_daryahaیه مسئله خیلی عجیبه چطوری میشه وقتی ما دانلودی نداریم بعد اونوقت ترافیک در حال مصرف داریم چرا اینقدر ترافیک زود تموم میشه؟؟؟!!!!\r\nposht_e_daryahaسرعتشم که تعریفی نداره\r\nparsonline@posht_e_daryaha دوست مصرف شما فقط محدود به دانلود نیست وب گردی و استفاده از شبکه های اجتماعی و موارد دیگه هم باعث تستفاده و کم شدن ترافیک شما میشه. میتونید گزارش مصرفتون رو با مصرفتون در یک بازه زمانی مشخص تطبیق بدید. ممنون از همراهی شما\r\nparsonline@moien_gol دو بامداد تا هفت صبح هستش دوست من\r\nposht_e_daryaha@parsonline مرسی از پاسختون\r\nmohamad.mobarakپارس آنلاین شباش فیریِ؟!\r\nparsonline@mohamad.mobarak از ساعت دو بامداد تا هفت صبح به صورت یک سوم محاسبه میشه\r\nmohamad.mobarakمن سرویسم شاتلِ هرماه برای فیری شدن شباش بابت هر ماه۵۰۰۰تومن گرفتن و شبارو فیری کردن اما اینجور که یک سومِ فکر نکنم صرفه ی دانلودی داشته باشه\r\nیک سوم محاسبه میشه\r\nmohamad.mobarakمن سرویسم شاتلِ هرماه برای فیری شدن شباش بابت هر ماه۵۰۰۰تومن گرفتن و شبارو فیری کردن اما اینجور که یک سومِ فکر نکنم صرفه ی دانلودی داشته باشه\r\nیک سوم محاسبه میشه\r\nmohamad.mobarakمن سرویسم شاتلِ هرماه برای فیری شدن شباش بابت هر ماه۵۰۰۰تومن گرفتن و شبارو فیری کردن اما اینجور که یک سومِ فکر نکنم صرفه ی دانلودی داشته باشه\r\nیک سوم محاسبه میشه\r\nmohamad.mobarakمن سرویسم شاتلِ هرماه برای فیری شدن شباش بابت هر ماه۵۰۰۰تومن گرفتن و شبارو فیری کردن اما اینجور که یک سومِ فکر نکنم صرفه ی دانلودی داشته باشه', 0, 1),
+(11, 'ففغغ', 'data/project_image/11/0-1465536941-13388539_1780369662194380_376567471_n.jpg', 'غغغغغغ', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -344,7 +358,8 @@ INSERT INTO `setting` (`slug`, `name`, `text`, `component`) VALUES
 ('do', '', 'save', ''),
 ('func', '', 'setting_mg_main', ''),
 ('unsuccessful_attack', '', '4', ''),
-('logo', 'لوگوی سایت', 'data/logo/0-1464688479-2479-logo2.png', '');
+('logo', 'لوگوی سایت', 'data/logo/0-1465289031-5310-0df3a302-2cae-11e6-9522-4833fcc0650d.png', ''),
+('baner', 'بنر', 'data/baner/0-1465504310-7536-google-seo.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -491,7 +506,7 @@ ALTER TABLE `cat`
 -- AUTO_INCREMENT for table `linkify`
 --
 ALTER TABLE `linkify`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
@@ -501,17 +516,17 @@ ALTER TABLE `newsletter`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه سفارش', AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه سفارش', AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 --
 -- AUTO_INCREMENT for table `page_layer`
 --
 ALTER TABLE `page_layer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 --
 -- AUTO_INCREMENT for table `product`
 --
@@ -521,7 +536,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `texty`
 --

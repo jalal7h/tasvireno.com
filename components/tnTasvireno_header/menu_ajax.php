@@ -85,10 +85,11 @@ function tabmenu_rast_cat(){
 
 				$cat_name = $rw['name'];
 				$id=$rw['id'];
-				$id=$rw['id'];
+				
 				?>
 			<li class="">
-			<a href="<?=tasvir_cat_link( table("cat", $id) );?>" class="">
+			
+			<a href="./?page=102&cat_id=<?=$rw['id']?>" class="">
 			    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
 			</a>
 			</li>

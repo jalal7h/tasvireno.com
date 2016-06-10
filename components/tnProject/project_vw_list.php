@@ -7,7 +7,7 @@ function project_vw_list(){
 <div class="nljxa">
 <?	
 	$i=0;
-	$tdd = 10;
+	$tdd = 12;
 	$stt = $tdd * intval($_REQUEST['p']); 
 	$query1 = " SELECT * FROM `project` WHERE `flag`='1' ORDER BY `prio` ASC LIMIT $stt , $tdd ";
     if(! $rs1 = dbq($query1) ){
@@ -37,14 +37,7 @@ function project_vw_list(){
 	</div>
 	
 	<?
-	$i++;
-	if ($i/3==1) {
-		$i=0;
-		?>
-		</div>
-		<div class="nljxa">
-		<?
-	}
+	
 	}	 
     ?>
     <br><br>
