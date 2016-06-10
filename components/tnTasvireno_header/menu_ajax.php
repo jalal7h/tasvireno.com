@@ -6,10 +6,24 @@ function menu_ajax(){
 ?>
 <div class="tabmenu">
 <div class="tabmenu_rast">
-<h1> هدایای شرکت:</h1>	
-<?tabmenu_rast_cat();?>
-<h1> برندهای هدایا:</h1>	
-<?tabmenu_rast_brand();?>
+<?
+switch($_REQUEST['do']){
+			case "gift":
+				echo "<h1> هدایای شرکت:</h1>";	
+				tabmenu_rast_cat();
+				break;
+
+			case "brand":
+				echo "<h1> برندهای هدایا:</h1>";	
+				tabmenu_rast_brand();
+				break;
+
+			case "field":
+				echo "<h1> زمینه هدایا:</h1>";	
+				tabmenu_rast_field();
+				break;
+}
+?>				
 </div>
 <div class="tabmenu_chap">
 <h1> کالاهای پیشنهادی:</h1>
@@ -43,7 +57,7 @@ function tabmenu_chap(){
 				$price=$rw1['price'];
 			?>
 			<a href="<?=tasvir_product_link($rw1);?>" class="cbp-item-wrapper">
-			<div class="p_img_vw ">
+			<div class="p_img_head ">
 			<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive hvr-round" >
 			</div>
 			<div class="tabmenu_chap_name">
@@ -108,6 +122,37 @@ function tabmenu_rast_brand(){
 			<li class="">
 			<a href="<?=tasvir_brand_link( table("cat", $id) );?>" class="">
 			    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
+			</a>
+			</li>
+	<?	 
+			}
+?>
+	 </ul>
+
+
+<?
+	}
+}
+function tabmenu_rast_field(){
+	?><ul class="cat-grid2"><?
+	$query = " SELECT * FROM `cat` WHERE `cat`='field' ORDER BY `id` ASC  ";
+	if(! $rs = dbq($query) ){
+		e( __FUNCTION__ , __LINE__ );
+
+	} else if(! dbn($rs) ){
+				?>
+				<div class="errors"><h1>موردی برای درخواست شما یافت نشد.</h1></div>
+				<?
+			
+	} else{ while( $rw = dbf($rs) ){
+
+				$field_name = $rw['name'];
+				$id=$rw['id'];
+				$id=$rw['id'];
+				?>
+			<li class="">
+			<a href="<?=tasvir_field_link( table("cat", $id) );?>" class="">
+			    <span data-mh="tile-category" style="height: 35px;"> <?=$field_name;?></span>
 			</a>
 			</li>
 	<?	 

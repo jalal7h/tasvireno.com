@@ -2,25 +2,26 @@
     width:100%;
     height:auto;
     background-color: #fff;
-    font-family:BYekan;
+    font-family:IRANSans;
 }
 .product_filter{
-    width:20.7%;
+    width:27.7%;
     height:auto;
     background-color: #ffffff;
-    font-family:BYekan;
+    font-family:IRANSans;
     display:inline-block;
     vertical-align:top;
+    padding-left: 1%;
 }
 .product_filter .Category{
     
      font: normal 14px IRANSans;
-     height:35px;
+     height:37px;
      color:#2ecc71;
      padding:0px 10px 30px 0;
      margin-bottom: 10px;
      cursor: pointer;
-     background-color:#f7f7f7;
+     background-color:#fcfcfc;
      border-bottom: 1px dashed #ccc;
      border-top: 1px dashed #ccc;
      border-radius:50px;
@@ -71,9 +72,10 @@
 }
 .product_filter  label {
     margin: 5px 0 0 5px;
-     padding:0 47px 10px 0;
+    padding:0 27px 10px 0;
     min-width: 76%;
     display: inline-block;
+    cursor:default;
    
 }
 .product_filter label > input {
@@ -81,6 +83,12 @@
     right: auto;
     bottom: auto; 
     left: auto;
+   /*  cursor:no-drop; */
+
+}
+.product_filter label a {
+    padding:0 1px 0 15px;
+}
 
 }
 .product_filter  label > span {
@@ -88,18 +96,15 @@
 
 }
 .product_filter .parent{
-    padding-right: 70px;
+    padding-right: 46px;
 }
 .product_list{
-    width:79%;
+    width:70%;
     height:auto;
     background-color: #fff;
     font-family:IRANSans;
     display:inline-block;
     vertical-align:top;
-    padding-right:20px;
-    padding-left:20px;
-
 }
 .product_list>h2{
    text-align: center;
@@ -108,14 +113,17 @@
     font-weight:bold;
 }
  
-.back{
-    width:100%;
-    height:40px;
-    font-size: 14px;
-    padding-top: 10px;
-    color:#999;
-    background-color:#fcfcfc;
-    margin-bottom:20px;
+.back {
+    width: 100%;
+    height: 37px;
+    font-size: 12px;
+    padding-top: 7px;
+    color: #999;
+    background-color: #fcfcfc;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border-bottom: 1px dashed #ccc;
+    border-top: 1px dashed #ccc;
 }
 .back >i{
     margin-right:5px;
@@ -131,13 +139,14 @@
 .product-grid
 {
     margin: 0 0 0 -2.16%;
-    padding: 0px 40px 0 0 ;
-    list-style: none;
+    padding: 0px 4% 0 0 ;
+    list-style: none; 
+    width: 97%;
 }
 
 .product-grid-spesc
 {
-    width: 25.5%;
+    width: 30%;
     margin: 0 0 2.16% 2.16%;
     display:inline-block;
 }
@@ -159,7 +168,7 @@
 .tile {
     color: #26bff1;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 6px;
     display: block;
     font-size: 18px;
     -o-transition: .3s;
@@ -186,10 +195,10 @@
     height:100%;
     position:relative;
     z-index:10;
-    background-color:rgba(0, 0, 0, 0.3);
+    background-color:rgba(0, 0, 0, 0.08);
     opacity:0;
-    border-radius:5px;
-    box-shadow:0px 0px 3px #ccc ,0px 9px 19px -4px #333;
+    border-radius:4px;
+    box-shadow:0px 0px 3px #ccc ;
     transition:all 1s;
 }
  
@@ -216,8 +225,8 @@ a.img-responsive h3 {
 .tile_btn {
     text-align:center;
     position:absolute;
-    top:45%;
-    right:24%;
+    top:73%;
+    right:23%;
    border-radius:30px !important;  
     
 } 
@@ -225,13 +234,21 @@ a.img-responsive h3 {
   border-radius:30px !important; 
   border:1px solid #fff !important;
 } 
+.tile_btn .tasvir_button:hover{
+  opacity:1!important;
+} 
 .tile:hover .photo{
     opacity:1;
 }
-
+.Category_cat{
+    margin-bottom: 18px;
+}
+.Category_brand{
+    margin-bottom: 18px;
+}
 .Category_cat > h2{
     color:#999;
-    margin-right:14%;
+    margin-right:10%;
     margin-bottom:15px;
 }
 .Category_cat > h2:before {
@@ -245,10 +262,13 @@ a.img-responsive h3 {
     display: inline-block;
     transition: all 0.5s;
 }
+.row1{
+    padding-right: 5%;
+}
 /*                        product_vw_view                        */
 .p_img_vw{
-    width:45%;
-    margin:30px auto;
+    width:40%;
+    margin:50px auto;
     background-color:#777;
 }
 .p_vw_btn{
@@ -256,28 +276,32 @@ a.img-responsive h3 {
     /* text-align:left; */
     padding:15px 10% 0 10%;
 }
-.p_vw_btn > a{
-    margin-left:15px !important;
-}
+
 .p_vw_name{
     width:100%;
     color:#2ecc71;
     /* text-align:left; */
     font-size:34px;
-    font-family:B Yekan;
+    font-family:IRANSans;
     padding:15px 10% 25px 10%;
+    border-top: 1px dashed #ccc;
     
+}
+.p_vw_name > h2{
+    font-size:22px;
 }
 .p_vw_cat {
     padding:0px 10% 0 10%;
     font-weight:bold; 
 }
 .txt{
-    padding:0px 10% 0 10%;
+    padding:0px 10% 20px 0;
+    border-bottom: 1px dashed #ccc;
 
 }
 .txt > p{
-    line-height:25px!important;
+    line-height:30px!important;
+    font-size:12px;
 }  
 .table-responsive {
     min-height: .01%;
@@ -321,10 +345,16 @@ a.img-responsive h3 {
     padding-right:25%;
 }
 .p_w_h > h3{
-    font-size:14px;
+    font-size:12px;
 }
 .p_w_h span{
-    font-size:14px;
+    font-size:12px;
+}
+.share{
+    width:200px;
+    height:200px;
+    background-color:#ccc;
+    color:#000;
 }
 /***********************************************************/
 @media only screen and (max-width : 900px) {
@@ -347,7 +377,7 @@ a.img-responsive h3 {
     }
     .back >a{
     
-    font-size:10px;
+    font: normal 10px IRANSans
     }
     .back >i{
     

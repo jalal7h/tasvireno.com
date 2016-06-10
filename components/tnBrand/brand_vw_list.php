@@ -1,5 +1,5 @@
 <?
-$GLOBALS['block_layers']['brand_vw_list2'] = 'لیست بنر ';
+$GLOBALS['block_layers']['brand_vw_list2'] = 'لیست برند ';
 
 function brand_vw_list2(){
 	?>

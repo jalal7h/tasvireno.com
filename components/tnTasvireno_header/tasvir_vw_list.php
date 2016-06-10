@@ -14,9 +14,9 @@ function tasvir_vw_list(){
 				
 			
 		$c.="<li";
-		if($name =='هدایا'){$c.=" id=\"gift\"";}
+		if($name =='هدایا'){$c.=" id=\"gift\"";}else if($name =='برند'){$c.=" id=\"brand\"";}else if($name =='زمینه'){$c.=" id=\"field\"";}
 		$c.="><a href=";
-		if($name =='هدایا'){$c.= "#";}else{$c.= $link;}
+		$c.= $link;
 		$c.=">"; $c.= $name;$c.="</a></li>";
 	
 		}

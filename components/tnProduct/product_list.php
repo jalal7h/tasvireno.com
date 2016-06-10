@@ -1,23 +1,25 @@
 <?
 function product_list(){
-	?>			
-
-<div class="product-grid">
-<?	
+	?>	
+	<div class="product-grid">
+	<?	
 	back();
-	if ($cat_id2 = $_REQUEST['cat']) {
-		$q_cat="AND `cat_id` ='$cat_id2' OR `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id2')";
+	?>
+	<div class="row1">
+	<?
+	if ($cat_id = $_REQUEST['cat']) {
 		
-	}
-	if ($cat_id = $_REQUEST['cat_id']) {
+		$cat_link="cat=".$cat_id;
+		$q_cat="AND( `cat_id` ='$cat_id' OR `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id'))";
 		
+	}else if ($cat_id = $_REQUEST['cat_id']) {
+		$cat_link="&cat_id=".$cat_id;
 		$q_cat="AND `cat_id` ='$cat_id' OR `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id') ";
 	}
 	if ($brand_id = $_REQUEST['brand_id']) {
 		
 		$q_brand="AND `brand_id` ='$brand_id'";
-	}
-	if ($brand_id = $_REQUEST['brand']) {
+	}else if ($brand_id = $_REQUEST['brand']) {
 		
 		$q_brand="AND `brand_id` ='$brand_id'";
 	}
@@ -25,38 +27,38 @@ function product_list(){
 		
 		$q_field="AND `field_id` ='$field_id'";
 	}
-	
+	$link = _URL."/?page=102&field_id=".$field_id."&brand=".$brand_id."&". $cat_link."&p=".$_REQUEST['p'];
 	$tdd = 12;
 	$stt = $tdd * intval($_REQUEST['p']); 
 	$query1 = " SELECT * FROM `product` WHERE `flag`='1'   $q_brand $q_field $q_cat ORDER BY `prio` ASC LIMIT $stt , $tdd ";
-	        if(! $rs1 = dbq($query1) ){
-				e(__FUNCTION__,__LINE__);
-			
-			} else if(! dbn($rs1) ){
-			
-			?>
-				<div class="errors"><h1>موردی برای درخواست شما یافت نشد.</h1></div>
- 			<?
-			
-			} else while( $rw1 = dbf($rs1) ){
-				$cat_id = $rw1['cat_id'];
-						
-				$photo_medium = $rw1['photo_medium']; 
-				$name = $rw1['name'];
-				$code=$rw1['code'];
-				$size=$rw1['size'];
-				?>
-			<div class=" product-grid-spesc">
-			<div class="tile">
-				<div class="photo">
+    if(! $rs1 = dbq($query1) ){
+		e(__FUNCTION__,__LINE__);
+	
+	} else if(! dbn($rs1) ){
+	
+	?>
+		<div class="errors"><h1>موردی برای درخواست شما یافت نشد.</h1></div>
+	<?
+	
+	} else while( $rw1 = dbf($rs1) ){
+		$cat_id = $rw1['cat_id'];
+				
+		$photo_medium = $rw1['photo_medium']; 
+		$name = $rw1['name'];
+		$code=$rw1['code'];
+		$size=$rw1['size'];
+		?>
+	<div class=" product-grid-spesc">
+		<div class="tile">
+			<div class="photo">
 				<div class="tile_btn"><a href="<?=tasvir_product_link($rw1);?>" class="tasvir_button">نمایش محصول</a></div>	 
-				</div>
-				<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
-			    <a href="<?=tasvir_product_link($rw1);?>" class="img-responsive">
-			       
-			        <h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
-			        <div class="p_w_h"> 
-			        <h3 data-mh="img-responsive" style="height: 35px;"><span>کد &nbsp;&nbsp;&nbsp;: </span><?=$code;?></h3>
+			</div>
+			<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
+		    <a href="<?=tasvir_product_link($rw1);?>" class="img-responsive">
+		       
+		        <h2 data-mh="img-responsive" style="height: 40px;"><?=$name;?></h2>
+		        <div class="p_w_h"> 
+			        <h3 data-mh="img-responsive" style="height: 25px;"><span>کد &nbsp;&nbsp;&nbsp;: </span><?=$code;?></h3>
 			        <h3 data-mh="img-responsive" style="height: 35px;">
 				        <?=
 				         
@@ -64,21 +66,22 @@ function product_list(){
 							        
 						?>
 					</h3>
-					</div>
-				</a>			
-					       
-			
-			</div>
-			</div>
-			<?
-			}	 
+				</div>
+			</a>			
+				       
+		
+		</div>
+	</div>
+	<?
+	}	 
 
 
-	$link = _URL."/?page=102&q=".$_REQUEST['q'];
+	
 	echo listmaker_paging($query1, $link, $tdd, $debug=true);
 
 
 ?>
+</div>
 </div>
 <?
 }

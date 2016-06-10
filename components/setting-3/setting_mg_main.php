@@ -15,6 +15,12 @@ function setting_mg_main(){
 		if( $f[0] ){
 			tab__temp('logo', true, $f[0]);
 		}
+		#
+		# baner
+		$f = fileupload_upload(["input"=>"baner"]);
+		if( $f[0] ){
+			tab__temp('baner', true, $f[0]);
+		}
 			break;
 	}
 	
@@ -44,6 +50,7 @@ function setting_mg_main(){
 		[setting_rw('main_title')['name'], 'text:main_title*','inDiv'],
 		[setting_rw('keywords')['name'], 'text:keywords','inDiv'],
 		[setting_rw('logo')['name'], 'file:logo','inDiv'],
+		[setting_rw('baner')['name'], 'file:baner','inDiv'],
 		[setting_rw('websitedescription')['name'], 'text:websitedescription','inDiv'],
 		[setting_rw('html_extra_tags')['name'], 'textarea:html_extra_tags','inDiv'],
 		[setting_rw('webstatus_main')['name'], 'toggle:webstatus_main','inDiv'],

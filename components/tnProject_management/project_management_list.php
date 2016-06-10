@@ -48,7 +48,7 @@ function project_management_list(){
 	$list['list_array'] = array (
 		array( "tag"=>"th", "picture" => '$rw[\'image\']'),
 		array("head"=>lmtc("project:name"), "content" => '$rw[\'name\']'),
-		array("head"=>lmtc("project:description"), "content" => '$rw[\'description\']'),
+		/*array("head"=>lmtc("project:description"), "content" => '$rw[\'description\']'),*/
 	);
 	
 	/*$list['paging_select'] = array(

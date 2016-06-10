@@ -6,11 +6,14 @@ function product_filter_brand(){
 	<?
 	if ($cat_id = $_REQUEST['cat']) {
 		$q_cat="AND  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id' ORDER BY `id` ASC)";
+		$cat_id2="cat=".$cat_id;
 		
 	}else
 	if ($cat_id = $_REQUEST['cat_id']) {
 		
 		$q_cat="AND `cat_id` ='$cat_id' ";
+		$c_id=$cat_id;
+		$cat_id2="cat_id=".$cat_id;
 	}
 	
 	if ($field_id = $_REQUEST['field_id']) {
@@ -31,8 +34,8 @@ function product_filter_brand(){
 		$name= table("cat", $brand_id, "name");
 		?>	
 			<label>
-					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" checked <?=($_REQUEST['brand']==$brand_id ?"checked": "")?> />
-						<a href='./?page=102&cat_id=<?=$cat_id?>&field_id=<?=$field_id?>'><?=$name?></a>
+					<input type="checkbox" disabled id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" checked <?=($_REQUEST['brand']==$brand_id ?"checked": "")?> />
+						<a href='./?page=102&<?=$cat_id2?>&field_id=<?=$field_id?>'><?=$name?></a>
 			</label>
 			
 		<?
@@ -71,8 +74,8 @@ function product_filter_brand(){
 			$brand_id=$rw['id'];				 
 			?>	
 				<label>
-					<input type="checkbox" id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
-					<a href="./?page=102&cat_id=<?=$cat_id?>&brand_id=<?=$rw['id']?>&field_id=<?=$field_id?>"><span><?=$brand_name?></span></span><span>(<?=$n?>)</span></a>
+					<input type="checkbox" disabled id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
+					<a href="./?page=102&<?=$cat_id2?>&brand_id=<?=$rw['id']?>&field_id=<?=$field_id?>"><span><?=$brand_name?></span></span><span>(<?=$n?>)</span></a>
 				</label>
 				
 			<?

@@ -5,7 +5,9 @@ function shearch(){
 	?>
 	<div class="product_wv_list">
 		 <div class="product_list">
+		 <div class="product-grid">
 		 <?shearch_product_list()?>
+		 </div>
 		 </div>
 		 <div class="product_filter">
 		 <? product_filter();?>
@@ -18,8 +20,7 @@ function shearch(){
 function shearch_product_list(){
 	back();
 	?>
-
-	
+    <div class="row1">	
 	<div class="CategoryHeading">نتایج جستجو برای : <?=$_REQUEST['q'];?></div>
 	
 	
@@ -66,11 +67,14 @@ function shearch_product_list(){
 			
 			</div>
 			</div>
+
 			<?
 			}	 
 
 
 	$link = _URL."/?page=105&q=".$_REQUEST['q'];
 	echo listmaker_paging($query1, $link, $tdd, $debug=true);
-
+?>
+</div>
+<?
 }

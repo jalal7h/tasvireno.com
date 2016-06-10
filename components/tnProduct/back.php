@@ -1,8 +1,10 @@
 <?
 function back(){
 	?>
-	<div class="back">  
+	<div class="back">
+		&nbsp;&nbsp;  
 		<i class="fa fa-th-large" aria-hidden="true"></i> 
+		&nbsp;
 		<a href="./">صفحه اصلی</a>
 		&nbsp;&nbsp;  / &nbsp;&nbsp; 
 		<a href="./?page=102&cats=1">هدایای شرکت</a>

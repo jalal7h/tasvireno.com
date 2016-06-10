@@ -18,7 +18,7 @@ function order_form(){
 function order_form1(){	
 
 	?> 
-	<div class="order">
+	<div class="order product-grid">
 	
 	<?
 	back();
