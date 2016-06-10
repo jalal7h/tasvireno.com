@@ -76,7 +76,7 @@ function product_vw(){
 
 	<div class="p_vw_btn">
 		<a href="<?=tasvir_order_link($rw1);?>" class="tasvir_button"> سفارش</a>
-		<a href="./?do_action=pdf_html&product=<?=$rw1['id'];?>" class="tasvir_button"><i class="fa fa-download" aria-hidden="true"></i> دانلود</a>
+		<a download href="./?do_action=pdf_html&product=<?=$rw1['id'];?>" class="tasvir_button"><i class="fa fa-download" aria-hidden="true"></i> دانلود</a>
 		<span id="share" class="tasvir_button"><i class="fa fa-share" aria-hidden="true"></i> اشتراک</span>
 	</div>
 </div>
