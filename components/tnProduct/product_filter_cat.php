@@ -29,7 +29,8 @@ function product_filter_cat()
 					
 			}else while( $rw = dbf($rs) )
 			{
-			$query3 = " SELECT * FROM `product` WHERE `flag`='1' AND `cat_id`='".$rw['id']."' $q_field  $q_brand";
+			$q_cat2="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id`='".$rw['id']."' )";
+			$query3 = " SELECT * FROM `product` WHERE `flag`='1' $q_cat2 $q_field  $q_brand";
 			
 			if(!$rs3 = dbq($query3) )
 			{

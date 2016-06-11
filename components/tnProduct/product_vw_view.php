@@ -40,12 +40,29 @@ function product_vw(){
 	$name = $rw1['name'];
 	$code=$rw1['code'];
 	$size=$rw1['size'];
-	$cat=$rw1['cat_id'];
 	$brand=$rw1['brand_id'];
 	$description=$rw1['description'];
 	$min_order=$rw1['min_order'];
+	$id=$rw1['id'];
 	$price=$rw1['price'];
+
+	$query = " SELECT `cat_id` FROM `product_cat_id` WHERE  `cat_id`='$id' ";
+	if(! $rs = dbq($query) ){
+		e( __FUNCTION__ , __LINE__ );
+
+	} else while( $rw = dbf($rs) ){
+
+			$cat_name = $rw['name'];
+			$id=$rw['id'];
+	}	
+	
+	if(! $cat = table("product_cat_id",$id,"cat_id","product_id")){
+		e( __FUNCTION__ , __LINE__ );	
+		return false;
+	}
 	$_SESSION['product_id']=$rw1['id'];
+
+	/*cat_translate($rw[\'cat_id\'])');*/
 	?>
 	<div class="p_img_vw"><img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" ></div>
 		
