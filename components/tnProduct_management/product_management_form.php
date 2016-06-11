@@ -25,9 +25,9 @@ function product_management_form(){
 		['text:price*@','inDiv'],
         '<hr>',
 		
-		['cat:cat_id*','cat_name'=>'cat','inDiv'],
+		['cat:cat_id+*','cat_name'=>'cat','inDiv'],
 		['file:photo_medium*','inDiv'],
-		['cat:field_id','cat_name'=>'field','inDiv'],
+		['cat:field_id+*','cat_name'=>'field','inDiv'],
 		['file:photos_large','inDiv'],
 		['cat:brand_id','cat_name'=>'brand','inDiv'],
 		

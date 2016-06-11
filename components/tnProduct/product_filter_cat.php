@@ -14,7 +14,7 @@ function product_filter_cat()
 				
 				$q_brand="AND `brand_id` ='$brand_id'";
 			}
-			$q_cat="AND  `parent`='$cat_id2'";
+			$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id'))";
 			$name=table("cat", $cat_id2, "name");
 			echo '<h2>'.$name.'</h2>';
 			$query = " SELECT * FROM `cat` WHERE `cat`='cat' $q_cat ORDER BY `id` ASC  ";
@@ -57,7 +57,7 @@ function product_filter_cat()
 	}else { 
 	if ($cat_id = $_REQUEST['cat_id']) {
 		
-		$q_cat="AND `cat_id` ='$cat_id' AND `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id')";
+		$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id' OR `id`='$cat_id' ))";
 	}	
 	if ($field_id = $_REQUEST['field_id']) {
 		
@@ -98,7 +98,8 @@ function product_filter_cat()
 				
 		}else while( $rw = dbf($rs) )
 		{	
-			$query3 = " SELECT * FROM `product` WHERE `flag`='1' AND  `cat_id`='".$rw['id']."' $q_field  $q_brand";
+			$q_cat2="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id`='".$rw['id']."' )";
+			$query3 = " SELECT * FROM `product` WHERE `flag`='1' $q_cat2 $q_field  $q_brand";
 			
 				if(!$rs3 = dbq($query3) )
 				{

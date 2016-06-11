@@ -10,7 +10,7 @@ function product_list(){
 	if ($cat_id = $_REQUEST['cat']) {
 		
 		$cat_link="cat=".$cat_id;
-		$q_cat="AND( `cat_id` ='$cat_id' OR `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id'))";
+		$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id' OR `id`='$cat_id' ))";
 		
 	}else if ($cat_id = $_REQUEST['cat_id']) {
 		$cat_link="&cat_id=".$cat_id;

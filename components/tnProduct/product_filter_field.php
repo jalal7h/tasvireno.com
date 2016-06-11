@@ -5,12 +5,12 @@ function product_filter_field(){
 	<div class="Category_field">
 	<?
 	if ($cat_id = $_REQUEST['cat']) {
-		$q_cat="AND  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id' ORDER BY `id` ASC)";
+		$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id' OR `id`='$cat_id' ))";
 		$cat_id2="cat=".$cat_id;
 		
 	}else if ($cat_id = $_REQUEST['cat_id']) {
 		
-		$q_cat="AND `cat_id` ='$cat_id' "; 
+		$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND  `id`='$cat_id' ))";
 		$cat_id2="cat_id=".$cat_id;
 	}	
 	if ($field_id = $_REQUEST['field_id']) {
