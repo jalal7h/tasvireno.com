@@ -111,25 +111,23 @@
 #lmfe_order_form_captcha{
 	width:50%;
 }
-.errors{
-	width:80%;
-	padding:5px 0 5px 0;
-	margin:10px auto;
-	border-radius:10px;
-	text-align:center;
-	background-color:rgba(255, 0, 0, 0.3);
-	color:#fff;
-	font-size: 10px;
-}
+.errors {
+    width: 80%;
+    padding: 5px 0 5px 0;
+    margin: 100px auto;
+    border-radius: 10px;
+    text-align: center;
+    color:#a0a0a0;
+    font: 8px IRANSans,B Yekan;
+}    
 .message{
 	width:80%;
 	padding:5px 0 5px 0;
 	margin:10px auto;
 	border-radius:10px;
 	text-align:center;
-	background-color:rgba(0, 128, 0, 0.43);
-	color:#fff;
-	font-size: 10px;
+	color:rgb(46, 204, 113);
+	font: 8px IRANSans,B Yekan;
 }
 .tite_order{
     text-align:center;

@@ -50,9 +50,9 @@ function product_list(){
 		?>
 	<div class=" product-grid-spesc">
 		<div class="tile">
-			<div class="photo">
-				<div class="tile_btn"><a href="<?=tasvir_product_link($rw1);?>" class="tasvir_button">نمایش محصول</a></div>	 
-			</div>
+			<a class="photo" href="<?=tasvir_product_link($rw1);?>">
+					 
+			</a>
 			<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
 		    <a href="<?=tasvir_product_link($rw1);?>" class="img-responsive">
 		       
