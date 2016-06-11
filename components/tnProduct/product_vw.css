@@ -87,7 +87,8 @@
 
 }
 .product_filter label a {
-    padding:0 1px 0 15px;
+    padding: 0 8px 0 15px;
+    display: inline-block;
 }
 
 }
@@ -105,6 +106,7 @@
     font-family:IRANSans;
     display:inline-block;
     vertical-align:top;
+    margin-bottom: 100px;
 }
 .product_list>h2{
    text-align: center;
@@ -268,7 +270,7 @@ a.img-responsive h3 {
 /*                        product_vw_view                        */
 .p_img_vw{
     width:40%;
-    margin:50px auto;
+    margin:80px auto;
     background-color:#777;
 }
 .p_vw_btn{
@@ -283,7 +285,7 @@ a.img-responsive h3 {
     /* text-align:left; */
     font-size:34px;
     font-family:IRANSans;
-    padding:15px 10% 25px 10%;
+    padding:40px 5% 25px 10%;
     border-top: 1px dashed #ccc;
     
 }

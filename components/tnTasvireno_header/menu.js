@@ -20,7 +20,7 @@ $(document).ready(function(){
 				tab = $("#gift");
 				text = $("#gift a");				
 				tab.css("background-color","white");
-				text.css("color","#A90000");
+				text.css("color","#2ecc71");
 				i=1;
 				break;
 			case "brand":
@@ -36,7 +36,7 @@ $(document).ready(function(){
 				content.slideDown(0.000001);
 				content.load("./?do_action=menu_ajax&do=brand");
 				tab.css("background-color","white");
-				text.css("color","#A90000");
+				text.css("color","#2ecc71");
 				i=2;
 				break;
 			case "field":
@@ -51,7 +51,7 @@ $(document).ready(function(){
 				content.load("./?do_action=menu_ajax&do=field");
 				tab.css("background-color","white");
 				text = $("#field a");
-				text.css("color","#A90000");
+				text.css("color","#2ecc71");
 				i=3;
 				break;
 			
