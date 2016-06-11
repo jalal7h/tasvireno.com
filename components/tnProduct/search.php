@@ -25,9 +25,14 @@ function shearch_product_list(){
 	
 	
 	<?
-	$tdd = 12;
+	$q_cat="OR `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `name`like '%".$_REQUEST['q']."%' ))";
+	$q_field="OR `id` in (SELECT `product_id` FROM `product_field_id` WHERE  `field_id` in(SELECT `id` FROM `cat` WHERE `cat`='field' AND `name`like '%".$_REQUEST['q']."%' ))";
+	$tdd = 12; 
 	$stt = $tdd * intval($_REQUEST['p']); 
-	$query1 = " SELECT * FROM `product` WHERE `flag`='1' AND `name`like '%".$_REQUEST['q']."%' OR `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `name`like '%".$_REQUEST['q']."%') OR `brand_id` in(SELECT `id` FROM `cat` WHERE `cat`='brand' AND `name`like '%".$_REQUEST['q']."%') ORDER BY `prio` ASC LIMIT $stt , $tdd ";
+	$query1 = " 
+	SELECT * FROM `product` WHERE `flag`='1' AND `name`like '%".$_REQUEST['q']."%'
+	$q_cat $q_field
+	OR `brand_id` in(SELECT `id` FROM `cat` WHERE `cat`='brand' AND `name`like '%".$_REQUEST['q']."%') ORDER BY `prio` ASC LIMIT $stt , $tdd ";
 	        if(! $rs1 = dbq($query1) ){
 				e(__FUNCTION__,__LINE__);
 			

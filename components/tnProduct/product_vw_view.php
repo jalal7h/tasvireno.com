@@ -46,15 +46,17 @@ function product_vw(){
 	$id=$rw1['id'];
 	$price=$rw1['price'];
 
-	$query = " SELECT `cat_id` FROM `product_cat_id` WHERE  `cat_id`='$id' ";
+	$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
 	if(! $rs = dbq($query) ){
 		e( __FUNCTION__ , __LINE__ );
 
 	} else while( $rw = dbf($rs) ){
 
-			$cat_name = $rw['name'];
-			$id=$rw['id'];
-	}	
+		$cat_name[] =cat_translate($rw['cat_id']) ;
+		
+	}
+		
+	$catname = implode( '&nbsp;,&nbsp;' ,$cat_name );
 	
 	if(! $cat = table("product_cat_id",$id,"cat_id","product_id")){
 		e( __FUNCTION__ , __LINE__ );	
@@ -70,7 +72,7 @@ function product_vw(){
 		<h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
 	</div> 
 	<div class="p_vw_cat">
-		<h2 data-mh="img-responsive" style="height: 35px;">دسته :&nbsp;&nbsp; <?=cat_translate($cat);?></h2>
+		<h2 data-mh="img-responsive" style="height: 35px;">دسته :&nbsp;&nbsp; <?=$catname;?></h2>
 	</div> 
 	<?= $brand ? '<div class="p_vw_cat"><h2 data-mh="img-responsive" style="height: 35px;">برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h2></div> ' : ''; 
 					        

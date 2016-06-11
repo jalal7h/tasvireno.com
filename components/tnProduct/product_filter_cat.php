@@ -14,10 +14,10 @@ function product_filter_cat()
 				
 				$q_brand="AND `brand_id` ='$brand_id'";
 			}
-			$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id'))";
+			
 			$name=table("cat", $cat_id2, "name");
 			echo '<h2>'.$name.'</h2>';
-			$query = " SELECT * FROM `cat` WHERE `cat`='cat' $q_cat ORDER BY `id` ASC  ";
+			$query = " SELECT * FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id2' ORDER BY `id` ASC  ";
 			
 			if(! $rs = dbq($query) )
 			{

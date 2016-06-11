@@ -57,11 +57,11 @@
     color: #ccc;
 }
 #footer .dark > .left > .ft-phone > span {
-    font-size: 18px;
+    font-size: 14px;
     position: relative;
     top: 2px;
     left: 5px;
-    font-family: Raleway;
+    font-family: IRANSans,Raleway;
 }
 #footer .dark > .left > .ft-phone:before { 
     display: inline-block;

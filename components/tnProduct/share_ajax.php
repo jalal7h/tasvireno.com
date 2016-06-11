@@ -21,12 +21,19 @@ function share_ajax(){
 	$photo_medium = $rw1['photos_large'];
 	$name = $rw1['name'];
 	$code=$rw1['code'];
-	$size=$rw1['size'];
-	$cat=$rw1['cat_id'];
 	$brand=$rw1['brand_id'];
-	$description=$rw1['description'];
-	$min_order=$rw1['min_order'];
-	$price=$rw1['price'];
+	$id=$rw1['id'];
+	$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
+	if(! $rs = dbq($query) ){
+		e( __FUNCTION__ , __LINE__ );
+
+	} else while( $rw = dbf($rs) ){
+
+		$cat_name[] =cat_translate($rw['cat_id']) ;
+		
+	}	
+	
+	$catname = implode( '&nbsp;,&nbsp;' ,$cat_name );
 	
 	?>
 	<div class="p_img_vw2"><img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" ></div>
@@ -37,7 +44,7 @@ function share_ajax(){
 	</div>
 	</div>	
 	<div class="p_vw_cat">
-		<h2 data-mh="img-responsive" style="height: 35px;">دسته :&nbsp;&nbsp; <?=cat_translate($cat);?></h2>
+		<h2 data-mh="img-responsive" style="height: 35px;">دسته :&nbsp;&nbsp; <?=$catname;?></h2>
 	</div> 
 	<?= $brand ? '<div class="p_vw_cat"><h2 data-mh="img-responsive" style="height: 35px;">برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h2></div> ' : ''; 
 					        
