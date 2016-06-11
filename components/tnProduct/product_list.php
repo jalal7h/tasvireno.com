@@ -14,7 +14,7 @@ function product_list(){
 		
 	}else if ($cat_id = $_REQUEST['cat_id']) {
 		$cat_link="&cat_id=".$cat_id;
-		$q_cat="AND `cat_id` ='$cat_id' OR `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id') ";
+		$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id`='$cat_id' )";
 	}
 	if ($brand_id = $_REQUEST['brand_id']) {
 		
@@ -25,12 +25,12 @@ function product_list(){
 	}
 	if ($field_id = $_REQUEST['field_id']) {
 		
-		$q_field="AND `field_id` ='$field_id'";
+		$q_field="AND `id` in (SELECT `product_id` FROM `product_field_id` WHERE  `field_id`='$field_id' )";
 	}
 	$link = _URL."/?page=102&field_id=".$field_id."&brand=".$brand_id."&". $cat_link."&p=".$_REQUEST['p'];
 	$tdd = 12;
 	$stt = $tdd * intval($_REQUEST['p']); 
-	$query1 = " SELECT * FROM `product` WHERE `flag`='1'   $q_brand $q_field $q_cat ORDER BY `prio` ASC LIMIT $stt , $tdd ";
+	$query1 = " SELECT * FROM `product` WHERE `flag`='1' $q_brand $q_field $q_cat ORDER BY `prio` ASC LIMIT $stt , $tdd ";
     if(! $rs1 = dbq($query1) ){
 		e(__FUNCTION__,__LINE__);
 	

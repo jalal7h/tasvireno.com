@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2016 at 11:05 AM
+-- Generation Time: Jun 11, 2016 at 12:25 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -258,7 +258,6 @@ INSERT INTO `page_layer` (`id`, `page_id`, `prio`, `func`, `type`, `name`, `data
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
-  `field_id` int(11) NOT NULL COMMENT 'زمینه محصول',
   `brand_id` int(11) NOT NULL COMMENT 'برند',
   `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'نام محصول',
   `code` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'کد محصول',
@@ -277,18 +276,18 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `field_id`, `brand_id`, `name`, `code`, `size`, `printing_Type`, `min_order`, `price`, `photo_medium`, `photos_large`, `description`, `prio`, `flag`) VALUES
-(7, 6, 9, 'وسیله نوشتن', 'sqjyv', '', 'لیزری , پلاستیک', 20, 1000, 'data/product_photo_medium/7/0-1464437330-500031-1_2.jpg', 'data/product_photos_large/7/0-1464437330-jootixir--1534426140.jpg', 'در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.', 5, 0),
-(10, 5, 8, 'مدادنوکی 20', 'dhd377', '', 'لیزری , پلاستیک', 10, 2244, 'data/product_photo_medium/10/0-1464437411--0-5--0-3--UM.jpg', 'data/product_photos_large/10/0-1464437411-product97758157237cf36e.jpg', 'kkkkkkkkkk', 7, 1),
-(11, 5, 9, 'قوری', 'dhd377', '56', 'لیزری', 44, 70000, 'data/product_photo_medium/11/0-1464175966-201510411131922a.jpg', 'data/product_photos_large/11/0-1464175966-DSC_4384-600x600.jpg', 'قوری', 6, 1),
-(12, 6, 8, 'قوری2', '2dhd377', '56', 'لیزری , پلاستیک', 44, 333, 'data/product_photo_medium/12/0-1464249669-martinus-view-black.jpg', 'data/product_photos_large/12/0-1464176204-coinsgold_92413-5426421.jpg', 'قوری 2', 9, 1),
-(13, 6, 9, 'قوری3', 'sqjyv', '56', 'لیزری', 44, 444, 'data/product_photo_medium/13/0-1464249600-azarantik_90800-1367561.jpg', 'data/product_photos_large/13/0-1464249600-martinus-view-black.jpg', 'قوری ظرفی است لوله‌دار که برای دم کردن چای و دیگر نوشیدنی‌های گیاهی به کار می‌رود.[۱][۲][۳] معمولاً قوری‌ها یک در اصلی دارند که از بالا باز شده و از طریق این در، چای خشک یا چای کیسه‌ای و آب جوش به قوری افزوده می‌شود. علاوه بر آن قوری‌ها دارای دسته‌ای برای در کنار و یک لوله برای ریختن چای هستند. بعضی از قوری‌ها دارای یک سوراخ کوچک برای تنظیم فشار هوا و خروج بخار در قسمت فوقانی خود می‌باشند.', 11, 1),
-(14, 5, 8, 'قوری23', '33', '33', 'لیزری', 44, 333, 'data/product_photo_medium/14/0-1464249782-DSC_4384-600x600.jpg', 'data/product_photos_large/14/0-1464249782-azarantik_90800-1367561.jpg', '23', 10, 1),
-(15, 5, 9, 'فلش مموری1', 'sqjyv', '56', 'لیزری', 333, 444, 'data/product_photo_medium/15/0-1464260521-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 'data/product_photos_large/15/0-1464260521-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 'ففف', 8, 1),
-(16, 5, 9, 'فلش مموری ترنس', 'sqjyv', '30gb', 'لیزری', 333, 444, 'data/product_photo_medium/16/0-1464260751-160697_0a0dc.jpg', 'data/product_photos_large/16/0-1464260751-160697_0a0dc.jpg', 'ترنس', 12, 1),
-(20, 5, 9, 'قوری شیشه ای', 'dhd377', '', 'لیزری', 44, 444, 'data/product_photo_medium/20/0-1464347709-D982D988D8B1DB8C-D9BEDB8CD8B1DAA9D8B3-1000.jpg', 'data/product_photos_large/20/0-1464347709-D982D988D8B1DB8C-D9BEDB8CD8B1DAA9D8B3-10001.jpg', '', 13, 1),
-(21, 0, 8, 'مدادرنگی', 'dhd377', '12 رنگ', 'رنگی', 12, 80000, 'data/product_photo_medium/21/0-1465630757-pencils-5.jpg', 'data/product_photos_large/21/0-1465630757-1an1og6f87qemp96ej7.jpg', 'مداد رنگی', 15, 1),
-(22, 0, 9, 'کلاه', 'dhd377', '56', 'لیزری', 44, 444, 'data/product_photo_medium/22/0-1465632973-201512912543923a.jpg', 'data/product_photos_large/22/0-1465632973-201512912543923a.jpg', 'ثثث', 14, 1);
+INSERT INTO `product` (`id`, `brand_id`, `name`, `code`, `size`, `printing_Type`, `min_order`, `price`, `photo_medium`, `photos_large`, `description`, `prio`, `flag`) VALUES
+(7, 9, 'وسیله نوشتن', 'sqjyv', '', 'لیزری , پلاستیک', 20, 1000, 'data/product_photo_medium/7/0-1464437330-500031-1_2.jpg', 'data/product_photos_large/7/0-1464437330-jootixir--1534426140.jpg', 'در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.', 5, 0),
+(10, 8, 'مدادنوکی 20', 'dhd377', '', 'لیزری , پلاستیک', 10, 2244, 'data/product_photo_medium/10/0-1464437411--0-5--0-3--UM.jpg', 'data/product_photos_large/10/0-1464437411-product97758157237cf36e.jpg', 'kkkkkkkkkk', 7, 1),
+(11, 9, 'قوری', 'dhd377', '56', 'لیزری', 44, 70000, 'data/product_photo_medium/11/0-1464175966-201510411131922a.jpg', 'data/product_photos_large/11/0-1464175966-DSC_4384-600x600.jpg', 'قوری', 6, 1),
+(12, 8, 'قوری2', '2dhd377', '56', 'لیزری , پلاستیک', 44, 333, 'data/product_photo_medium/12/0-1464249669-martinus-view-black.jpg', 'data/product_photos_large/12/0-1464176204-coinsgold_92413-5426421.jpg', 'قوری 2', 9, 1),
+(13, 9, 'قوری3', 'sqjyv', '56', 'لیزری', 44, 444, 'data/product_photo_medium/13/0-1464249600-azarantik_90800-1367561.jpg', 'data/product_photos_large/13/0-1464249600-martinus-view-black.jpg', 'قوری ظرفی است لوله‌دار که برای دم کردن چای و دیگر نوشیدنی‌های گیاهی به کار می‌رود.[۱][۲][۳] معمولاً قوری‌ها یک در اصلی دارند که از بالا باز شده و از طریق این در، چای خشک یا چای کیسه‌ای و آب جوش به قوری افزوده می‌شود. علاوه بر آن قوری‌ها دارای دسته‌ای برای در کنار و یک لوله برای ریختن چای هستند. بعضی از قوری‌ها دارای یک سوراخ کوچک برای تنظیم فشار هوا و خروج بخار در قسمت فوقانی خود می‌باشند.', 11, 1),
+(14, 8, 'قوری23', '33', '33', 'لیزری', 44, 333, 'data/product_photo_medium/14/0-1464249782-DSC_4384-600x600.jpg', 'data/product_photos_large/14/0-1464249782-azarantik_90800-1367561.jpg', '23', 10, 1),
+(15, 9, 'فلش مموری1', 'sqjyv', '56', 'لیزری', 333, 444, 'data/product_photo_medium/15/0-1464260521-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 'data/product_photos_large/15/0-1464260521-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 'ففف', 8, 1),
+(16, 9, 'فلش مموری ترنس', 'sqjyv', '30gb', 'لیزری', 333, 444, 'data/product_photo_medium/16/0-1464260751-160697_0a0dc.jpg', 'data/product_photos_large/16/0-1464260751-160697_0a0dc.jpg', 'ترنس', 12, 1),
+(20, 9, 'قوری شیشه ای', 'dhd377', '', 'لیزری', 44, 444, 'data/product_photo_medium/20/0-1464347709-D982D988D8B1DB8C-D9BEDB8CD8B1DAA9D8B3-1000.jpg', 'data/product_photos_large/20/0-1464347709-D982D988D8B1DB8C-D9BEDB8CD8B1DAA9D8B3-10001.jpg', '', 13, 1),
+(21, 8, 'مدادرنگی', 'dhd377', '12 رنگ', 'رنگی', 12, 80000, 'data/product_photo_medium/21/0-1465630757-pencils-5.jpg', 'data/product_photos_large/21/0-1465630757-1an1og6f87qemp96ej7.jpg', 'مداد رنگی', 15, 1),
+(22, 9, 'کلاه', 'dhd377', '56', 'لیزری', 44, 444, 'data/product_photo_medium/22/0-1465632973-201512912543923a.jpg', 'data/product_photos_large/22/0-1465632973-201512912543923a.jpg', 'ثثث', 14, 1);
 
 -- --------------------------------------------------------
 
@@ -350,6 +349,35 @@ INSERT INTO `product_cat_id` (`id`, `product_id`, `cat_id`) VALUES
 (41, 21, 13),
 (42, 21, 0),
 (43, 21, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_field_id`
+--
+
+CREATE TABLE `product_field_id` (
+  `id` int(11) NOT NULL COMMENT 'شناسه',
+  `product_id` int(11) NOT NULL COMMENT 'شناسه کالا',
+  `field_id` int(11) NOT NULL COMMENT 'شناسه زمینه'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+--
+-- Dumping data for table `product_field_id`
+--
+
+INSERT INTO `product_field_id` (`id`, `product_id`, `field_id`) VALUES
+(1, 7, 6),
+(2, 10, 5),
+(3, 11, 5),
+(4, 12, 6),
+(5, 13, 6),
+(6, 14, 5),
+(7, 15, 5),
+(8, 16, 5),
+(9, 20, 5),
+(10, 21, 5),
+(11, 22, 5);
 
 -- --------------------------------------------------------
 
@@ -526,13 +554,18 @@ ALTER TABLE `page_layer`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `field_id` (`field_id`),
   ADD KEY `brand_id` (`brand_id`);
 
 --
 -- Indexes for table `product_cat_id`
 --
 ALTER TABLE `product_cat_id`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_field_id`
+--
+ALTER TABLE `product_field_id`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -605,6 +638,11 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_cat_id`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=44;
+--
+-- AUTO_INCREMENT for table `product_field_id`
+--
+ALTER TABLE `product_field_id`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `project`
 --

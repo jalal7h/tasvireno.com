@@ -8,7 +8,7 @@ function product_filter_cat()
 	if ($cat_id2 = $_REQUEST['cat']) {
 			if ($field_id = $_REQUEST['field_id']) {
 		
-				$q_field="AND `field_id` ='$field_id'";
+				$q_field="AND `id` in (SELECT `product_id` FROM `product_field_id` WHERE  `field_id`='$field_id' )";
 			}
 			if ($brand_id = $_REQUEST['brand_id']) {
 				
@@ -61,7 +61,7 @@ function product_filter_cat()
 	}	
 	if ($field_id = $_REQUEST['field_id']) {
 		
-		$q_field="AND `field_id` ='$field_id'";
+		$q_field="AND `id` in (SELECT `product_id` FROM `product_field_id` WHERE  `field_id`='$field_id' )";
 	}
 	if ($brand_id = $_REQUEST['brand_id']) {
 		

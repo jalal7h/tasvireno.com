@@ -15,11 +15,12 @@ function product_filter_field(){
 	}	
 	if ($field_id = $_REQUEST['field_id']) {
 		
-		$q_field="AND `field_id` ='$field_id'";
+		$q_field="AND `id` in (SELECT `product_id` FROM `product_field_id` WHERE  `field_id`='$field_id' )";
 	}
 	if ($brand_id = $_REQUEST['brand_id']) {
 		
 		$q_brand="AND `brand_id` ='$brand_id'";
+
 	}else if ($brand_id = $_REQUEST['brand']) {
 		
 		$q_brand="AND `brand_id` ='$brand_id'";
@@ -52,7 +53,8 @@ function product_filter_field(){
 				
 		}else while( $rw = dbf($rs) )
 		{	
-			$query3 = " SELECT * FROM `product` WHERE `flag`='1' AND  `field_id`='".$rw['id']."' $q_cat  $q_brand";
+			$q_field2="AND `id` in (SELECT `product_id` FROM `product_field_id` WHERE  `field_id`='".$rw['id']."' )";
+			$query3 = " SELECT * FROM `product` WHERE `flag`='1' $q_field2 $q_cat  $q_brand";
 			
 				if(!$rs3 = dbq($query3) )
 				{
