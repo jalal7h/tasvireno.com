@@ -8,20 +8,21 @@ function menu_ajax(){
 <div class="tabmenu_rast">
 <?
 switch($_REQUEST['do']){
-			case "gift":
-				echo "<h1> هدایای شرکت:</h1>";	
-				tabmenu_rast_cat();
-				break;
 
-			case "brand":
-				echo "<h1> برندهای هدایا:</h1>";	
-				tabmenu_rast_brand();
-				break;
+		case "gift":
+			echo "<h1> هدایای شرکت:</h1>";	
+			tabmenu_rast_cat();
+			break;
 
-			case "field":
-				echo "<h1> زمینه هدایا:</h1>";	
-				tabmenu_rast_field();
-				break;
+		case "brand":
+			echo "<h1> برندهای هدایا:</h1>";	
+			tabmenu_rast_brand();
+			break;
+
+		case "field":
+			echo "<h1> زمینه هدایا:</h1>";	
+			tabmenu_rast_field();
+			break;
 }
 ?>				
 </div>
@@ -30,6 +31,7 @@ switch($_REQUEST['do']){
 <?tabmenu_chap();?>
 </div>	
 </div>
+
 <?
 
 }
@@ -46,23 +48,17 @@ function tabmenu_chap(){
 				<?
 			
 			} else while( $rw1 = dbf($rs1) ){
-				$photo_medium = $rw1['photos_large'];
+				$photo_medium=$rw1['photo_medium'];
 				$name = $rw1['name'];
-				$code=$rw1['code'];
-				$size=$rw1['size'];
-				$cat=$rw1['cat_id'];
-				$brand=$rw1['brand_id'];
-				$description=$rw1['description'];
-				$min_order=$rw1['min_order'];
-				$price=$rw1['price'];
+				
 			?>
 			<a href="<?=tasvir_product_link($rw1);?>" class="cbp-item-wrapper">
-			<div class="p_img_head ">
-			<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive hvr-round" >
-			</div>
-			<div class="tabmenu_chap_name">
-			<h2 data-mh="img-responsive" style="height: 35px;"> <?=$name;?></h2>
-			</div>
+				<div class="p_img_head ">
+					<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive hvr-round" >
+				</div>
+					<div class="tabmenu_chap_name">
+					<h2 style="height: 35px;"> <?=$name;?></h2>
+				</div>
 			</a>
 			
 			<?
@@ -71,7 +67,8 @@ function tabmenu_chap(){
 }
 
 function tabmenu_rast_cat(){
-	?><ul class="cat-grid2"><?
+?>
+<ul class="cat-grid2"><?
 	$query = " SELECT * FROM `cat` WHERE `cat`='cat' AND `parent` not in(0) ORDER BY `id` ASC  ";
 	if(! $rs = dbq($query) ){
 		e( __FUNCTION__ , __LINE__ );
@@ -87,24 +84,22 @@ function tabmenu_rast_cat(){
 				$id=$rw['id'];
 				
 				?>
-			<li class="">
-			
-			<a href="./?page=102&cat_id=<?=$rw['id']?>" class="">
-			    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
-			</a>
-			</li>
-	<?	 
+				<li class="">							
+					<a href="./?page=102&cat_id=<?=$rw['id']?>" class="">
+					    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
+					</a>
+				</li>
+<?	 
 			}
+		}
 ?>
-	 </ul>
-
-
+ </ul>
 <?
-	}
 }
 
 function tabmenu_rast_brand(){
-	?><ul class="cat-grid2"><?
+?>
+<ul class="cat-grid2"><?
 	$query = " SELECT * FROM `cat` WHERE `cat`='brand' ORDER BY `id` ASC  ";
 	if(! $rs = dbq($query) ){
 		e( __FUNCTION__ , __LINE__ );
@@ -120,19 +115,17 @@ function tabmenu_rast_brand(){
 				$id=$rw['id'];
 				$id=$rw['id'];
 				?>
-			<li class="">
-			<a href="<?=tasvir_brand_link( table("cat", $id) );?>" class="">
-			    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
-			</a>
-			</li>
+				<li class="">
+					<a href="<?=tasvir_brand_link( table("cat", $id) );?>" class="">
+					    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
+					</a>
+				</li>
 	<?	 
 			}
+		}
 ?>
-	 </ul>
-
-
+</ul>
 <?
-	}
 }
 function tabmenu_rast_field(){
 	?><ul class="cat-grid2"><?
@@ -152,16 +145,14 @@ function tabmenu_rast_field(){
 				$id=$rw['id'];
 				?>
 			<li class="">
-			<a href="<?=tasvir_field_link( table("cat", $id) );?>" class="">
-			    <span data-mh="tile-category" style="height: 35px;"> <?=$field_name;?></span>
-			</a>
+				<a href="<?=tasvir_field_link( table("cat", $id) );?>" class="">
+				    <span data-mh="tile-category" style="height: 35px;"> <?=$field_name;?></span>
+				</a>
 			</li>
-	<?	 
+<?	 
 			}
+		}
 ?>
-	 </ul>
-
-
+</ul>
 <?
-	}
 }

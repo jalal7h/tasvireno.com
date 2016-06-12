@@ -2,7 +2,6 @@ $(document).ready(function(){
 	//References
 	var sections = $("#TopMenu li");
 	var text2 = $("#TopMenu a");
-	var content = $("#content");
 	var i=0;
 	//Manage mouseover events
 	sections.mouseenter(function(){
@@ -13,8 +12,10 @@ $(document).ready(function(){
 			   	
 					tab.css("background-color","#2ecc71");
 					text.css("color","#fff");
+					content.slideUp(0.000001);
 					
 			   	}	
+			   	content = $("#gift1");
 				content.slideDown(0.000001);
 				content.load("./?do_action=menu_ajax&do=gift");
 				tab = $("#gift");
@@ -29,8 +30,10 @@ $(document).ready(function(){
 			   	
 					tab.css("background-color","#2ecc71");
 					text.css("color","#fff");
+					content.slideUp(0.0000001);
 					
 			   	}
+			   	content = $("#brand1");
 				tab = $("#brand");
 				text = $("#brand a");
 				content.slideDown(0.000001);
@@ -44,8 +47,10 @@ $(document).ready(function(){
 			   	
 					tab.css("background-color","#2ecc71");
 					text.css("color","#fff");
+					content.slideUp(0.0000001);
 					
 			   	}
+			   	content = $("#field1");
 			 	tab = $("#field");
 				content.slideDown(0.000001);
 				content.load("./?do_action=menu_ajax&do=field");
@@ -75,9 +80,9 @@ $(document).ready(function(){
 				});	
  });*/
 
-$("#content").mouseleave(function(){
+$("#gift1 , #field1 , #brand1 ").mouseleave(function(){
 			   if (i==1||i==2||i==3) {
-			   		content.hide(0.00001);
+			   		content.slideUp(0.1);
 					tab.css("background-color","#2ecc71");
 					text.css("color","#fff");
 					i=0;
@@ -85,7 +90,7 @@ $("#content").mouseleave(function(){
 });
 $("#hed").mouseover(function(){
 			   if (i==1||i==2||i==3) {
-			   		content.slideUp(0.0001);
+			   		content.slideUp(0.1);
 					tab.css("background-color","#2ecc71");
 					text.css("color","#fff");
 					i=0;
@@ -93,7 +98,7 @@ $("#hed").mouseover(function(){
 });
 $("li").not("#gift,#field,#brand").mouseover(function(){
 			    if (i==3) {
-			   		content.slideUp(0.0001);
+			   		content.slideUp(0.1);
 					tab.css("background-color","#2ecc71");
 					text.css("color","#fff");
 				}
@@ -102,7 +107,7 @@ $("li").not("#gift,#field,#brand").mouseover(function(){
 	
 $("*").not("#gift,#field,#brand,#content").click(function(){
 			   if (i==1||i==2||i==3) {
-			   		content.slideUp(0.0001);
+			   		content.slideUp(0.1);
 					tab.css("background-color","#2ecc71");
 					text.css("color","#fff");
 					

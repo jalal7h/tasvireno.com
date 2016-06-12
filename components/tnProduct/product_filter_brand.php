@@ -79,7 +79,7 @@ function product_filter_brand(){
 					
 					<a href="./?page=102&<?=$cat_id2?>&brand_id=<?=$rw['id']?>&field_id=<?=$field_id?>">
 						<?=($_REQUEST['brand_id']==$brand_id ?"<i class=\"fa fa-check\" aria-hidden=\"true\"></i>": "")?>
-						<span><?=$brand_name?></span></span><span>(<?=$n?>)</span>
+						<span><?=$brand_name?></span> <span>(<?=$n?>)</span>
 					</a>
 				</label>
 				
