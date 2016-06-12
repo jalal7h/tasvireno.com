@@ -1,5 +1,5 @@
 .project_img_vw{
-	width:64%;
+	width:74.5%;
 	height:100%;
 	display:inline-block;
 	vertical-align:top;
@@ -7,10 +7,10 @@
 }
 .project_img_vw img{
 	width:100%;
-	height:600px;
+	
 }	
 .text_project{
-	width:35%;
+	width:25%;
 	height:100%;
 	display:inline-block;
 	vertical-align:top;

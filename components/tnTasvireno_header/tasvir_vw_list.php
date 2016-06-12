@@ -25,7 +25,30 @@ function tasvir_vw_list(){
 		$c.= $link;
 		$c.=">";
 		$c.= $name;
-		$c.="</a></li>";
+		$c.="</a>";
+		if( $name=='هدایا' ){
+			$c.=" <ul>
+						
+			            <div id=\"gift1\" class=\"content\"></div>
+			            
+			      </ul>
+			    </li>";
+		} else if( $name=='برند' ){
+			$c.=" <ul>
+						
+			            <div id=\"brand1\" class=\"content\"></div>
+			            
+			      </ul>
+			    </li>";
+		} else if( $name=='زمینه' ){
+			$c.=" <ul>
+						
+			            <div id=\"field1\" class=\"content\"></div>
+			            
+			      </ul>
+			    </li>";
+		}
+		
 
 	}
 

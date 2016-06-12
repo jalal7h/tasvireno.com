@@ -20,8 +20,7 @@ function project_vw_list(){
 	<?
 	
 	} else while( $rw1 = dbf($rs1) ){
-		$cat_id = $rw1['cat_id'];
-				
+		$cat_id = $rw1['cat_id'];				
 		$image = $rw1['image']; 
 		$name = $rw1['name'];
 		$id=$rw1['id'];

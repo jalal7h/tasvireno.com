@@ -50,28 +50,29 @@ function shearch_product_list(){
 				$code=$rw1['code'];
 				$size=$rw1['size'];
 				?>
-			<div class=" product-grid-spesc">
-			<div class="tile">
-				<div class="photo">
-				<div class="tile_btn"><a href="<?=tasvir_product_link($rw1);?>" class="tasvir_button">نمایش محصول</a></div>	 
-				</div>
-				<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
-			    <a href="<?=tasvir_product_link($rw1);?>" class="img-responsive">
-			        
-			        <h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
-			        <h3 data-mh="img-responsive" style="height: 35px;"><span>کد : </span><?=$code;?></h3>
-			        <h3 data-mh="img-responsive" style="height: 35px;">
-				        <?=
-				         
-							$size ? '<span>سایز : </span>'.$size	: ''; 
-							        
-						?>
-					</h3>
-				</a>			
+				<div class=" product-grid-spesc">
+					<div class="tile">
+						<a class="photo" href="<?=tasvir_product_link($rw1);?>">
+								 
+						</a>
+						<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
+					    <a href="<?=tasvir_product_link($rw1);?>" class="img-responsive">
 					       
-			
-			</div>
-			</div>
+					        <h2 data-mh="img-responsive" style="height: 40px;"><?=$name;?></h2>
+					        <div class="p_w_h"> 
+						        <h3 data-mh="img-responsive" style="height: 25px;"><span>کد &nbsp;&nbsp;&nbsp;: </span><?=$code;?></h3>
+						        <h3 data-mh="img-responsive" style="height: 35px;">
+							        <?=
+							         
+										$size ? '<span>سایز : </span>'.$size	: ''; 
+										        
+									?>
+								</h3>
+							</div>
+						</a>			
+							       				
+					</div>
+				</div>
 
 			<?
 			}	 
