@@ -48,12 +48,24 @@ function order_form1(){
 		$description=$rw1['description'];
 		$min_order=$rw1['min_order'];
 		$price=$rw1['price'];
-		
+		$id=$rw1['id'];
+		$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
+		if(! $rs = dbq($query) ){
+			e( __FUNCTION__ , __LINE__ );
+
+		} else while( $rw = dbf($rs) ){
+
+			$cat_name[] =cat_translate($rw['cat_id']) ;
+			
+		}
+			
+		$catname = implode( '&nbsp;,&nbsp;' ,$cat_name );
+			
 		?>
 		
 		<div class="p_vw_cat">
 		<h2 data-mh="img-responsive" style="height: 39px;">محصول :&nbsp;&nbsp;&nbsp;<?=$name;?></h2>
-		<h2 data-mh="img-responsive" style="height: 39px;">دسته  &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<?=cat_translate($cat);?></h2>
+		<h2 data-mh="img-responsive" style="height: 39px;">دسته  &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<?=$catname;?></h2>
 		</div>  
 		           
         <div class="table-responsive">
