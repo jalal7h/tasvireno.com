@@ -78,6 +78,10 @@
     cursor:default;
    
 }
+.product_filter .check{
+    padding:0 13px 10px 0 !important;
+    
+}
 .product_filter label > input {
     top: auto;
     right: auto;
@@ -87,7 +91,7 @@
 
 }
 .product_filter label a {
-    padding: 0 8px 0 15px;
+    padding: 0 15px 0 15px;
     display: inline-block;
 }
 
@@ -97,7 +101,7 @@
 
 }
 .product_filter .parent{
-    padding-right: 46px;
+    padding-right: 35px;
 }
 .product_list{
     width:70%;
@@ -238,7 +242,7 @@
 }
 .Category_cat > h2{
     color:#999;
-    margin-right:10%;
+    margin-right:25px;
     margin-bottom:15px;
 }
 .Category_cat > h2:before {

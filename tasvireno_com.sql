@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.1
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jun 12, 2016 at 02:45 AM
--- Server version: 5.6.27
--- PHP Version: 5.6.14
+-- Host: 127.0.0.1
+-- Generation Time: Jun 12, 2016 at 03:09 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tasvireno.com`
+-- Database: `tasvireno_com`
 --
 
 -- --------------------------------------------------------
@@ -61,7 +61,13 @@ INSERT INTO `cat` (`id`, `name`, `desc`, `kw`, `parent`, `cat`, `ord`, `logo`, `
 (15, 'ترنس', '', '', 3, 'cat', 0, 'data/cat/cat/0-1464260464-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 0, 1),
 (16, 'قوری شیشه ای', '', '', 10, 'cat', 0, 'data/cat/cat/0-1464347584-images1.jpg', 0, 1),
 (17, 'مداد', '', '', 1, 'cat', 0, 'data/cat/cat/0-1464437197-25765718515731697455.jpg', 0, 1),
-(18, 'مداد نوکی', '', '', 1, 'cat', 0, 'data/cat/cat/0-1464437215-product97758157237cf36e.jpg', 0, 1);
+(18, 'مداد نوکی', '', '', 1, 'cat', 0, 'data/cat/cat/0-1464437215-product97758157237cf36e.jpg', 0, 1),
+(19, '٠ تا ٥٠٠٠ تومان', '', '', 0, 'price', 0, '', 0, 1),
+(20, ' ٥ تا ١٠ هزار تومان', '', '', 0, 'price', 0, '', 0, 1),
+(21, '10 تا 20 هزار تومان', '', '', 0, 'price', 0, '', 0, 1),
+(22, '20 تا 50 هزار تومان', '', '', 0, 'price', 0, '', 0, 1),
+(23, '50 تا 100 هزار تومان', '', '', 0, 'price', 0, '', 0, 1),
+(24, 'بالای ١٠٠ هزار تومان', '', '', 0, 'price', 0, '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -157,7 +163,8 @@ INSERT INTO `orders` (`id`, `product_id`, `name`, `company`, `tell`, `cell`, `nu
 (20, 10, 'meysam', 'asas', '01143140758', '33', 9118979803, 'mtaghipoor13@gmail.com', '3333', 1464606325),
 (21, 11, 'meysam', 'sam', '01143140758', '222222', 2222, 'taghipoor.meysam@gmail.com', '2222', 1465169043),
 (22, 13, 'meysam', 'sam', '01143140758', '33', 333, 'taghipoor.meysam@gmail.com', '3333333', 1465402108),
-(23, 12, 'meysam', 'sam', '01143140758', '3', 3, 'taghipoor.meysam@gmail.com', '33', 1465588806);
+(23, 12, 'meysam', 'sam', '01143140758', '3', 3, 'taghipoor.meysam@gmail.com', '33', 1465588806),
+(24, 7, 'd', 'd', '2', '2', 2, 'taghipoor.meysam@gmail.com', '2', 1465723531);
 
 -- --------------------------------------------------------
 
@@ -259,12 +266,12 @@ INSERT INTO `page_layer` (`id`, `page_id`, `prio`, `func`, `type`, `name`, `data
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL COMMENT 'برند',
+  `price_id` int(11) NOT NULL COMMENT 'قیمت',
   `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'نام محصول',
   `code` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'کد محصول',
   `size` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'سایز',
   `printing_Type` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'نوع چاپ',
   `min_order` int(11) NOT NULL COMMENT 'حداقل سفارش',
-  `price` int(11) NOT NULL COMMENT 'قیمت',
   `photo_medium` text COLLATE utf8_persian_ci NOT NULL COMMENT 'عکس متوسط ',
   `photos_large` text COLLATE utf8_persian_ci NOT NULL COMMENT 'عکس بزرگ',
   `description` text COLLATE utf8_persian_ci NOT NULL COMMENT 'توضیحات',
@@ -276,18 +283,18 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `brand_id`, `name`, `code`, `size`, `printing_Type`, `min_order`, `price`, `photo_medium`, `photos_large`, `description`, `prio`, `flag`) VALUES
-(7, 9, 'وسیله نوشتن', 'sqjyv', '', 'لیزری , پلاستیک', 20, 1000, 'data/product_photo_medium/7/0-1464437330-500031-1_2.jpg', 'data/product_photos_large/7/0-1464437330-jootixir--1534426140.jpg', 'در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.', 5, 0),
-(10, 8, 'مدادنوکی 20', 'dhd377', '', 'لیزری , پلاستیک', 10, 2244, 'data/product_photo_medium/10/0-1464437411--0-5--0-3--UM.jpg', 'data/product_photos_large/10/0-1464437411-product97758157237cf36e.jpg', 'kkkkkkkkkk', 7, 1),
-(11, 9, 'قوری', 'dhd377', '56', 'لیزری', 44, 70000, 'data/product_photo_medium/11/0-1464175966-201510411131922a.jpg', 'data/product_photos_large/11/0-1464175966-DSC_4384-600x600.jpg', 'قوری', 6, 1),
-(12, 8, 'قوری2', '2dhd377', '56', 'لیزری , پلاستیک', 44, 333, 'data/product_photo_medium/12/0-1464249669-martinus-view-black.jpg', 'data/product_photos_large/12/0-1464176204-coinsgold_92413-5426421.jpg', 'قوری 2', 9, 1),
-(13, 9, 'قوری3', 'sqjyv', '56', 'لیزری', 44, 444, 'data/product_photo_medium/13/0-1464249600-azarantik_90800-1367561.jpg', 'data/product_photos_large/13/0-1464249600-martinus-view-black.jpg', 'قوری ظرفی است لوله‌دار که برای دم کردن چای و دیگر نوشیدنی‌های گیاهی به کار می‌رود.[۱][۲][۳] معمولاً قوری‌ها یک در اصلی دارند که از بالا باز شده و از طریق این در، چای خشک یا چای کیسه‌ای و آب جوش به قوری افزوده می‌شود. علاوه بر آن قوری‌ها دارای دسته‌ای برای در کنار و یک لوله برای ریختن چای هستند. بعضی از قوری‌ها دارای یک سوراخ کوچک برای تنظیم فشار هوا و خروج بخار در قسمت فوقانی خود می‌باشند.', 11, 1),
-(14, 8, 'قوری23', '33', '33', 'لیزری', 44, 333, 'data/product_photo_medium/14/0-1464249782-DSC_4384-600x600.jpg', 'data/product_photos_large/14/0-1464249782-azarantik_90800-1367561.jpg', '23', 10, 1),
-(15, 9, 'فلش مموری1', 'sqjyv', '56', 'لیزری', 333, 444, 'data/product_photo_medium/15/0-1464260521-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 'data/product_photos_large/15/0-1464260521-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 'ففف', 8, 1),
-(16, 9, 'فلش مموری ترنس', 'sqjyv', '30gb', 'لیزری', 333, 444, 'data/product_photo_medium/16/0-1464260751-160697_0a0dc.jpg', 'data/product_photos_large/16/0-1464260751-160697_0a0dc.jpg', 'ترنس', 12, 1),
-(20, 9, 'قوری شیشه ای', 'dhd377', '', 'لیزری', 44, 444, 'data/product_photo_medium/20/0-1464347709-D982D988D8B1DB8C-D9BEDB8CD8B1DAA9D8B3-1000.jpg', 'data/product_photos_large/20/0-1464347709-D982D988D8B1DB8C-D9BEDB8CD8B1DAA9D8B3-10001.jpg', '', 13, 1),
-(21, 8, 'مدادرنگی', 'dhd377', '12 رنگ', 'رنگی', 12, 80000, 'data/product_photo_medium/21/0-1465630757-pencils-5.jpg', 'data/product_photos_large/21/0-1465630757-1an1og6f87qemp96ej7.jpg', 'مداد رنگی', 15, 1),
-(22, 9, 'کلاه', 'dhd377', '56', 'لیزری', 44, 444, 'data/product_photo_medium/22/0-1465632973-201512912543923a.jpg', 'data/product_photos_large/22/0-1465632973-201512912543923a.jpg', 'ثثث', 14, 1);
+INSERT INTO `product` (`id`, `brand_id`, `price_id`, `name`, `code`, `size`, `printing_Type`, `min_order`, `photo_medium`, `photos_large`, `description`, `prio`, `flag`) VALUES
+(7, 9, 20, 'وسیله نوشتن', 'sqjyv', '', 'لیزری , پلاستیک', 20, 'data/product_photo_medium/7/0-1464437330-500031-1_2.jpg', 'data/product_photos_large/7/0-1464437330-jootixir--1534426140.jpg', 'در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.در لغتنامه دهخدا در مورد لیوان آمده‌است: از کلمه ٔ «لوان گودوش» یعنی گاودوش لوان (لوان اسم دهکده‌ای از آذربایجان که در آنجا سفال نیک پزند) گرفته شده‌است. گیلاس. آب‌وند. آبخوری. کوزه ٔ نازک. آبخوری که در لیوان آذربایجان سازند و امروز تعمیم یافته و بر مطلق ظرف آبخوری که از سفال یا چینی یا بلور یا فلز سازند اطلاق می‌گردد.', 5, 1),
+(10, 8, 0, 'مدادنوکی 20', 'dhd377', '', 'لیزری , پلاستیک', 10, 'data/product_photo_medium/10/0-1464437411--0-5--0-3--UM.jpg', 'data/product_photos_large/10/0-1464437411-product97758157237cf36e.jpg', 'kkkkkkkkkk', 7, 1),
+(11, 9, 0, 'قوری', 'dhd377', '56', 'لیزری', 44, 'data/product_photo_medium/11/0-1464175966-201510411131922a.jpg', 'data/product_photos_large/11/0-1464175966-DSC_4384-600x600.jpg', 'قوری', 6, 1),
+(12, 8, 0, 'قوری2', '2dhd377', '56', 'لیزری , پلاستیک', 44, 'data/product_photo_medium/12/0-1464249669-martinus-view-black.jpg', 'data/product_photos_large/12/0-1464176204-coinsgold_92413-5426421.jpg', 'قوری 2', 9, 1),
+(13, 9, 0, 'قوری3', 'sqjyv', '56', 'لیزری', 44, 'data/product_photo_medium/13/0-1464249600-azarantik_90800-1367561.jpg', 'data/product_photos_large/13/0-1464249600-martinus-view-black.jpg', 'قوری ظرفی است لوله‌دار که برای دم کردن چای و دیگر نوشیدنی‌های گیاهی به کار می‌رود.[۱][۲][۳] معمولاً قوری‌ها یک در اصلی دارند که از بالا باز شده و از طریق این در، چای خشک یا چای کیسه‌ای و آب جوش به قوری افزوده می‌شود. علاوه بر آن قوری‌ها دارای دسته‌ای برای در کنار و یک لوله برای ریختن چای هستند. بعضی از قوری‌ها دارای یک سوراخ کوچک برای تنظیم فشار هوا و خروج بخار در قسمت فوقانی خود می‌باشند.', 11, 1),
+(14, 8, 0, 'قوری23', '33', '33', 'لیزری', 44, 'data/product_photo_medium/14/0-1464249782-DSC_4384-600x600.jpg', 'data/product_photos_large/14/0-1464249782-azarantik_90800-1367561.jpg', '23', 10, 1),
+(15, 9, 0, 'فلش مموری1', 'sqjyv', '56', 'لیزری', 333, 'data/product_photo_medium/15/0-1464260521-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 'data/product_photos_large/15/0-1464260521-316sony-flash-memory-16gb-usm16gn-itbazar-1.jpg', 'ففف', 8, 1),
+(16, 9, 0, 'فلش مموری ترنس', 'sqjyv', '30gb', 'لیزری', 333, 'data/product_photo_medium/16/0-1464260751-160697_0a0dc.jpg', 'data/product_photos_large/16/0-1464260751-160697_0a0dc.jpg', 'ترنس', 12, 1),
+(20, 9, 0, 'قوری شیشه ای', 'dhd377', '', 'لیزری', 44, 'data/product_photo_medium/20/0-1464347709-D982D988D8B1DB8C-D9BEDB8CD8B1DAA9D8B3-1000.jpg', 'data/product_photos_large/20/0-1464347709-D982D988D8B1DB8C-D9BEDB8CD8B1DAA9D8B3-10001.jpg', '', 13, 1),
+(21, 8, 0, 'مدادرنگی', 'dhd377', '12 رنگ', 'رنگی', 12, 'data/product_photo_medium/21/0-1465679484-pencils-5.jpg', 'data/product_photos_large/21/0-1465679484-jootixir--1534426140.jpg', 'مداد رنگی', 15, 1),
+(22, 9, 0, 'کلاه', 'dhd377', '56', 'لیزری', 44, 'data/product_photo_medium/22/0-1465679424-201512912543923a.jpg', 'data/product_photos_large/22/0-1465679456-201512912543923a.jpg', 'ثثث', 14, 1);
 
 -- --------------------------------------------------------
 
@@ -298,7 +305,7 @@ INSERT INTO `product` (`id`, `brand_id`, `name`, `code`, `size`, `printing_Type`
 CREATE TABLE `product_cat_id` (
   `id` int(11) NOT NULL COMMENT 'شناسه',
   `product_id` int(11) NOT NULL COMMENT 'شناسه کالا',
-  `cat_id` int(11) NOT NULL COMMENT 'دسته بندی'
+  `cat_id` int(11) NOT NULL COMMENT ' دسته'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
@@ -316,39 +323,12 @@ INSERT INTO `product_cat_id` (`id`, `product_id`, `cat_id`) VALUES
 (8, 16, 15),
 (9, 20, 16),
 (10, 21, 13),
-(11, 21, 0),
-(12, 21, 0),
-(13, 22, 16),
-(14, 22, 0),
-(15, 22, 0),
-(16, 22, 0),
-(17, 22, 0),
-(18, 22, 0),
-(19, 22, 0),
-(20, 22, 16),
-(21, 22, 0),
-(22, 22, 0),
-(23, 22, 0),
-(24, 22, 0),
-(25, 22, 0),
-(26, 22, 0),
-(27, 22, 16),
-(28, 22, 0),
-(29, 22, 0),
-(30, 22, 0),
-(31, 22, 0),
-(32, 22, 0),
-(33, 22, 0),
 (34, 22, 16),
-(35, 22, 0),
-(36, 22, 0),
-(37, 22, 0),
-(38, 22, 0),
-(39, 22, 0),
-(40, 22, 0),
-(41, 21, 13),
-(42, 21, 0),
-(43, 21, 0);
+(44, 7, 18),
+(45, 22, 16),
+(46, 22, 16),
+(47, 22, 16),
+(48, 21, 13);
 
 -- --------------------------------------------------------
 
@@ -359,7 +339,7 @@ INSERT INTO `product_cat_id` (`id`, `product_id`, `cat_id`) VALUES
 CREATE TABLE `product_field_id` (
   `id` int(11) NOT NULL COMMENT 'شناسه',
   `product_id` int(11) NOT NULL COMMENT 'شناسه کالا',
-  `field_id` int(11) NOT NULL COMMENT 'زمینه'
+  `field_id` int(11) NOT NULL COMMENT ' زمینه'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
@@ -377,7 +357,11 @@ INSERT INTO `product_field_id` (`id`, `product_id`, `field_id`) VALUES
 (8, 16, 5),
 (9, 20, 5),
 (10, 21, 5),
-(11, 22, 5);
+(11, 22, 5),
+(12, 22, 5),
+(13, 22, 5),
+(14, 22, 5),
+(15, 21, 5);
 
 -- --------------------------------------------------------
 
@@ -448,8 +432,8 @@ INSERT INTO `setting` (`slug`, `name`, `text`, `component`) VALUES
 ('cp', '', 'setting_mg', ''),
 ('do', '', 'save', ''),
 ('func', '', 'setting_mg_main', ''),
-('unsuccessful_attack', '', '5', ''),
-('logo', 'لوگوی سایت', 'data/logo/0-1465625739-6651-logotasvireno.png', ''),
+('unsuccessful_attack', '', '7', ''),
+('logo', 'لوگوی سایت', 'data/logo/0-1465662022-9985-logotasvireno.png', ''),
 ('baner', 'بنر', 'data/baner/0-1465504310-7536-google-seo.jpg', '');
 
 -- --------------------------------------------------------
@@ -554,7 +538,8 @@ ALTER TABLE `page_layer`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `brand_id` (`brand_id`);
+  ADD KEY `brand_id` (`brand_id`),
+  ADD KEY `price_id` (`price_id`);
 
 --
 -- Indexes for table `product_cat_id`
@@ -602,7 +587,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cat`
 --
 ALTER TABLE `cat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `linkify`
 --
@@ -617,7 +602,7 @@ ALTER TABLE `newsletter`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه سفارش', AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه سفارش', AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `page`
 --
@@ -637,12 +622,12 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product_cat_id`
 --
 ALTER TABLE `product_cat_id`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `product_field_id`
 --
 ALTER TABLE `product_field_id`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `project`
 --

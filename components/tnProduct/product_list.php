@@ -2,9 +2,6 @@
 function product_list(){
 	?>	
 	<div class="product-grid">
-	<?	
-	back();
-	?>
 	<div class="row1">
 	<?
 	if ($cat_id = $_REQUEST['cat']) {

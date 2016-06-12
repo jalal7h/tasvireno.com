@@ -49,7 +49,7 @@ function product_management_list(){
 		array( "tag"=>"th", "picture" => '$rw[\'photo_medium\']'),
 		array("head"=>lmtc("product:name"), "content" => '$rw[\'name\']'),
 		array("head"=>lmtc("product:code"), "content" => '$rw[\'code\']'),
-		array("head"=>lmtc("product:price"), "content" =>'$rw[\'price\']' ,"attr" => array("align" => 'center',"dir" => "rtl")),
+		array("head"=>lmtc("product:price_id"), "content" => 'cat_translate($rw[\'price_id\'])'),
 		/*array("head"=>lmtc("product:cat_id"), "content" => 'cat_translate($rw[\'cat_id\'])'),
 		array("head"=>lmtc("product:field_id"), "content" => 'cat_translate($rw[\'field_id\'])'),*/
 		array("head"=>lmtc("product:brand_id"), "content" => 'cat_translate($rw[\'brand_id\'])'),

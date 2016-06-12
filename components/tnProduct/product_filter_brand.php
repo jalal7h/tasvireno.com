@@ -33,9 +33,11 @@ function product_filter_brand(){
 		
 		$name= table("cat", $brand_id, "name");
 		?>	
-			<label>
-					<input type="checkbox" disabled id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" checked <?=($_REQUEST['brand']==$brand_id ?"checked": "")?> />
-						<a href='./?page=102&<?=$cat_id2?>&field_id=<?=$field_id?>'><?=$name?></a>
+			<label  class="check">
+			 	<a href='./?page=102&<?=$cat_id2?>&field_id=<?=$field_id?>'>
+				 	<i class="fa fa-check" aria-hidden="true"></i>
+					<?=$name?>
+				</a>
 			</label>
 			
 		<?
@@ -73,9 +75,12 @@ function product_filter_brand(){
 			$brand_name=$rw['name'];
 			$brand_id=$rw['id'];				 
 			?>	
-				<label>
-					<input type="checkbox" disabled id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" <?=($_REQUEST['brand_id']==$brand_id ?"checked": "")?> />
-					<a href="./?page=102&<?=$cat_id2?>&brand_id=<?=$rw['id']?>&field_id=<?=$field_id?>"><span><?=$brand_name?></span></span><span>(<?=$n?>)</span></a>
+				<label <?=($_REQUEST['brand_id']==$brand_id ?"class=\"check\"": "")?>>
+					
+					<a href="./?page=102&<?=$cat_id2?>&brand_id=<?=$rw['id']?>&field_id=<?=$field_id?>">
+						<?=($_REQUEST['brand_id']==$brand_id ?"<i class=\"fa fa-check\" aria-hidden=\"true\"></i>": "")?>
+						<span><?=$brand_name?></span></span><span>(<?=$n?>)</span>
+					</a>
 				</label>
 				
 			<?

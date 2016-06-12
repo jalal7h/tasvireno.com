@@ -14,7 +14,7 @@ function product_filter_cat()
 				
 				$q_brand="AND `brand_id` ='$brand_id'";
 			}
-			
+
 			$name=table("cat", $cat_id2, "name");
 			echo '<h2>'.$name.'</h2>';
 			$query = " SELECT * FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id2' ORDER BY `id` ASC  ";
@@ -47,9 +47,10 @@ function product_filter_cat()
 			$cat_name=$rw['name'];
 			$cat_id=$cat_id2;				 
 			?>	
-				<label class="parent">
-					<input type="checkbox" disabled id="no_brand" class="<?=$cat_id?>" name="cat_<?=$brand_id?>" value="1" <?=($_REQUEST['cat_id']==$cat_id ?"checked": "") ?>/>
-					<a href="./?page=102&brand=<?=$_REQUEST['brand_id']?>&cat_id=<?=$rw['id']?>&field_id=<?=$_REQUEST['field_id']?>"><span><?=$cat_name?></span></span><span>(<?=$n?>)</span></a>
+				<label class="parent">					
+					<a href="./?page=102&brand=<?=$_REQUEST['brand_id']?>&cat_id=<?=$rw['id']?>&field_id=<?=$_REQUEST['field_id']?>">
+						<span><?=$cat_name?></span></span><span>(<?=$n?>)</span>
+					</a>
 				</label>
 				
 			<?
@@ -76,9 +77,12 @@ function product_filter_cat()
 	if( $cat_id ){
 		$name= table("cat", $cat_id, "name");
 		?>	
-			<label>
-					<input type="checkbox" disabled id="no_brand" class="<?=$cat_id?>" name="brand_<?=$brand_id?>" value="1" checked <?=($_REQUEST['brand']==$brand_id ?"checked": "")?> />
-						<a href='./?page=102&brand_id=<?=$brand_id?>&field_id=<?=$field_id?>'><?=$name?></a>
+			<label  class="check">
+				<a href='./?page=102&brand_id=<?=$brand_id?>&field_id=<?=$field_id?>'>
+				<i class="fa fa-check" aria-hidden="true"></i>
+				<?=$name?>
+				</a>
+
 			</label>
 			
 		<?
@@ -117,9 +121,12 @@ function product_filter_cat()
 			$cat_name=$rw['name'];
 			$cat_id=$rw['id'];				 
 			?>	
-				<label>
-					<input type="checkbox" disabled id="no_brand" class="<?=$cat_id?>" name="cat_<?=$brand_id?>" value="1" <?=($_REQUEST['cat_id']==$cat_id ?"checked": "")?> />
-					<a href="./?page=102&brand=<?=$brand_id?>&cat_id=<?=$rw['id']?>&field_id=<?=$field_id?>"><span><?=$cat_name?></span></span><span>(<?=$n?>)</span></a>
+				<label <?=($_REQUEST['cat_id']==$cat_id ?"class=\"check\"": "")?>>
+					
+					<a href="./?page=102&brand=<?=$brand_id?>&cat_id=<?=$rw['id']?>&field_id=<?=$field_id?>">
+					<?=($_REQUEST['cat_id']==$cat_id ?"<i class=\"fa fa-check\" aria-hidden=\"true\"></i>": "")?>					
+					<span><?=$cat_name?></span></span><span>(<?=$n?>)</span>
+					</a>
 				</label>
 				
 			<?

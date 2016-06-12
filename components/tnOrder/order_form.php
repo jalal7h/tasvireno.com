@@ -47,7 +47,7 @@ function order_form1(){
 		$brand=$rw1['brand_id'];
 		$description=$rw1['description'];
 		$min_order=$rw1['min_order'];
-		$price=$rw1['price'];
+		$price=$rw1['price_id'];
 		$id=$rw1['id'];
 		$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
 		if(! $rs = dbq($query) ){
@@ -77,7 +77,7 @@ function order_form1(){
 	      </tr>	
 	      <tr>
 	        <td>قیمت برای هر عدد کالا</td>
-	        <td class="number1"><?=number_format($price);?> ریال</td>		        
+	        <td class="number1"><?=cat_translate($price);?></td>		        
 	      </tr>
 		  
 	    </tbody></table>

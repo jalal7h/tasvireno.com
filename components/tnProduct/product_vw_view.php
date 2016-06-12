@@ -44,7 +44,7 @@ function product_vw(){
 	$description=$rw1['description'];
 	$min_order=$rw1['min_order'];
 	$id=$rw1['id'];
-	$price=$rw1['price'];
+	$price=$rw1['price_id'];
 
 	$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
 	if(! $rs = dbq($query) ){
@@ -86,7 +86,7 @@ function product_vw(){
 	      </tr>	
 	      <tr>
 	        <td>قیمت برای هر عدد کالا</td>
-	        <td class="number1"><?=number_format($price);?> ریال</td>		        
+	        <td class="number1"><?=cat_translate($price);?></td>		        
 	      </tr>
 		  
 	    </tbody></table>

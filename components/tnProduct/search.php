@@ -18,7 +18,7 @@ function shearch(){
 } 
 
 function shearch_product_list(){
-	back();
+
 	?>
     <div class="row1">	
 	<div class="CategoryHeading">نتایج جستجو برای : <?=$_REQUEST['q'];?></div>
