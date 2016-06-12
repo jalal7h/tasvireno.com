@@ -10,6 +10,10 @@ function lmfc(){
 
 function listmaker_form_close(){
 
+	unset($GLOBALS['listmaker_form-rw']);
+	unset($GLOBALS['listmaker_form-formTable']);
+	unset($GLOBALS['listmaker_form-formName']);
+
 	return "</form>\n";
 
 }

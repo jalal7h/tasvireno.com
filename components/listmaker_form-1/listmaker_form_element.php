@@ -1,12 +1,18 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/06/08
+# Version 1.2
+
 function lmfe( $list ){
 	return listmaker_form_element( $list );
 }
 
-function listmaker_form_element( $list ){
+function listmaker_form_element( $list, $comment=true ){
 
-	$c.= "\n\n<!----------------------- form maker element - start ----------------------->\n\n";
+	if( $comment ){
+		$c.= "\n\n<!----------------------- form maker element - start ----------------------->\n\n";
+	}
 
 	if(! is_array($list)){
 		e(__FUNCTION__,__LINE__);
@@ -29,7 +35,9 @@ function listmaker_form_element( $list ){
 		$c.= "\n";
 	}
 
-	$c.= "\n<!----------------------- form maker element - end ----------------------->\n\n\n";
+	if( $comment ){
+		$c.= "\n<!----------------------- form maker element - end ----------------------->\n\n\n";
+	}
 
 	return $c;
 

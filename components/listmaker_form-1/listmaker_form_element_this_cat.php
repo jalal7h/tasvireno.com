@@ -1,95 +1,96 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/06/10
+# Version 1.2
+
 function listmaker_form_element_this_cat( $info ){
 
 	if( $info['value'] ){
 		$value_serial = cat_id_serial( $info['value'] );
 		$value_serial = array_reverse($value_serial);
 		$value_serial = implode(',', $value_serial);
-	
-	} else {
-		$value_serial = '';		
-	}
 
-	$c.= lmfe_tnit( $info );
+	} else {
+		$value_serial = '';
+	}
 
 	if(! $info['cat_name'] ){
 		echo "no cat defined !";
 		return false;
 	}
+	
+	$c.= lmfe_tnit( $info );
 
-	$hidden_input_id = "lmfetc_hidden_".$info['name']."_".$info['cat_name'];
+	$c.= "
+	<span class='lmfetc_container' rel_cat_name='{$info['cat_name']}' >
+		
+		<input type=\"hidden\" name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".( $info['value'] ? "value=\"".$info['value']."\" " : '' )." />
+	
+		<span class='lmfetc' rel_parent='0' rel_value_serial='$value_serial'></span>
 
-	$c.= $info['PreTab']."<input type=\"hidden\" id=\"".$hidden_input_id."\"".
-		" name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
-		( $info['value'] ? "value=\"".$info['value']."\" " : '' ).
-		"/>\n";
-
-	$c.= "<span id='lmfetcX_".$info['name']."_".$info['cat_name']."' ></span>\n";
-	$c.= "<script> lmfetc( '".$info['cat_name']."', 0, 'lmfetcX_".$info['name']."_".$info['cat_name']."', '".$hidden_input_id."', '$value_serial' ); </script>";
+	</span>";
 
 	return $c;
 
 }
 
+$GLOBALS['do_action'][] = 'listmaker_form_element_this_cat_fetchSubCat';
+function listmaker_form_element_this_cat_fetchSubCat(){
 
-$GLOBALS['do_action'][] = 'listmaker_form_element_this_cat_getChild';
-
-function listmaker_form_element_this_cat_getChild(){
-	
-	$hidden_input_id = trim( strip_tags($_REQUEST['hidden_input_id']) );
+	#
+	# vars
 	$cat_name = trim( strip_tags($_REQUEST['cat_name']) );
 	$parent = intval($_REQUEST['parent']);
-	$div_id = 'lmfetc'.$parent;
-
-	if( $_REQUEST['value_serial'] ){
-
-		$value_serial = trim( strip_tags($_REQUEST['value_serial']) );
-		$value_this = strstr($value_serial, ",", 1);
-		$value_serial_else = substr( strstr( $value_serial, "," ), 1 );
-
-		if(! $value_this ){
-			$value_this = $value_serial;
-			$value_serial_else = "";
-		}
-
+ 	$value_serial = strip_tags($_REQUEST['value_serial']);
+	
+	#
+	# fix value_serial
+	if( $value_serial ){
+		$value_serial = explode(',', $value_serial);
+		$value_serial = array_reverse($value_serial);
+		$value_this = intval(array_pop($value_serial));
+		$value_serial = array_reverse($value_serial);
+		$value_serial = implode(',', $value_serial);
+	} else {
+		$value_this = 0;
 	}
-
+	
+	#
+	# main query
 	if(! $rs = dbq(" SELECT * FROM `cat` WHERE `cat`='$cat_name' AND `parent`='$parent' ")){
 		e(__FUNCTION__,__LINE__);
 
+	#
+	# if no child
 	} else if(! dbn($rs) ){
 		// echo "00";
 	
 	} else {
-		echo '<select id="'.$div_id.'_select" onchange="lmfetc( \''.$cat_name.'\', this.value, \''.$div_id.'\', \''.$hidden_input_id.'\', \'\' );" >'."\n";
-		echo "<option value=''>..</option>\n";
-		while( $rw = dbf($rs) ){
-			echo "<option value='".$rw['id']."'>".$rw['name']."</option>\n";
-		}
-		echo "</select>\n";
-		echo "<span id='$div_id'></span>\n";
 		
-		echo '
-		<script>
-			$(document).ready(function($) {
-				
-				
-				'.($value_this ? '
-				lmfetc( \''.$cat_name.'\', '.$value_this.' , \''.$div_id.'\', \''.$hidden_input_id.'\', \''.$value_serial_else.'\' );
-				' :'' ).'
 
-				$("#'.$div_id.'_select").val("'.$value_this.'");
+		$lmfetc_rahem_rand = 'lmfetc_rand_'.rand(100000,999999);
+		error_log('kkl; '.$lmfetc_rahem_rand);
 
-			});
-		</script>
-		';
-		error_log(__LINE__);
+		# 
+		# the select
+		echo "<select onchange='lmfetc_load( $(\"#$lmfetc_rahem_rand\") , this.value );' ><option value=''>..</option>";
+		while( $rw = dbf($rs) ){
+			echo "<option ".($rw['id']==$value_this ? "selected=1": '')." value='{$rw['id']}'>{$rw['name']}</option>";
+		}
+		echo "</select>";
 
+		#
+		# makan e bevojud amadan e child
+		echo "<span id='$lmfetc_rahem_rand' class='lmfetc' rel_parent='$value_this' rel_value_serial='$value_serial'></span>";
+
+		if( $value_this ){
+			?><script>lmfetc_load( $('#<?=$lmfetc_rahem_rand?>'), '<?=$value_this?>' );</script><?
+		}
 	}
-
-
 }
+
+
 
 
 

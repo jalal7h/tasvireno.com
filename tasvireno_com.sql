@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.6.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 11, 2016 at 12:25 PM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.6.19
+-- Host: localhost
+-- Generation Time: Jun 12, 2016 at 02:45 AM
+-- Server version: 5.6.27
+-- PHP Version: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tasvireno_com`
+-- Database: `tasvireno.com`
 --
 
 -- --------------------------------------------------------
@@ -298,7 +298,7 @@ INSERT INTO `product` (`id`, `brand_id`, `name`, `code`, `size`, `printing_Type`
 CREATE TABLE `product_cat_id` (
   `id` int(11) NOT NULL COMMENT 'شناسه',
   `product_id` int(11) NOT NULL COMMENT 'شناسه کالا',
-  `cat_id` int(11) NOT NULL COMMENT 'شناسه دسته'
+  `cat_id` int(11) NOT NULL COMMENT 'دسته بندی'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
@@ -359,7 +359,7 @@ INSERT INTO `product_cat_id` (`id`, `product_id`, `cat_id`) VALUES
 CREATE TABLE `product_field_id` (
   `id` int(11) NOT NULL COMMENT 'شناسه',
   `product_id` int(11) NOT NULL COMMENT 'شناسه کالا',
-  `field_id` int(11) NOT NULL COMMENT 'شناسه زمینه'
+  `field_id` int(11) NOT NULL COMMENT 'زمینه'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
@@ -448,7 +448,7 @@ INSERT INTO `setting` (`slug`, `name`, `text`, `component`) VALUES
 ('cp', '', 'setting_mg', ''),
 ('do', '', 'save', ''),
 ('func', '', 'setting_mg_main', ''),
-('unsuccessful_attack', '', '4', ''),
+('unsuccessful_attack', '', '5', ''),
 ('logo', 'لوگوی سایت', 'data/logo/0-1465625739-6651-logotasvireno.png', ''),
 ('baner', 'بنر', 'data/baner/0-1465504310-7536-google-seo.jpg', '');
 
@@ -505,7 +505,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `permission`, `name`, `tell`, `cell`, `wallet_credit`, `position_region_id`, `address`, `profile_pic`, `im_a`, `work_at`, `gender`, `auth`) VALUES
-(1, 'taghipoor.meysam@gmail.com', 'admin', 2, 'مدیریت سایت', '02166936950', '09127744129', 0, 0, '', '', 0, 0, 0, '');
+(1, 'admin', 'admin', 2, 'مدیریت سایت', '02166936950', '09127744129', 0, 0, '', '', 0, 0, 0, '');
 
 --
 -- Indexes for dumped tables

@@ -17,6 +17,7 @@
 
 	echo lmfe([
 		'some text',
+		['cat:cat_id', 'cat_name'=>'adsCat','inDiv'],
 		['text:name*+','inDiv'],
 		['color:color_code','inDiv'],
 		['checkbox:flag','inDiv'],

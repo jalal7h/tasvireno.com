@@ -1,20 +1,47 @@
 
-function lmfetc( cat_name, parent, le_paluet, hidden_input_id, value_serial ) {
+// 2016/06/10
 
-	// 
-	// update the main hidden input
-	$( '#'+hidden_input_id ).val( parent );
+function lmfetc_load( lmfetc_rahem, select_value ){
+
+	// vars
+	cat_name = lmfetc_rahem.closest('.lmfetc_container').attr('rel_cat_name');
+	value_serial = lmfetc_rahem.attr('rel_value_serial');
+	lmfetc_rahem.attr('rel_value_serial','');
 	
-	//
-	// request for next level
-	urlpath = './';
-	pars = 'do_action=listmaker_form_element_this_cat_getChild&cat_name='+cat_name+'&parent='+parent+'&hidden_input_id='+hidden_input_id;
-
-	if( value_serial!='' ){
-		pars = pars+'&value_serial='+value_serial;
+	if( select_value ){
+		parent = select_value;
+	} else {
+		parent = lmfetc_rahem.attr('rel_parent');
 	}
 
-	wget( urlpath, le_paluet, pars );
+	// cl( ';; ' + parent + ' ; ' + cat_name + ' ; ' + value_serial );
+
+	//
+	// update the `hidden` input
+	lmfetc_rahem.closest('.lmfetc_container').find('> input[type="hidden"]').val( parent );
+
+	if( select_value=='' ){
+		lmfetc_rahem.html('');
+	} else {
+		$.ajax({
+			method: "GET",
+			url: './?do_action=listmaker_form_element_this_cat_fetchSubCat&cat_name='+cat_name+'&parent='+parent+'&value_serial='+value_serial
+		
+		}).done(function( html ) {
+			lmfetc_rahem.html( html );
+		});
+	}
 
 }
+
+jQuery(document).ready(function($) {
+	
+	$('.lmfetc_container').each(function( index ) {
+		// console.log( index );
+		lmfetc_load( $(this).find('> .lmfetc'), null );
+	});
+	
+});
+
+
 
