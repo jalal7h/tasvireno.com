@@ -7,6 +7,7 @@
   padding: 0 100px 0px;
   position: relative;
   box-shadow: 0 2px 44px rgba(0,0,0,.09);
+  margin-top:12px;
 
  }
 .menu > ul {
@@ -103,4 +104,115 @@
 }
 .tabmenu_rast > ul > li > a:hover{
   color: #A90000;
+}
+
+
+.menu-container {
+    width: 80%;
+    margin: 0 auto;
+    background: #e9e9e9;
+}
+
+.menu-mobile {
+    display: none;
+    padding:10px 30px 40px 10px;
+}
+
+.menu-mobile:after {
+    content: "\f0c9 ";
+    font-family: FontAwesome;
+    font-size: 2.5rem;
+    padding: 0;
+    float: right;
+    position: relative;
+    -webkit-transform: translateY(-25%);
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%);
+    color:#fefefe;
+}
+.menu-mobile:hover:after {
+    text-shadow:0px 0px 8px  #555;
+
+}
+.menu-dropdown-icon:before {
+    content: "\f067";
+    font-family: "FontAwesome";
+    font-size:18px;
+    display: none;
+    cursor: pointer;
+    float: right;
+    padding: .6em .5em;
+    color: #eee;
+    margin-left:-10px;
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+Mobile style's
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media only screen and (max-width: 959px) {
+    
+    #pagewrap nav{
+        padding: 0;
+    }
+    .menu-container {
+        width: 100%;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    .menu-dropdown-icon:before {
+        display: block;
+    }
+    .menu > ul {
+        display: none;
+        border-top:1px solid #0d4826;
+    }
+    .menu > ul > li {
+        width: 100%;
+        display: block;
+        padding-top:-30px;
+        border-top:1px solid #0d4826;
+    }
+    .menu > ul > li> a {
+        width: 100%;
+        display: block;
+        padding-top:15px;
+        margin-right: 10px;
+    }
+    .menu > ul > li:hover > a{
+         color:#A90000;  
+    }
+    .menu > ul > li:hover{
+        background-color: #eee;
+         
+    }
+    .menu > ul > li > ul {
+        position: relative;
+    }
+    .menu > ul > li > ul.normal-sub {
+        width: 100%;
+    }
+    .menu > ul > li > ul > li {
+        float: none;
+        width: 100%;
+        margin-top: 0px;
+    }
+    
+    .menu .show-on-mobile {
+        display: block;
+    }
+    .menu > ul > li > a:before {
+        display:none;
+    }  
+    .tabmenu_rast > ul > li {
+        width:100%;
+    }
+    .tabmenu_rast > h1{
+        display:none;
+    }
+    .menu > ul > li > ul {
+    
+    box-shadow: none;
+}
 }
