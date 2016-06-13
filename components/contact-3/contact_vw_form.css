@@ -42,13 +42,14 @@
 .contact_vw_form input[name="name"] {
 	
 }
-.contact_vw_form input[name="tell"] {
+.contact_vw_form input[name="cell_number"] {
+	direction: ltr;
+	text-align: left !important;
+}
+.contact_vw_form input[name="email_address"] {
 	direction: ltr;
 }
-.contact_vw_form input[name="_mail"] {
-	direction: ltr;
-}
-.contact_vw_form input[name="_cont"] {
+.contact_vw_form input[name="content"] {
 	
 }
 .contact_vw_form textarea {

@@ -4,6 +4,11 @@ $GLOBALS['block_layers']['contact_vw_form'] = 'فرم تماس با ما';
 
 function contact_vw_form(){
 	
+	switch($_REQUEST['do']) {
+		case 'send':
+			return contact_vw_send();
+	}
+
 	if(! $rs = dbq(" SELECT * FROM `setting` WHERE `slug` LIKE 'contact_email_address_%' ORDER BY `slug` ")){
 		e(__FUNCTION__,__LINE__);
 		
