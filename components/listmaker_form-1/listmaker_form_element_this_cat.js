@@ -32,6 +32,11 @@ function lmfetc_load( lmfetc_rahem, select_value ){
 		});
 	}
 
+	// catcustomfield console
+	if(typeof catcustomfield_console == 'function') { 
+		catcustomfield_console( cat_name, parent /* as cat_id */ ); 
+	}
+
 }
 
 jQuery(document).ready(function($) {

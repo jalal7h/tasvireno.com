@@ -5,7 +5,7 @@
 # Version 1.2
 
 function listmaker_form_element_this_cat( $info ){
-
+	
 	if( $info['value'] ){
 		$value_serial = cat_id_serial( $info['value'] );
 		$value_serial = array_reverse($value_serial);
@@ -24,12 +24,18 @@ function listmaker_form_element_this_cat( $info ){
 
 	$c.= "
 	<span class='lmfetc_container' rel_cat_name='{$info['cat_name']}' >
-		
 		<input type=\"hidden\" name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".( $info['value'] ? "value=\"".$info['value']."\" " : '' )." />
-	
 		<span class='lmfetc' rel_parent='0' rel_value_serial='$value_serial'></span>
-
 	</span>";
+	
+	if( is_component('catcustomfield') ){
+		if(! $info['ArrayInput'] ){
+			$cat_name = $info['cat_name'];
+			$item_table = $GLOBALS['listmaker_form-formTable'];
+			$item_id = $GLOBALS['listmaker_form-rw']['id'];
+			$c.= catcustomfield_console( $cat_name, $item_table, $item_id );
+		}
+	}
 
 	return $c;
 

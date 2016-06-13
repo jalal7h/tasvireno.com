@@ -1,24 +1,19 @@
 
 
-<div class="contact_display">
+<div class="contact_vw_form">
 	
 	<div class="path">
-		<div>آدرس شرکت : {cu_company_addr}</div>
-		<div>دفتر فروش : <span dir=ltr >{cu_company_tell}</div>
-		<div>دفتر پشتیبانی : <span dir=ltr >{cu_company_fax}</div>
+		<div>آدرس شرکت : {contact_address}</div>
+		<div>دفتر فروش : <span dir=ltr >{contact_tell}</div>
+		<div>دفتر پشتیبانی : <span dir=ltr >{contact_fax}</div>
 	</div>
 
 	<form method="post" name="form21" action="./?page={page}&do=send_contactUsForm" id="contact_display">
 	<fieldset>
 		<legend>
 		<select name="_dest">
-		<option value="">ارتباط با ..</option>
-		<script>
-		if('{email_address_management}'!='')document.write('<option value="management">مديريت</option>');
-		if('{email_address_sell}'!='')document.write('<option value="sell">بخش آموزش</option>');
-		if('{email_address_support}'!='')document.write('<option value="support">پشتيباني</option>');
-		if('{email_address_webadmin}'!='')document.write('<option value="webadmin">مدير سايت</option>');
-		</script>
+			<option value="">ارتباط با ..</option>
+			{email_select_option}
 		</select>
 		</legend>
 		<img src="http://parsunix.com/cdn/img/contact.jpg" class="handshaking" />
