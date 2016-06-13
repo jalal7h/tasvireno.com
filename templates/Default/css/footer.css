@@ -4,7 +4,7 @@
 #footer {
 	border-top: 4px solid #A90000;
 	background-color: #262626;
-	height: 320px;
+	min-height: 320px;
 	/* margin: 30px 0 0 0; */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 	position: relative;
@@ -106,7 +106,7 @@
 
 #footer .light {
 	border-bottom: 1px solid #141414;
-	height: 216px;
+	min-height: 216px;
 	/*background-color: #555;*/
 	padding: 25px 40px 20px 40px;
 }
@@ -303,5 +303,20 @@
 .footer-copyright > a:hover {
     color: #900;
 }
+
+@media (max-width: 600px) {
+    #footer .dark {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
