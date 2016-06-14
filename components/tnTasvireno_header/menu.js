@@ -1,15 +1,17 @@
 $(document).ready(function(){
-		
-   	content = $("#gift1");
-	content.load("./?do_action=menu_ajax&do=gift");
+        
+    content = $("#gift1");
+    content.load("./?do_action=menu_ajax&do=gift");
 
-	content2 = $("#brand1");
-	content2.load("./?do_action=menu_ajax&do=brand");
-	
-   	content3 = $("#field1");
- 	content3.load("./?do_action=menu_ajax&do=field");
-	
-	$('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
+    content2 = $("#brand1");
+    content2.load("./?do_action=menu_ajax&do=brand");
+    
+    content3 = $("#field1");
+    content3.load("./?do_action=menu_ajax&do=field");
+
+    $('#gift a , #brand a, #field a').attr('href','#');
+    
+    $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
 
 
     $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
@@ -24,10 +26,11 @@ $(document).ready(function(){
         }
     });
 
-    $("#gift , #brand , #field ").click(function (e) {
+    $("#gift , #brand , #field ").click(function () {
+        
         if ($(window).width() <= 943) {
             $(this).children("ul").fadeToggle(200);
-            e.preventDefault();
+            
         }
     });
 
@@ -38,11 +41,11 @@ $(document).ready(function(){
 
     $(window).resize(function(){
        if ($('.menu').width() > 944) {
-       	
+        
     $(".menu > ul").slideDown(0.0000003);
     $(".menu > ul > li > ul ").fadeOut(0.0000003);
     
-	}
+    }
     });
 
 });

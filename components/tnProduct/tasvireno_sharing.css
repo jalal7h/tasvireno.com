@@ -88,7 +88,7 @@
 
 #offer_new_item_hitbox img {
 	width: 140px;
-	margin: 50px 0 40px 0;
+	margin: 40px 0 40px 0;
 }
 
 #offer_new_item_hitbox span {
@@ -106,8 +106,10 @@
 .p_img_vw2{
     width:40%;
     margin:20px auto;
-    background-color:#777;
-}
+    background-color:#fff;
+    height:190px;
+    overflow:height;
+} 
 
 
 

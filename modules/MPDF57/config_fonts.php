@@ -43,7 +43,7 @@ by including the font-family in $this->sans_fonts below
 To aid backwards compatability some are included:
 */
 $this->fonttrans = array(
-	'helvetica' => 'IRANSans',
+	'helvetica' => 'arial',
 	'times' => 'timesnewroman',
 	'courier' => 'couriernew',
 	'trebuchet' => 'trebuchetms',
@@ -98,7 +98,6 @@ $this->fontdata = array(
 		'I' => "DejaVuSansCondensed-Oblique.ttf",
 		'BI' => "DejaVuSansCondensed-BoldOblique.ttf",
 		),
-	
 	"dejavusans" => array(
 		'R' => "DejaVuSans.ttf",
 		'B' => "DejaVuSans-Bold.ttf",
@@ -200,10 +199,7 @@ $this->fontdata = array(
 		'unAGlyphs' => true,
 		),
 
-	"IRANSans" => array(
-		'R' => "IRANSans.ttf",
-		 'unAGlyphs' => true,
-	),
+
 
 
 /* Examples of some CJK fonts */

@@ -13,7 +13,7 @@ $desc=array (
 );
 $up=-63;
 $ut=44;
-$ttffile='C:/xampp2/htdocs/PROJ/tasvireno.com/modules/MPDF57/ttfonts/DejaVuSerifCondensed.ttf';
+$ttffile='C:/xampp2/htdocs/PROJ/tasvireno.com/tasvireno.com/modules/MPDF57/ttfonts/DejaVuSerifCondensed.ttf';
 $TTCfontID='0';
 $originalsize=296976;
 $sip=false;

@@ -16,7 +16,7 @@ function order_management_list(){
 	# list
 
 	$list['name'] = __FUNCTION__;
-	$list['query'] = " SELECT * FROM `orders` WHERE 1 ORDER BY `id` ASC ";
+	$list['query'] = " SELECT * FROM `orders` WHERE 1 ORDER BY `id` DESC ";
 	$list['tdd'] = 12;
 
 	$list['base_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]';

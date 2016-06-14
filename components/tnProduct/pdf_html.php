@@ -18,7 +18,7 @@ function pdf_html(){
 		$brand=$rw1['brand_id'];
 		$description=$rw1['description'];
 		$min_order=$rw1['min_order'];
-		$price=$rw1['price_id'];
+		$price=$rw1['price'];
 		$id=$rw1['id'];
 		$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
 		if(! $rs = dbq($query) ){
@@ -126,7 +126,7 @@ $html='
 			      </tbody>
 			    </table>
 		    </div>
-		</div>
+		</div> 
 	</body>
 </html>';
 }

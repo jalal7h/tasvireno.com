@@ -27,7 +27,7 @@ function product_management_form(){
 		['cat:cat_id+*','cat_name'=>'cat','inDiv'],		
 		['cat:field_id+*','cat_name'=>'field','inDiv'],		
 		['cat:brand_id','cat_name'=>'brand','inDiv'],
-		['cat:price_id','cat_name'=>'price','inDiv'],
+		['cat:price','cat_name'=>'price','inDiv'],
 		['file:photo_medium*','inDiv'],
 		['file:photos_large','inDiv'],
 		

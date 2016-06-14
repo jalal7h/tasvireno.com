@@ -18,7 +18,7 @@ function share_ajax(){
 		<?		
 		return false;
 	}
-	$photo_medium = $rw1['photos_large'];
+	$photos_large = $rw1['photos_large'];
 	$name = $rw1['name'];
 	$code=$rw1['code'];
 	$brand=$rw1['brand_id'];
@@ -36,7 +36,7 @@ function share_ajax(){
 	$catname = implode( '&nbsp;,&nbsp;' ,$cat_name );
 	
 	?>
-	<div class="p_img_vw2"><img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" ></div>
+	<div class="p_img_vw2"><img src="<?=img_product_src($photos_large);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" ></div>
 	<div class="sharing">
 	<div class="head">
 			<div class="dotline"></div>

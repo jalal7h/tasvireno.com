@@ -44,7 +44,7 @@ function product_vw(){
 	$description=$rw1['description'];
 	$min_order=$rw1['min_order'];
 	$id=$rw1['id'];
-	$price=$rw1['price_id'];
+	$price=$rw1['price'];
 
 	$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
 	if(! $rs = dbq($query) ){
