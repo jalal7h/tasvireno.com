@@ -109,8 +109,20 @@
     background-color:#fff;
     height:190px;
     overflow:height;
+}  
+
+@media only screen and (max-width: 600px) {
+	.p_img_vw2{
+    margin:5px auto;
+    height:150px;
+   
 } 
+.sharing .socials .seo_share_link > a icon:before {
+	font-size: 20px !important;
+	width: 45px;
+	height: 40px;
 
-
+}
+}
 
 
