@@ -1,7 +1,7 @@
 <?
 function order_sendOrderMail(){
 	
-	if (! user_order_msg() or ! admin_order_msg() ) {
+	if (! user_order_msg() && ! admin_order_msg() ) {
 	    ?>
 		<div class="message"><h1>سفارش شما با موفقیعت ثبت شد</h1></div>
 	    <?
