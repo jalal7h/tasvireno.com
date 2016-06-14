@@ -46,9 +46,11 @@ function share_ajax(){
 	<div class="p_vw_cat">
 		<h2 data-mh="img-responsive" style="height: 35px;">دسته :&nbsp;&nbsp; <?=$catname;?></h2>
 	</div> 
-	<?= $brand ? '<div class="p_vw_cat"><h2 data-mh="img-responsive" style="height: 35px;">برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h2></div> ' : ''; 
-					        
-	?>
+	<div class="p_vw_cat">
+		<h2 data-mh="img-responsive" style="height: 35px;">
+			<?= $brand ? 'برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand) : '';?>
+		</h2> 
+	</div>
 	<br>
 	<div>
 		<?=tasvireno_sharing( $rw1 )?>
