@@ -1,5 +1,5 @@
 <?
-function product_list(){
+function product_list(){ 
 	?>	
 	<div class="product-grid">
 	<div class="row1">
@@ -24,6 +24,7 @@ function product_list(){
 		
 		$q_field="AND `id` in (SELECT `product_id` FROM `product_field_id` WHERE  `field_id`='$field_id' )";
 	}
+	breadcrumb();	
 	$link = _URL."/?page=102&field_id=".$field_id."&brand=".$brand_id."&". $cat_link."&p=".$_REQUEST['p'];
 	$tdd = 12;
 	$stt = $tdd * intval($_REQUEST['p']); 

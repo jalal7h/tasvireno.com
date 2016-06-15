@@ -21,6 +21,7 @@ function shearch_product_list(){
 
 	?>
     <div class="row1">	
+    <?=breadcrumb();?>
 	<div class="CategoryHeading">نتایج جستجو برای : <?=$_REQUEST['q'];?></div>
 	
 	

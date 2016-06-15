@@ -53,6 +53,6 @@ function project_vw_list(){
 }
 function img_project_src( $photo ){
 
-	$link = _URL."/".$photo;
+	$link = _URL."/resize/200x200/".$photo;
 	return $link;
 }
