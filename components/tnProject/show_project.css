@@ -36,7 +36,15 @@
 @media only screen and (max-width : 630px) {
 	.project_img_vw{
 	
-	height:78%;
+	height:76%;
+
+}
+
+}
+@media only screen and (max-width : 330px) {
+	.project_img_vw{
+	
+	height:70%;
 
 }
 

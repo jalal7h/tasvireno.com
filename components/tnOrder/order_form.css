@@ -188,6 +188,16 @@
 .product_filter{
 	width:100% !important;
 }
-
-
+.order > .p_vw_cat , .order >.p_vw_cat ,.order > .table-responsive{
+	
+	width:90%;
+	display:block;
+	
+}
+.order .table-bordered{
+	float:right;
+}
+.order > .p_vw_cat{
+	padding-right:20px;
+}
 }

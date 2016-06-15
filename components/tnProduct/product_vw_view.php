@@ -12,7 +12,7 @@ function product_vw_view(){
 		 </div>
 	 </div>
 
-<?	
+<?	 
 }
 function product_vw(){
 	?>
@@ -20,7 +20,8 @@ function product_vw(){
 	 	   
 	<?
 
-	back();
+	/*back();*/
+	breadcrumb_product();
 	#
 	# find it
 	if(! $product_id = $_REQUEST['product_id'] ){

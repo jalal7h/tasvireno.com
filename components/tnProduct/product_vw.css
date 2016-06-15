@@ -379,6 +379,9 @@
     
     font-size:14px;
     }
+    .p_img_vw{
+    width:90%;
+    }
 }
 @media only screen and (max-width : 420px) {
     .product-grid-spesc{
@@ -388,6 +391,7 @@
     padding: 0px 0px 0 0;
     
     }
+
 /************************صفحه اصلی***************/
     .cat-grid li {
     width: 45.1%;
