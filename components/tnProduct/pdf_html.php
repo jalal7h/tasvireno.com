@@ -46,12 +46,12 @@ $html='
 		    	font-family:IRANSans;
 		    }
 		    .img{
-		    	width:70%;
+		    	width:65%;
 		    	margin:50px auto;
 		    	background-color:#fff;
 		    }
 		    .name{ 
-		    	color:#2ecc71;
+		    	color:#e84e0f;
 		    	font-size:20px;
 		    	padding:15px 0 25px 10%;
 	        	border-top: 1px dashed #ccc;
@@ -93,10 +93,21 @@ $html='
 			    vertical-align: top;
 			    
 		    }
+		    .logo{
+		    	text-align:center;
+		    }
+		    .table{
+		    	margin:-15px 0 10px 0;
+		    	border-bottom:1px dashed #ccc;
+		    	padding-bottom:10px;
+		    }
 		</style>
 	</head>
 	<body>
 		<div class="main">
+			<div class="logo">
+				<img src="'._URL.'/'.tab__temp('logo').'" />
+			</div>
 			<div class="img">
 				<img src="'.img_product_src($photo_medium).'" alt="'.$name.'" title="'.$name.'"  >
 			</div>
@@ -112,7 +123,7 @@ $html='
 			<div class="txt" style="">
 				<p>'.nl2br($rw1['description']).'</p>
 			</div>
-			<div>
+			<div class="table">
 				<table>
 			      <tbody>
 			      <tr>
@@ -126,6 +137,11 @@ $html='
 			      </tbody>
 			    </table>
 		    </div>
+		    <div class="cat" >		    
+			<h3>آدرس شرکت :'.setting( contact_address).'</h3>
+			<h3>دفتر فروش : <span dir=ltr >'.setting(contact_tell).'</h3>
+			<h3>دفتر پشتیبانی : <span dir=ltr >'.setting(contact_fax).'</h3>
+			</div>			
 		</div> 
 	</body>
 </html>';

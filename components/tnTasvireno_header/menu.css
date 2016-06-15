@@ -2,9 +2,9 @@
   width: 100%;
   /* margin-bottom:2px !important; */
   /* height: 51px; */
-  background-color:#2ecc71;
+  background-color:#e84e0f;
   margin: 0;
-  padding: 0 100px 0px;
+  padding: 0 150px 0px;
   position: relative;
   box-shadow: 0 2px 44px rgba(0,0,0,.09);
   margin-top:12px;
@@ -13,7 +13,7 @@
 .menu > ul {
     display: block;
     width: 100%;
-    background-color: #2ecc71;
+    background-color: #e84e0f;
     box-sizing:border-box;
 
 }
@@ -39,14 +39,14 @@
     display: inline-block;
     font: normal 13px IRANSans,B Yekan;
     color: #fff;
-    padding: 10px 18px 13px 33px;
+    padding: 10px 30px 13px 45px;
 }
 .menu > ul > li:hover > a{
-    color: #2ecc71;
+    color: #e84e0f;
 }
 .menu > ul > li:hover{
     background-color: #fff;
-  /* border-top:.5px solid #2ecc71; */
+  /* border-top:.5px solid #e84e0f; */
 
     
 }
@@ -64,7 +64,7 @@
 }
 .menu > ul > li:hover>a:before {
     transform: rotate(90deg);
-    color: #2ecc71;
+    color: #e84e0f;
 }
 .menu > ul > li > ul {
     display: none;

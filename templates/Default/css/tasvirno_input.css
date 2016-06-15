@@ -2,7 +2,7 @@
 .tasvir_button ,
 input[type=submit].tasvir_input {
 	display: inline-block !important;
-    background-color: #2ecc71;
+    background-color: #e84e0f;
 	padding: 8px 27px !important;
 	font: normal 12px IRANSans !important;
 	color: white !important;
@@ -20,5 +20,6 @@ input[type=submit].tasvir_input {
 .tasvir_button:hover ,
 input[type=submit].tasvir_input:hover {
 	opacity: 0.8;
+	
 }
 

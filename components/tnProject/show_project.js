@@ -5,7 +5,7 @@ $(document).ready(function(){
 	// on click of plus	
 	$('.project-grid-spesc').on('click', function(e){
 	
-		hitbox('<div class="boxborder" id="project_hitbox"></div>', 1080, 600 );
+		hitbox('<div class="boxborder" id="project_hitbox"></div>', 800, 700 );
 		var project_hitbox = $("#project_hitbox");
 		project_hitbox.css( {'background-color':'#fff'} );
 		var id = this.id;

@@ -17,7 +17,7 @@
     
      font: normal 14px IRANSans;
      height:37px;
-     color:#2ecc71;
+     color:#e84e0f;
      padding:0px 10px 30px 0;
      margin-bottom: 10px;
      cursor: pointer;
@@ -30,7 +30,7 @@
     font-family: FontAwesome;
     font-size: 20px;
     content: "\f107";
-    color: #2ecc71;
+    color: #e84e0f;
     margin: 0 0px 0 7px;
     position: relative;
     top: 4px;
@@ -220,7 +220,7 @@
 }
 .tile a h2 {
     margin-top: 10px;
-    color: #2ecc71;
+    color: #e84e0f;
     font-size:16px;
     background: #fff;
     padding: 10px 20px;
@@ -275,7 +275,7 @@
 
 .p_vw_name{
     width:100%;
-    color:#2ecc71;
+    color:#e84e0f;
     /* text-align:left; */
     font-size:34px;
     font-family:IRANSans;
@@ -337,8 +337,8 @@
     background: #efefef;
 } 
 .p_w_h{
-    text-align:right;
-    padding-right:25%;
+    text-align:center;
+
 }
 .p_w_h > h3{
     font-size:12px;

@@ -9,7 +9,7 @@ function project_vw_list(){
 	$i=0;
 	$tdd = 12;
 	$stt = $tdd * intval($_REQUEST['p']); 
-	$query1 = " SELECT * FROM `project` WHERE `flag`='1' ORDER BY `prio` ASC LIMIT $stt , $tdd ";
+	$query1 = " SELECT * FROM `project` WHERE `flag`='1' ORDER BY `prio` ASC , `id` DESC  LIMIT $stt , $tdd ";
     if(! $rs1 = dbq($query1) ){
 		e(__FUNCTION__,__LINE__);
 	

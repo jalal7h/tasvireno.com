@@ -1,17 +1,17 @@
 .project_img_vw{
-	width:74.5%;
-	height:100%;
+	width:100%;
 	display:inline-block;
 	vertical-align:top;
+	height:85%;
 
 }
 .project_img_vw img{
 	width:100%;
+	height:100%;
 	
 }	
 .text_project{
-	width:25%;
-	height:100%;
+	width:100%;
 	display:inline-block;
 	vertical-align:top;
 	direction:rtl;
@@ -21,25 +21,21 @@
 	width:95%;
 	height:85%;
 	overflow:scroll;
-	padding-right:10px;
+	text-align:center;
 	border-bottom: none;
+	margin-top:-20px;
 
 }
 .text_project .sharing .head{
-    margin: 40px 0 0px 0;
+    margin: 20px 0 0px 0;
     color: #808080;
 }
-@media only screen and (max-width : 830px) {
-.project_img_vw{
-	width:55%;
-}
-.text_project{
-	width:43%;
-	height:100%;
-	display:inline-block;
-	vertical-align:top;
-	direction:rtl;
+
+@media only screen and (max-width : 630px) {
+	.project_img_vw{
 	
+	height:78%;
+
 }
 
 }

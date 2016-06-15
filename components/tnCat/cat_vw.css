@@ -22,6 +22,7 @@
   /* box-shadow: 0 0 15px #eee inset; */
   cursor: default;
   color: #7b7b7b;
+  text-align:center;
 }
 
 .cat-grid {
@@ -32,7 +33,7 @@
 
 .cat-grid li {
     width: 14.1%;
-    height: 204.92px;
+    /* height: 204.92px; */
     margin: 0 1% 2.10% 1%;
     display: inline-block;
     position: relative;
@@ -50,11 +51,11 @@
    
 
 }
-.cat-grid li  img
+/* .cat-grid li  img
 {
  position:absolute;
  top:0px;
-}
+} */
 .img-responsive
 {
     display:block;
@@ -78,10 +79,11 @@ a.tile-category h2 {
     margin: 0;
     color: #fff;
     text-align: center;
-    background: #7d7d7d;
-    padding: 10px 0;
+    background: #424f57;
+    /* padding: 10px 0;    
+    bottom: -1px; */
     position: absolute;
-    bottom: -1px;
+    padding-top: 6px;
     width: 100%;
     border-radius: 0 0 4px 4px;
 }

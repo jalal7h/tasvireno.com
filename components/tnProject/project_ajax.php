@@ -22,6 +22,9 @@ function project_ajax(){
 	$name = $rw1['name'];
 	$description = $rw1['description'];
 	?>
+	<div class="project_img_vw">
+		<img src="<?=img_product_src($image);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
+	</div>
 	<div class="text_project">
 		<div class="sharing">
 			<div class="head">
@@ -33,11 +36,9 @@ function project_ajax(){
 		</div>	
 		<div class="txt"><p><?=nl2br($description)?></p></div>	
 	</div>
-	<div class="project_img_vw">
-		<img src="<?=img_product_src($image);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
-	</div>
+	
 
-</div>
+
 
 <?
 }
