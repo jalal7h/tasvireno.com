@@ -1,8 +1,5 @@
-/*
-	jalal7h@gmail.com
-	2015/12/20
-	Version 1.2.13
-*/
+
+/*2016/12/20*/
 
 .listmaker_list {
 	direction:rtl;
@@ -193,7 +190,14 @@
 	border: 0px;
 }
 
-
+.listmaker_list_form {
+	position: relative;
+}
+.listmaker_list_form .list_addnew_url {
+	position: absolute;
+	left: 6px;
+    top: -60px;
+}
 
 
 

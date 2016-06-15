@@ -45,7 +45,7 @@ function nl_management_emailList(){
 	
 	#
 	# list array // list e sotun haye list
-	$list['list_array'][] = array("head"=>lmtc("linkify:name"), "content" => '$rw[\'email\']');
+	$list['list_array'][] = array("head"=>lmtc("newsletter:email"), "content" => '$rw[\'email\']');
 
 	#
 	# search columns // az in field ha tu table search mikone

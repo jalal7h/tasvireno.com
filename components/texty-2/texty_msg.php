@@ -23,7 +23,7 @@ function texty_msg( $who , $template_name , $vars ){
 	switch ($who) {
 
 		case 'admin':
-			$to = tab__temp('contact_email_address_0');
+			$to = setting('contact_email_address_0');
 			break;
 
 		case 'user':

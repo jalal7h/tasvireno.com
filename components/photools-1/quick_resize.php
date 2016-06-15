@@ -3,11 +3,13 @@ $GLOBALS['do_action'][] = "quick_resize";
 
 
 function multi_size_pic($file_name, $nWD, $nHT){
+	
 	if($nWD==0 or $nHT==0){
 		return false;
 	}
+
 	$PIC = $file_name;
-	$PIC_tmp = "/tmp/tmp".rand(10000,99999).strrchr($PIC, ".");
+	$PIC_tmp = sys_get_temp_dir()."/tmp".rand(10000,99999).strrchr($PIC, ".");
 	$PIC = _URL."/".$PIC;
 	$SZ = getimagesize($PIC);
 	$SW = $SZ[0];
