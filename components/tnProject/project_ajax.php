@@ -30,7 +30,7 @@ function project_ajax(){
 			<div class="head">
 				<div class="dotline"></div>
 				<div class="text">
-					<h3 style="font-size: 16px;color: #2ECC71"><?=$name;?></h3>
+					<h3 style="font-size: 18px;color: #e84e0f"><?=$name;?></h3>
 				</div>
 			</div>
 		</div>	
