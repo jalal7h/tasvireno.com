@@ -2,9 +2,9 @@
 
 function contact_vw_send(){
 
-	 if(! captcha_check( captcha , $_REQUEST['captcha'] ) ) {
-				/*$errors="<h2 style=\"color:rgba(255, 0, 0, 0.3); margin-right: 12%;font-size: 18px;\">کد امنیتی اشتباه است</h2>";*/
-				echo "<div class='errors'><h2 style=\"font-size: 18px;\">کد امنیتی اشتباه است</h2></div>";
+	if(! captcha_check( captcha , $_REQUEST['captcha'] ) ) {
+			
+		echo "<div class='errors'><h2 style=\"font-size: 18px;\">کد امنیتی اشتباه است</h2></div>";
 				
 	} else if(! $_REQUEST['to'] = $_REQUEST['to'] ){
 		e(__FUNCTION__,__LINE__);

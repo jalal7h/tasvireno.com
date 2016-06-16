@@ -12,6 +12,9 @@ function product_list(){
 	}else if ($cat_id = $_REQUEST['cat_id']) {
 		$cat_link="&cat_id=".$cat_id;
 		$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id`='$cat_id' )";
+	}else{unset($_SESSION['cat_id']);}
+	if (!$cat_id = $_REQUEST['cat'] && !$cat_id = $_REQUEST['cat_id']) {
+		unset($_SESSION['cat']);
 	}
 	if ($brand_id = $_REQUEST['brand_id']) {
 		
@@ -19,11 +22,12 @@ function product_list(){
 	}else if ($brand_id = $_REQUEST['brand']) {
 		
 		$q_brand="AND `brand_id` ='$brand_id'";
-	}
+		unset($_SESSION['brand_id']);
+	}else{unset($_SESSION['brand']);}
 	if ($field_id = $_REQUEST['field_id']) {
 		
 		$q_field="AND `id` in (SELECT `product_id` FROM `product_field_id` WHERE  `field_id`='$field_id' )";
-	}
+	}else{unset($_SESSION['field_id']);}
 	breadcrumb();	
 	$link = _URL."/?page=102&field_id=".$field_id."&brand=".$brand_id."&". $cat_link."&p=".$_REQUEST['p'];
 	$tdd = 12;

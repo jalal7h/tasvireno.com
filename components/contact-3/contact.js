@@ -9,11 +9,11 @@ $(document).ready(function(){
 			alert("لطفا نام خود را به درستی وارد کنید");
 		} else if( $("#contact_display input:nth-child(3)").val()=='' ){
 			alert("لطفا آدرس ایمیل خود را به درستی وارد کنید");
-		} else  if( $("#contact_display .chaptcha").val()=='' ){
-			alert("لطفا کد امنیتی را به درستی وارد کنید");
 		} else if( $("#contact_display textarea").val()=='' ){
 			alert("لطفا متن پیام را به درستی وارد کنید");
-		} else {
+		} else if( $("#contact_display .chaptcha").val()=='' ){
+			alert("لطفا کد امنیتی را به درستی وارد کنید");
+		} else  {
 			return true;
 		}
 

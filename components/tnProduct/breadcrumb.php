@@ -76,7 +76,7 @@ function breadcrumb(){
 		&nbsp;&nbsp;  
 		<i class="fa fa-th-large" aria-hidden="true"></i> 
 		&nbsp;
-		<a href="./">صفحه اصلی</a>
+		<a href="./?page=102">هدایای شرکت</a>
 		<?=$cat_link_p?>
 		<?=$field_link?>
 		<?=$cat_link?>
@@ -165,9 +165,11 @@ function breadcrumb_product(){
 		&nbsp;&nbsp;  
 		<i class="fa fa-th-large" aria-hidden="true"></i> 
 		&nbsp;
-		<a href="./">صفحه اصلی</a>
+		<a href="./?page=102">هدایای شرکت</a>
 		<?=$cat_link_p?>		
+		<?=$field_link?>
 		<?=$cat_link?>
+		<?=$brand_link?>
 		<?=$product_link?>
 		<?
 		unset($_SESSION['cat']);
