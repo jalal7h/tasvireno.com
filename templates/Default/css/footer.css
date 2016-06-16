@@ -305,8 +305,11 @@
 }
 
 @media (max-width: 600px) {
-    #footer .dark {
+    #footer .dark .right {
         display: none;
+    }
+    #footer .dark .left {
+        width:100%;
     }
 }
 

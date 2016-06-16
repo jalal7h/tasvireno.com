@@ -14,6 +14,7 @@ function product_filter_brand(){
 		$q_cat="AND `id` in (SELECT `product_id` FROM `product_cat_id` WHERE  `cat_id` in(SELECT `id` FROM `cat` WHERE `cat`='cat' AND  `id`='$cat_id' ))";
 		$c_id=$cat_id;
 		$cat_id2="cat_id=".$cat_id;
+		
 	}
 	
 	if ($field_id = $_REQUEST['field_id']) {
