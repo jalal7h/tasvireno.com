@@ -2,7 +2,11 @@
 
 function contact_vw_send(){
 
-	if(! $_REQUEST['to'] = $_REQUEST['to'] ){
+	 if(! captcha_check( captcha , $_REQUEST['captcha'] ) ) {
+				/*$errors="<h2 style=\"color:rgba(255, 0, 0, 0.3); margin-right: 12%;font-size: 18px;\">کد امنیتی اشتباه است</h2>";*/
+				echo "<div class='errors'><h2 style=\"font-size: 18px;\">کد امنیتی اشتباه است</h2></div>";
+				
+	} else if(! $_REQUEST['to'] = $_REQUEST['to'] ){
 		e(__FUNCTION__,__LINE__);
 	
 	} else if(! $_REQUEST['to'] = setting($_REQUEST['to']) ){
@@ -11,7 +15,7 @@ function contact_vw_send(){
 	} else if(! dbs('contact', ['name','email_address','cell_number','to','content','date'=>U()] ) ){
 		e(__FUNCTION__,__FILE__);
 
-	} else {
+	} else { 
 		texty_msg( 
 			"admin", "admin_contactMessageReceived" , 
 			array(
