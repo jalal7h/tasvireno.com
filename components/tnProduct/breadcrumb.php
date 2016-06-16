@@ -13,7 +13,8 @@ function breadcrumb(){
 		}
 		
 		
-	}else if ($cat_id = $_REQUEST['cat_id']) {
+	}
+	if ($cat_id = $_REQUEST['cat_id']) {
 		if(! $cat_name = table("cat", $cat_id,"name")){
 		   e( __FUNCTION__ , __LINE__ );
 		}else{
@@ -78,8 +79,8 @@ function breadcrumb(){
 		<a href="./">صفحه اصلی</a>
 		<?=$cat_link_p?>
 		<?=$field_link?>
-		<?=$brand_link?>		
 		<?=$cat_link?>
+		<?=$brand_link?>		
 		<?=$product_link?>
 		
 		
@@ -101,7 +102,8 @@ function breadcrumb_product(){
 		}
 		
 		
-	}else if ($cat_id = $_SESSION['cat_id']) {
+	}
+	if ($cat_id = $_SESSION['cat_id']) {
 		if(! $cat_name = table("cat", $cat_id,"name")){
 		   e( __FUNCTION__ , __LINE__ );
 		}else{
@@ -164,9 +166,7 @@ function breadcrumb_product(){
 		<i class="fa fa-th-large" aria-hidden="true"></i> 
 		&nbsp;
 		<a href="./">صفحه اصلی</a>
-		<?=$cat_link_p?>
-		<?=$field_link?>
-		<?=$brand_link?>		
+		<?=$cat_link_p?>		
 		<?=$cat_link?>
 		<?=$product_link?>
 		<?
