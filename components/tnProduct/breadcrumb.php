@@ -2,7 +2,7 @@
 function breadcrumb(){
 	if ($cat_id = $_REQUEST['cat']) {
 		
-		 if(! $cat_name_p = table("cat", $cat_id,"name")){
+		if(! $cat_name_p = table("cat", $cat_id,"name")){
 		   e( __FUNCTION__ , __LINE__ );
 		}else{
 			$cat_link_p='
@@ -15,14 +15,26 @@ function breadcrumb(){
 		
 	}
 	if ($cat_id = $_REQUEST['cat_id']) {
-		if(! $cat_name = table("cat", $cat_id,"name")){
+		if(! $cat = table("cat", $cat_id)){
 		   e( __FUNCTION__ , __LINE__ );
 		}else{
-			$cat_link='
-			<i class="fa fa-angle-double-left" aria-hidden="true"></i>
- 			 
-			<a href='._URL.'/?page=102&cat_id='.$cat_id.'>'.$cat_name.'</a>';
-			$_SESSION['cat_id']=$cat_id;
+				$cat_name=$cat['name'];
+				$cat_link='
+				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+	 			 
+				<a href='._URL.'/?page=102&cat_id='.$cat_id.'>'.$cat_name.'</a>';
+				$_SESSION['cat_id']=$cat_id;
+				
+				$parent=$cat['parent'];
+				if(! $cat_name_p = table("cat", $parent,"name")){
+				  /* e( __FUNCTION__ , __LINE__ );*/
+				}else{
+					$cat_link_p='
+					 <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+					<a href='.tasvir_cat_link( table("cat", $parent) ).'>'.$cat_name_p.'</a>
+					';
+					$_SESSION['cat']=$parent;
+				}
 		}
 	}
 	if ($brand_id = $_REQUEST['brand_id']) {
@@ -78,8 +90,8 @@ function breadcrumb(){
 		&nbsp;
 		<a href="./?page=102">هدایای شرکت</a>
 		<?=$cat_link_p?>
-		<?=$field_link?>
 		<?=$cat_link?>
+		<?=$field_link?>		
 		<?=$brand_link?>		
 		<?=$product_link?>
 		
@@ -167,8 +179,8 @@ function breadcrumb_product(){
 		&nbsp;
 		<a href="./?page=102">هدایای شرکت</a>
 		<?=$cat_link_p?>		
-		<?=$field_link?>
 		<?=$cat_link?>
+		<?=$field_link?>
 		<?=$brand_link?>
 		<?=$product_link?>
 		<?
