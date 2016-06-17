@@ -171,6 +171,17 @@ function breadcrumb_product(){
 			
 		}
 	}
+	if ($product_id = $_REQUEST['product']) {
+		
+		if(! $product_name = table("product", $product_id,"name")){
+		   e( __FUNCTION__ , __LINE__ );
+		}else{
+			$product_link='
+			  <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+				<a>'.$product_name.'</a>';
+			
+		}
+	}
 ?>
 
 		<div class="back">

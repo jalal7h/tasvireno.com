@@ -19,12 +19,18 @@ function product_vw(){
 <div class="product-grid" style="">
 	 	   
 	<?
-
-	/*back();*/
+	if($product_id = $_REQUEST['product'] ){
+		unset($_SESSION['cat']);
+		unset($_SESSION['cat_id']);
+		unset($_SESSION['brand']);
+		unset($_SESSION['field_id']);
+		unset($_SESSION['brand_id']);
+	}else{$product_id = $_REQUEST['product_id'];}
+	
 	breadcrumb_product();
 	#
 	# find it
-	if(! $product_id = $_REQUEST['product_id'] ){
+	if(!$product_id){
 		/*e( __FUNCTION__ , __LINE__ );*/
 		?>
 			<div class="errors"><h1>موردی برای درخواست شما یافت نشد.</h1></div>

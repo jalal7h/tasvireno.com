@@ -52,7 +52,7 @@ function tabmenu_chap(){
 				$name = $rw1['name'];
 				
 			?>
-			<a href="<?=tasvir_product_link($rw1);?>" class="cbp-item-wrapper">
+			<a href="<?=tasvir_product_link2($rw1);?>" class="cbp-item-wrapper">
 				<div class="p_img_head ">
 					<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive hvr-round" >
 				</div>
