@@ -50,15 +50,13 @@ function product_management_list(){
 		array("head"=>lmtc("product:name"), "content" => '$rw[\'name\']'),
 		array("head"=>lmtc("product:code"), "content" => '$rw[\'code\']'),
 		array("head"=>lmtc("product:price"), "content" => 'cat_translate($rw[\'price\'])'),
-		/*array("head"=>lmtc("product:cat_id"), "content" => 'cat_translate($rw[\'cat_id\'])'),
-		array("head"=>lmtc("product:field_id"), "content" => 'cat_translate($rw[\'field_id\'])'),*/
 		array("head"=>lmtc("product:brand_id"), "content" => 'cat_translate($rw[\'brand_id\'])'),
 		
 	);
 	
 	$list['paging_select'] = array(
-		'cat_id' => "<option value=''>.. دسته بندی ..</option>".cat_display('cat',$is_array=false,$parent=0,$optionPreStr=""),		
-		/*'field_id' => "<option value=''>.. زمینه ..</option>".cat_display('field',$is_array=false,$parent=0,$optionPreStr=""),
+		/*'cat_id' => "<option value=''>.. دسته بندی ..</option>".cat_display('cat',$is_array=false,$parent=0,$optionPreStr=""),		
+		'field_id' => "<option value=''>.. زمینه ..</option>".cat_display('field',$is_array=false,$parent=0,$optionPreStr=""),
 		'brand_id' => "<option value=''>.. برند..</option>".cat_display('brand',$is_array=false,$parent=0,$optionPreStr=""),*/
 			
 	);
