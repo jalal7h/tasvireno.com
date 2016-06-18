@@ -44,6 +44,7 @@ function project_management_list(){
 	$list['remove_url'] = true;
 	$list['up_n_down'] = true ;
 	$list['setflag_url'] = true;
+	$list['addnew_url'] = false;
 
 	$list['list_array'] = array (
 		array( "tag"=>"th", "picture" => '$rw[\'image\']'),

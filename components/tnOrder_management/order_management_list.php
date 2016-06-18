@@ -26,6 +26,7 @@ function order_management_list(){
 	$list['remove_url'] = true;
 	$list['up_n_down'] = false ;
 	$list['setflag_url'] = false;
+	$list['addnew_url'] = false;
 	$list['linkTo'][] = array(
 		'url' => '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=order_management_show&p=".$_REQUEST["p"]."&do=show&id=".$rw["id"]',
 		'name' => 'نمایش',
