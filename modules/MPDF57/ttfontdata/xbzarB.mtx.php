@@ -13,7 +13,7 @@ $desc=array (
 );
 $up=-278;
 $ut=29;
-$ttffile='C:/xampp2/htdocs/PROJ/tasvireno.com/tasvireno.com/modules/MPDF57/ttfonts/XB Zar Bd.ttf';
+$ttffile='C:/xampp2/htdocs/PROJ/tasvireno.com/modules/MPDF57/ttfonts/XB Zar Bd.ttf';
 $TTCfontID='0';
 $originalsize=1389628;
 $sip=false;
