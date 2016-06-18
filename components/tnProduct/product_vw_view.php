@@ -70,10 +70,10 @@ function product_vw(){
 		return false;
 	}
 	$_SESSION['product_id']=$rw1['id'];
-
-	/*cat_translate($rw[\'cat_id\'])');*/
 	?>
-	<div class="p_img_vw"><img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" ></div>
+	<div class="p_img_vw">
+		<img class="zoom3 img-responsive" src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>"  data-zoom-image="<?=img_product_src($photo_medium);?>" >
+	</div>
 		
 	<div class="p_vw_name">
 		<h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
