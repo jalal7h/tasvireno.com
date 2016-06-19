@@ -378,17 +378,6 @@
     padding: 0px 10px 0 0;
     
     }
-    .cat-grid li {
-    width: 20.1%;
-    margin: 0 0 2.10% 2.10%;
-    display: inline-block;
-    height:165px; 
-    }
-    .brand-grid li {
-    width: 20.1%;
-    margin: 0 0 2.10% 2.10%;
-    display: inline-block;
-    }
     .back >a{
     
     font: normal 10px IRANSans
@@ -412,17 +401,7 @@
     }
 
 /************************صفحه اصلی***************/
-    .cat-grid li { 
-    width: 45.1%;
-    margin: 0 0 2.10% 2.10%;
-    display: inline-block;
-    height:158px; 
-   }
-   .brand-grid li {
-    width: 45.1%;
-    margin: 0 0 2.10% 2.10%;
-    display: inline-block;
-    }
+   
     .tile_btn {
         right:30%;
         
