@@ -62,11 +62,11 @@ function product_list(){
 		       
 		        <h2 data-mh="img-responsive" style="height: 40px;"><?=$name;?></h2>
 		        <div class="p_w_h"> 
-			        <h3 data-mh="img-responsive" style="height: 25px;"><span>کد &nbsp;&nbsp;&nbsp;: </span><?=$code;?></h3>
+			        <h3 data-mh="img-responsive" style="height: 25px;"><span>کد &nbsp;&nbsp;:&nbsp; </span><?=$code;?></h3>
 			        <h3 data-mh="img-responsive" style="height: 35px;">
 				        <?=
 				         
-							$size ? '<span>سایز : </span>'.$size	: ''; 
+							$size ? '<span>سایز &nbsp;: &nbsp;</span>'.$size	: ''; 
 							        
 						?>
 					</h3>
