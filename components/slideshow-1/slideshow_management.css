@@ -11,12 +11,8 @@
 #slideshow_management_form input#sForm_link {
 	font-family: monospace;
 }
-#slideshow_management_form input {
+#slideshow_management_form input[type=text] {
 	width:300px;
-}
-#slideshow_management_form select {
-	width:300px;
-	margin:10px;
 }
 #slideshow_management_form .devider {
 	border-top:1px dashed #bbb;
