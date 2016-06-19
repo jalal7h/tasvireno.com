@@ -46,3 +46,14 @@ RewriteRule ^Catalog$ ./?page=108 [L]
 RewriteRule ^services$ ./?page=109 [L]
 RewriteRule ^project$ ./?page=111 [L]
 
+#
+# footer
+RewriteRule ^blog$ ./?page=113 [L]
+RewriteRule ^press$ ./?page=114 [L]
+RewriteRule ^learn$ ./?page=115 [L]
+RewriteRule ^agent$ ./?page=116 [L]
+RewriteRule ^business$ ./?page=117 [L]
+RewriteRule ^support$ ./?page=118 [L]
+RewriteRule ^Customers$ ./?page=119 [L]
+RewriteRule ^online-payment$ ./?page=120 [L]
+RewriteRule ^faq$ ./?page=121 [L]

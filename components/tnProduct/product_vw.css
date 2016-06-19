@@ -363,7 +363,7 @@
  right:211% !important;
  width:200px !important;
 } 
-/***********************************************************/
+/***********************************************************/  
 @media only screen and (max-width : 959px) {
     .product-grid-spesc{
         width:35%!important;
@@ -382,6 +382,7 @@
     width: 20.1%;
     margin: 0 0 2.10% 2.10%;
     display: inline-block;
+    height:165px; 
     }
     .brand-grid li {
     width: 20.1%;
@@ -411,10 +412,11 @@
     }
 
 /************************صفحه اصلی***************/
-    .cat-grid li {
+    .cat-grid li { 
     width: 45.1%;
     margin: 0 0 2.10% 2.10%;
     display: inline-block;
+    height:158px; 
    }
    .brand-grid li {
     width: 45.1%;
