@@ -20,6 +20,12 @@ function pdf_html(){
 		$min_order=$rw1['min_order'];
 		$price=$rw1['price'];
 		$id=$rw1['id'];
+		if ($brand) {
+			$brand2='<div class="brand">
+				<h3>برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h3>
+			</div>';
+		}else{$brand2="";}
+		
 		$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
 		if(! $rs = dbq($query) ){
 			e( __FUNCTION__ , __LINE__ );
@@ -117,9 +123,7 @@ $html='
 			<div class="cat" >
 				<h3>دسته :&nbsp;&nbsp; '.$catname.'</h3>
 			</div> 
-			<div class="brand">
-				<h3>برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h3>
-			</div> 
+			 '.$brand2.'
 			<div class="txt" style="">
 				<p>'.nl2br($rw1['description']).'</p>
 			</div>
