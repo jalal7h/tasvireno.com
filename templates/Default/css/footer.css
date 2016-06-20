@@ -2,7 +2,7 @@
 /*index*/
 
 #footer {
-	border-top: 4px solid #A90000;
+	border-top: 4px solid #e84e0f;
 	background-color: #262626;
 	min-height: 320px;
 	/* margin: 30px 0 0 0; */
@@ -42,7 +42,7 @@
 	transition: all 0.3s;
 }
 #footer .dark > .right > .links > a:hover {
-	color: #A90000;
+	color: #e84e0f;
 }
 
 #footer .dark > .left {
@@ -76,7 +76,7 @@
     float: left;
     margin: 1px 5px 0 0;
     color: gray;
-    color: #A90000;
+    color: #e84e0f;
     transition: all 0.3s;
 }
 
@@ -100,7 +100,7 @@
     transition-duration: 0.2s;
 }
 #footer .dark > .left > .socials > li > a:hover {
-	color: #A90000;
+	color: #e84e0f;
 }
 
 
@@ -154,7 +154,7 @@
     transition: all 0.3s;
 }
 #footer .light > .top > .linkbox > .links > a:hover:before {
-	color: #A90000;
+	color: #e84e0f;
     transform: rotate(-45deg);
 }
 
@@ -215,7 +215,7 @@
 }
 #footer .light > .down > .newsletter input[type=submit] {
 	padding: 15px 20px 10px 20px;
-    background-color: #A90000;
+    background-color: #e84e0f;
     color: #fff;
     font: normal 20px BYekan;
     border: 0px;
@@ -225,7 +225,7 @@
     top: 52px;
 }
 #footer .light > .down > .newsletter input[type=submit]:hover {
-	color: #A90000;
+	color: #e84e0f;
 	background-color: #eee;
 	border: 0;
 }
