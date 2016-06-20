@@ -1,4 +1,4 @@
-var initLat=36.4649196740962; var initLng=52.3546171188354; var initZoom=11; var initidObjectMap=69205;
+var initLat=35.767146; var initLng= 51.476297; var initZoom=16; var initidObjectMap=69205;
         
         function initialize() { 
             var latlng = new google.maps.LatLng(initLat, initLng); 
