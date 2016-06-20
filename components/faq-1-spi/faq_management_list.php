@@ -28,6 +28,7 @@ function faq_management_list(){
 	);
 	$list['addnew_url'] = false;
 	$list['search'] = array("name");
+	
 	echo listmaker_list($list);
 }
 
