@@ -4,20 +4,20 @@
 	direction: rtl;
 }
 
-#faq_management_form_name {
+#faq_management_form_name_1 {
 	width: 100%;
 	margin: 10px 0;
 	font-size: 14px;
 	line-height: 24px !important;
 }
-#faq_management_form_text {
+#faq_management_form_text_2 {
 	width: 100%;
 	height: 120px;
 	margin: 10px 0;
 	font-size: 14px;
 	line-height: 24px !important;
 }
-#faq_management_form_submit {
+#faq_management_form_submit_3 {
 	margin: 10px 0;
 }
 
