@@ -75,7 +75,7 @@
 
 }
 @media screen and (max-width: 600px) {
-	.contact_vw_form img {
+	#contact_display .handshaking {
 		display: none;
 	}
 	.contact_vw_form .right {
