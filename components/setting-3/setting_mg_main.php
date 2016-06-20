@@ -38,9 +38,10 @@ function setting_mg_main(){
 		[setting_rw('main_title')['name'], 'text:main_title*','inDiv'],
 		[setting_rw('keywords')['name'], 'text:keywords','inDiv'],
 		[setting_rw('websitedescription')['name'], 'text:websitedescription','inDiv'],
+		[setting_rw('money_unit')['name'], 'text:money_unit','inDiv'],
 		[setting_rw('html_extra_tags')['name'], 'textarea:html_extra_tags','inDiv'],
 		[setting_rw('webstatus_main')['name'], 'toggle:webstatus_main','inDiv'],
-		"<br><hr><br>",
+		"<hr>",
 		['submit:ثبت.submit_button','inDiv'],
 	]);
 
