@@ -20,12 +20,20 @@ function listmaker_form_element_this_cat( $info ){
 		return false;
 	}
 	
+	#
+	# check if this cat have subcat
+	if(! $GLOBALS['cat_items'][ $info['cat_name'] ][2] ){
+		$noSubcat = 1;
+	} else {
+		$noSubcat = 0;
+	}
+
 	$c.= lmfe_tnit( $info );
 
 	$c.= "
 	<span class='lmfetc_container' rel_cat_name='{$info['cat_name']}' >
 		<input type=\"hidden\" name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".( $info['value'] ? "value=\"".$info['value']."\" " : '' )." />
-		<span class='lmfetc' rel_parent='0' rel_value_serial='$value_serial'></span>
+		<span class='lmfetc' rel_parent='0' rel_no_subcat='$noSubcat' rel_value_serial='$value_serial'></span>
 	</span>";
 	
 	if( is_component('catcustomfield') ){

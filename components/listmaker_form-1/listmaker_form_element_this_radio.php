@@ -26,10 +26,6 @@ function listmaker_form_element_this_radio( $info ){
 		$c.= $info['PreTab']."\t<span>".$name."</span>\n";
 		$c.= $info['PreTab']."</label>\n";
 	}
-	
-	if( $info['value'] ){
-		$c.= $info['PreTab']."<script>document.getElementById(\"".$info['id']."\").value = \"".$info['value']."\";</script>\n";
-	}
 
 	return $c;
 	

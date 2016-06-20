@@ -9,6 +9,10 @@ RewriteRule ^captcha-(.*)\.png(.*)$ ./?do_action=captcha_build&captcha_name=$1 [
 RewriteRule ^contact$ ./?page=2 [L]
 
 # 
+# faq-1
+RewriteRule ^faq$ ./?page=20 [L]
+
+# 
 # main-2
 RewriteRule ^resize/([0-9]+)x([0-9]+)/(.*)$ ./?do_action=quick_resize&width=$1&height=$2&address=$3 [L]
 RewriteRule ^scripts.js$ ./?do_action=include_all_js [L]
@@ -46,8 +50,6 @@ RewriteRule ^Catalog$ ./?page=108 [L]
 RewriteRule ^services$ ./?page=109 [L]
 RewriteRule ^project$ ./?page=111 [L]
 
-#
-# footer
 RewriteRule ^blog$ ./?page=113 [L]
 RewriteRule ^press$ ./?page=114 [L]
 RewriteRule ^learn$ ./?page=115 [L]
@@ -57,3 +59,4 @@ RewriteRule ^support$ ./?page=118 [L]
 RewriteRule ^Customers$ ./?page=119 [L]
 RewriteRule ^online-payment$ ./?page=120 [L]
 RewriteRule ^faq$ ./?page=121 [L]
+

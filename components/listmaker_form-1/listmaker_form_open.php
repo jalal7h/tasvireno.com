@@ -195,10 +195,10 @@ function listmaker_form_open( $list ){
 		}
 		$list['action'].= $switch_string;
 	}
-
+	
 	$list['class'].= ' lmfo';
 	$list['class'] = trim($list['class']);
-
+	
 	#
 	# etc
 	foreach ($list as $k => $r) {
@@ -206,8 +206,7 @@ function listmaker_form_open( $list ){
 			$etc.= " $k=\"$r\"";
 		}
 	}
-
-
+	
 	#
 	# burn the <form tag
 	return '<form '.

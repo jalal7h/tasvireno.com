@@ -6,6 +6,7 @@ function lmfetc_load( lmfetc_rahem, select_value ){
 	// vars
 	cat_name = lmfetc_rahem.closest('.lmfetc_container').attr('rel_cat_name');
 	value_serial = lmfetc_rahem.attr('rel_value_serial');
+	no_subcat = lmfetc_rahem.attr('rel_no_subcat');
 	lmfetc_rahem.attr('rel_value_serial','');
 	
 	if( select_value ){
@@ -19,6 +20,12 @@ function lmfetc_load( lmfetc_rahem, select_value ){
 	//
 	// update the `hidden` input
 	lmfetc_rahem.closest('.lmfetc_container').find('> input[type="hidden"]').val( parent );
+
+	//
+	// skip if there is no subcat
+	// if( no_subcat==1 ){
+	// 	return true;
+	// }
 
 	if( select_value=='' ){
 		lmfetc_rahem.html('');
