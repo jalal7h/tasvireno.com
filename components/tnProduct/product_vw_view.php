@@ -16,7 +16,7 @@ function product_vw_view(){
 }
 function product_vw(){
 	?>
-<div class="product-grid" style="">
+<div class="product_vw" style="">
 	 	   
 	<?
 	if($product_id = $_REQUEST['product'] ){
@@ -88,37 +88,39 @@ function product_vw(){
 
 	});
 	</script>
-		
-	<div class="p_vw_name">
-		<h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
-	</div> 
-	<div class="p_vw_cat">
-		<h2 data-mh="img-responsive" style="height: 35px;">دسته :&nbsp;&nbsp; <?=$catname;?></h2>
-	</div> 
-	<?= $brand ? '<div class="p_vw_cat"><h2 data-mh="img-responsive" style="height: 35px;">برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h2></div> ' : ''; 
-					        
-	?>
-	<div class="table-responsive">
-		<table id="price-grid" class="table table-bordered">
-	      <tbody>
-	      <tr id="price-qty-row">
-	      	<td>حداقل سفارش</td>
-	        <td class="number1"><?=number_format($min_order);?> عدد</td>		        
-	      </tr>	
-	      <tr>
-	        <td>قیمت برای هر عدد کالا</td>
-	        <td class="number1"><?=cat_translate($price);?></td>		        
-	      </tr>
-		  
-	    </tbody></table>
-    </div>
-	<div class="txt"><p><?=nl2br($rw1['description'])?></p></div>
+	<div class="p_vw">	
+		<div class="p_vw_name"> 
+			<h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
+		</div> 
+		<div class="p_vw_cat">
+			<h2 data-mh="img-responsive" style="height: 35px;">دسته :&nbsp;&nbsp; <?=$catname;?></h2>
+		</div> 
+		<?= $brand ? '<div class="p_vw_cat"><h2 data-mh="img-responsive" style="height: 35px;">برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h2></div> ' : ''; 
+						        
+		?>
+		<div class="table-responsive">
+			<table id="price-grid" class="table table-bordered">
+		      <tbody>
+		      <tr id="price-qty-row">
+		      	<td>حداقل سفارش</td>
+		        <td class="number1"><?=number_format($min_order);?> عدد</td>		        
+		      </tr>	
+		      <tr>
+		        <td>قیمت برای هر عدد کالا</td>
+		        <td class="number1"><?=cat_translate($price);?></td>		        
+		      </tr>
+			  
+		    </tbody></table>
+	    </div>
+		<div class="txt"><p><?=nl2br($rw1['description'])?></p></div>
 
-	<div class="p_vw_btn">
-		<a href="<?=tasvir_order_link($rw1);?>" class="tasvir_button"> سفارش</a>
-		<a target="_blank" href="./?do_action=pdf_html&product=<?=$rw1['id'];?>" class="tasvir_button"><i class="fa fa-download" aria-hidden="true"></i> دانلود</a>
-		<span id="share" class="tasvir_button"><i class="fa fa-share" aria-hidden="true"></i> اشتراک</span>
+		<div class="p_vw_btn">
+			<a href="<?=tasvir_order_link($rw1); ?>" class="tasvir_button" target="_blank"> سفارش</a>
+			<a target="_blank" href="./?do_action=pdf_html&product=<?=$rw1['id'];?>" class="tasvir_button"><i class="fa fa-download" aria-hidden="true"></i> دانلود</a>
+			<span id="share" class="tasvir_button"><i class="fa fa-share" aria-hidden="true"></i> اشتراک</span>
+		</div>
 	</div>
+
 </div>
 
 <?

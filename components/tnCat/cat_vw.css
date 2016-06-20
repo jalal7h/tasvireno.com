@@ -1,4 +1,3 @@
-
 .cat_vw_list{
     width:100%;
     height:auto;
@@ -33,7 +32,7 @@
 
 .cat-grid li {
     width: 14.1%;
-    height:198px; 
+    height:190px; 
     margin: 0 1% 2.10% 1%;
     display: inline-block;
     position: relative;
@@ -113,7 +112,7 @@ a.tile-category h2 {
     }
     
 }
-@media only screen and (max-width : 959px) {
+@media only screen and (max-width : 980px) {
 
     .cat-grid li {
     width: 20.1%;
@@ -123,13 +122,23 @@ a.tile-category h2 {
     }
     
 }
+@media only screen and (max-width : 800px) {
+
+    .cat-grid li {
+    width: 20.1%;
+    margin: 0 0 2.10% 2.10%;
+    display: inline-block;
+    height:175px; 
+    }
+    
+}
 @media only screen and (max-width : 659px) {
 
     .cat-grid li {
     width: 30.1%;
     margin: 0 0 2.10% 2.10%;
     display: inline-block;
-    height:185px; 
+    height:195px; 
     }
     
 }
@@ -139,7 +148,7 @@ a.tile-category h2 {
     width: 45.1%;
     margin: 0 0 2.10% 2.10%;
     display: inline-block;
-    height:170px; 
+    height:160px; 
    }
 
 }
