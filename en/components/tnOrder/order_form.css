@@ -1,0 +1,203 @@
+.order{
+	
+	margin:0px auto;
+	direction:ltr;
+}
+.order > .p_vw_cat , .order >.p_vw_cat ,.order > .table-responsive{
+	padding-right:0px !important;
+	width:49.6%;
+	display:inline-block;
+	vertical-align:top;
+}
+.order > .p_vw_cat{
+	margin-top:18px;
+}
+.order .table-bordered{
+	float:right;
+}
+.order_form1 {
+	direction:ltr;
+	text-align: right;
+	border:1px solid #efefef;
+	padding-top:10px;
+}
+.order_form1 > div {
+	width: 49.50%;
+	display: inline-block;
+	padding: 0px;
+	vertical-align: top;
+	margin: 10px 0;
+}
+.order_form1 > div.textarea {
+	width: 100%;
+	
+}
+.order_form1 > div > input ,
+.order_form1 > div > select
+ {
+	width: 70%;
+	vertical-align: top;
+	border-radius: 4px;
+	font-size: 16px;
+	direction:ltr;
+}
+.order_form1 .lmfe_tnit{
+	width:95px;
+	margin-left:0px;
+	font-size:11px;
+	font-family:IRANSans;
+
+}
+.order_form1  textarea {
+	width: 84.5%;
+	height:120px;
+	vertical-align: top;
+	border-radius: 4px;
+	font-size: 16px;
+	display:inline-block;
+	direction:ltr;
+}
+.order_form1 > div > textarea {
+	height: 150px;
+}
+
+#order_form_name {
+	font-size: 16px;
+}
+#inDiv_order_form_stash_icon , 
+#inDiv_order_form_stash_screenshot {
+	width: 100%;
+	text-align: right;
+	padding-right: 50px;
+}
+
+#inDiv_order_form_submit {
+	width: 100%;
+	text-align: center;
+}
+
+.order_form1 .divider {
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+
+#order_form_website ,
+#order_form_facebook_page ,
+#order_form_twitter_page ,
+#order_form_googleplus_page {
+	text-align: left;
+	direction: ltr;
+	font-family: monospace, sans-serif;
+}
+.mail>img{
+	float:right;
+	margin-right:0px;
+	width:100px;
+}
+#lmfe_inDiv_order_form1_captcha span:before{
+	
+	width:100px;
+	height:40px;
+	font-size: 11px;
+	content:"Security code";
+	color: #333;
+	margin: 0 0px 0 7px;
+	position: relative;
+	top: 0px;
+	left:10px;
+	display: inline-block;
+	
+}
+#lmfe_order_form_captcha{
+	width:50%;
+}
+.errors {
+    width: 80%;
+    padding: 5px 0 5px 0;
+    margin: 100px auto;
+    border-radius: 10px;
+    text-align: center;
+    color:#a0a0a0;
+    font: 8px IRANSans,B Yekan;
+}    
+.message{
+	width:80%;
+	padding:5px 0 5px 0;
+	margin:10px auto;
+	border-radius:10px;
+	text-align:center;
+	color:rgb(46, 204, 113);
+	font: 8px IRANSans,B Yekan;
+}
+.tite_order{
+    text-align:center;
+    width:100%;
+    background-color:#efefef;
+   border-top:1px dashed #fcf;
+}
+.tite_order > h2{
+    padding:8px;
+    font: bold 18px IRANSans;
+    color: #888;
+    text-shadow: 1px 1px 1px #fff;
+}     
+
+/* @media only screen and (max-width : 1210px) {
+
+.mail>img{
+	float:right;
+	margin-right:0px;
+}
+} */
+@media only screen and (max-width : 1010px) {
+.order{
+	width:100%;
+	
+}	
+.order_form1 > div {
+	width:100% !important;
+	padding-right:20px;
+}
+.order_form1 > div > input ,
+.order_form1 > div > select
+ {
+	width: 90%;
+	
+}	
+.order_form1  textarea {
+	width: 84.5%;
+	margin-right:20px;
+}
+.order_form1  span {
+    display: inline-block;
+  
+    text-align: right;
+   
+}
+.order_form1 .lmfe_tnit{
+	padding-right:0px;
+}
+.order_form1 textarea {
+	width:90%;
+	margin-right:0px;
+}
+.product_list{
+	width:100% !important;
+	margin:20px auto;
+}
+.product_filter{
+	width:100% !important;
+}
+.order > .p_vw_cat , .order >.p_vw_cat ,.order > .table-responsive{
+	
+	width:90%;
+	display:block;
+	
+}
+.order .table-bordered{
+	float:left;
+}
+.order > .p_vw_cat{
+	padding-right:20px;
+}
+}

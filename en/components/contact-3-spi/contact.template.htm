@@ -1,0 +1,45 @@
+
+
+<div class="contact_vw_form">
+	
+	<div class="path">
+		<div>Address  : {contact_address}</div>
+		<div>Sales Office : <span dir=ltr >{contact_tell}</div>
+		<div>Office Support : <span dir=ltr >{contact_fax}</div>
+	</div>
+
+	<form method="post" action="./?page={page}&do=send" id="contact_display" >
+	<fieldset>
+		<legend>
+		<select name="to">
+			<option value="">Connect with ..</option>
+			{email_select_option}
+		</select>
+		</legend>
+		<img src="http://parsunix.com/cdn/img/contact.jpg" class="handshaking" />
+		<div class="right">
+		<input placeholder="name" type="text" name="name" value="{name}">
+		<input placeholder="cell_number" type="text" class="numeric" name="cell_number" value="{cell_number}">
+		<input placeholder="email_address" type="email" name="email_address" value="{email_address}">
+		<textarea placeholder="message ..." name="content" >{content}</textarea>
+		<br>
+		<input placeholder="Security code" type="text" name="captcha" value="{captcha}" class="chaptcha"  autocomplete="off">
+		<div class="captcha"><img src="{_URL}/?do_action=captcha_build&captcha_name=captcha&nocache=<?=rand(10000000,99999999)?>"></div>
+		<input type="submit" value="Send" class="submit_button"  >
+		{map}
+		</div>
+	</fieldset>
+	</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
