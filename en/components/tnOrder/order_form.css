@@ -16,10 +16,10 @@
 	float:right;
 }
 .order_form1 {
-	direction:ltr;
-	text-align: right;
+	direction:ltr !important;
+	text-align: left!important;
 	border:1px solid #efefef;
-	padding-top:10px;
+	padding:10px 10px 10px 10px;
 }
 .order_form1 > div {
 	width: 49.50%;
@@ -35,11 +35,12 @@
 .order_form1 > div > input ,
 .order_form1 > div > select
  {
-	width: 70%;
+	width: 74%;
 	vertical-align: top;
 	border-radius: 4px;
 	font-size: 16px;
 	direction:ltr;
+	text-align:left;
 }
 .order_form1 .lmfe_tnit{
 	width:95px;
@@ -49,7 +50,7 @@
 
 }
 .order_form1  textarea {
-	width: 84.5%;
+	width: 86.5%;
 	height:120px;
 	vertical-align: top;
 	border-radius: 4px;
@@ -90,14 +91,14 @@
 	font-family: monospace, sans-serif;
 }
 .mail>img{
-	float:right;
+	
 	margin-right:0px;
 	width:100px;
 }
 #lmfe_inDiv_order_form1_captcha span:before{
 	
 	width:100px;
-	height:40px;
+	height:20px;
 	font-size: 11px;
 	content:"Security code";
 	color: #333;
@@ -140,15 +141,7 @@
     font: bold 18px IRANSans;
     color: #888;
     text-shadow: 1px 1px 1px #fff;
-}     
-
-/* @media only screen and (max-width : 1210px) {
-
-.mail>img{
-	float:right;
-	margin-right:0px;
 }
-} */
 @media only screen and (max-width : 1010px) {
 .order{
 	width:100%;
@@ -156,14 +149,22 @@
 }	
 .order_form1 > div {
 	width:100% !important;
-	padding-right:20px;
+	padding-left:10%;
 }
 .order_form1 > div > input ,
 .order_form1 > div > select
  {
 	width: 90%;
 	
+}
+.order_form1 > .submit > .lmfe_tnit {
+	width:0px!important;
+	
+
 }	
+#lmfe_inDiv_order_form1_captcha span:before{
+	left:5px;
+}
 .order_form1  textarea {
 	width: 84.5%;
 	margin-right:20px;
@@ -171,11 +172,11 @@
 .order_form1  span {
     display: inline-block;
   
-    text-align: right;
+    text-align: left;
    
 }
 .order_form1 .lmfe_tnit{
-	padding-right:0px;
+	padding-left:0px;
 }
 .order_form1 textarea {
 	width:90%;
