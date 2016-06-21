@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 /data/*
+=======
+
+/codec
+/allow.inc
+/config.php
+/error_log
+/data
+>>>>>>> origin/master
 
 /fa/codec
 /fa/data/*
