@@ -15,3 +15,4 @@ en/allow.inc
 en/config.php
 en/components/*/*.inc.php
 en/error_log
+*.inc.php
