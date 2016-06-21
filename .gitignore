@@ -1,11 +1,11 @@
-/data/*
+/data
 /codec
 /allow.inc
 /config.php
 /error_log
 
 /fa/codec
-/fa/data/*
+/fa/data
 /fa/codec
 /fa/codec.d
 /fa/allow.inc
@@ -13,7 +13,7 @@
 /fa/components/*/*.inc.php
 /fa/error_log
 
-/en/data/*
+/en/data
 /en/codec
 /en/codec.d
 /en/allow.inc
