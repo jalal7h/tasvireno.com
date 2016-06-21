@@ -1,3 +1,6 @@
+/data/*
+
+/fa/codec
 /fa/data/*
 /fa/codec
 /fa/codec.d
@@ -13,3 +16,4 @@
 /en/config.php
 /en/components/*/*.inc.php
 /en/error_log
+
