@@ -8,7 +8,7 @@
 define( 'mysql_host' 	, 'localhost' );
 define( 'mysql_username', 'root' );
 define( 'mysql_password', '' );
-define( 'mysql_database', 'tasno_db' );
+define( 'mysql_database', 'tasno_fa' );
 
 # Security Config .........
 define( '__FC' , 111 );
