@@ -33,13 +33,13 @@ function product_vw(){
 	if(!$product_id){
 		/*e( __FUNCTION__ , __LINE__ );*/
 		?>
-			<div class="errors"><h1>The case was not found for your request.</h1></div>
+			<div class="errors"><h1>The case was not found for your request1.</h1></div></div>
 		<? 
 		return false;
 	} else if(! $rw1 = table("product", $product_id)){
 		/*e( __FUNCTION__ , __LINE__ );*/
 		?>
-			<div class="errors"><h1>The case was not found for your request.</h1></div>
+			<div class="errors"><h1>The case was not found for your request.</h1></div></div>
 		<?		
 		return false;
 	}

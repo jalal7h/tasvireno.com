@@ -10,7 +10,7 @@ function slideshow_management_form(){
 		<div id="slideshow_management_form">
 	<?
 		echo lmfo([
-		'table' => 'Slideshow' ,
+		'table' => 'slideshow' ,
 		'action' =>'./?page=admin&cp='.$_REQUEST['cp'].'&func=slideshow_management_list',
 		
 		'name' => __FUNCTION__ ,
