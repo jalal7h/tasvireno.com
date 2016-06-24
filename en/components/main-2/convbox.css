@@ -9,7 +9,7 @@
 	font-size: 13px;
 	line-height: 23px !important;
 	border-radius: 10px;
-	direction: ltr;
+	direction: rtl;
 	box-sizing: border-box;
 }
 .convbox a {
