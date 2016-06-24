@@ -75,13 +75,14 @@ function product_vw(){
 		<img class="zoom img-responsive" src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>"  data-zoom-image="<?=img_product_src($photo_medium);?>" >
 	</div>
 	<script>
-	$(".zoom").elevateZoom({     
-
-        cursor: "crosshair",       	
+	
+	$(".zoom").elevateZoom({
+        cursor: "crosshair",
 		lensShape:"round",
-		scrollZoom:true
-
+		scrollZoom: false
 	});
+
+
 	</script>
 	<div class="p_vw">	
 		<div class="p_vw_name"> 
