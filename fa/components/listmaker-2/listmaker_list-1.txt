@@ -1,8 +1,8 @@
 
 
 # jalal7h@gmail.com
-# 2016/06/14
-# Version 1.20
+# 2016/06/20
+# Version 1.21
 
 /*
 	
@@ -55,6 +55,14 @@
 		'jensiat' => "<option value=''>جنسیت</option>".cat_display('jensiat',$is_array=false,$parent=0,$optionPreStr=""),
 		
 	);
+	
+	$list['linkTo'][] = [
+		'url' => '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=tour_management_list&p=".$_REQUEST["p"]."&do=setHotel&id=".$rw["id"]',
+		'icon' => '021',
+		'name' => 'بروزرسانی',
+		'color' => '#f00',
+		'width' => 65,
+	];
 
 	#
 	# echo result

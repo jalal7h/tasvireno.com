@@ -6,3 +6,4 @@ config.php
 components/*/*.inc.php
 error_log
 *.inc.php
+dbsync.txt

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.0.10.14
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 20, 2016 at 09:33 PM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.6.19
+-- Host: localhost:3306
+-- Generation Time: Jun 24, 2016 at 02:08 PM
+-- Server version: 5.5.50-cll
+-- PHP Version: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,10 +14,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `tasno_db`
+-- Database: `tasno_en`
 --
 
 -- --------------------------------------------------------
@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `cat`
 --
 
-CREATE TABLE `cat` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `cat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   `desc` text COLLATE utf8_persian_ci NOT NULL COMMENT 'شرح توضیحات',
   `kw` text COLLATE utf8_persian_ci NOT NULL COMMENT 'کلمات کلیدی ',
@@ -36,8 +36,9 @@ CREATE TABLE `cat` (
   `ord` int(11) NOT NULL,
   `logo` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   `hide` int(1) NOT NULL,
-  `flag` int(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `flag` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=74 ;
 
 --
 -- Dumping data for table `cat`
@@ -45,7 +46,7 @@ CREATE TABLE `cat` (
 
 INSERT INTO `cat` (`id`, `name`, `desc`, `kw`, `parent`, `cat`, `ord`, `logo`, `hide`, `flag`) VALUES
 (1, 'تشریفات', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465730636-tasrifat.jpg', 0, 1),
-(2, 'پوشاک', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465730974-poshak.jpg', 0, 1),
+(2, 'Clothing', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465730974-poshak.jpg', 0, 1),
 (3, 'هدایای الکترونیکی', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465731362-electronic.jpg', 0, 1),
 (4, 'ماگ', '', '', 0, 'cat', 0, 'data/cat/cat/0-1465731503-mug.jpg', 0, 1),
 (5, 'هدایای مدیریتی', '', '', 0, 'field', 0, '', 0, 1),
@@ -72,11 +73,11 @@ INSERT INTO `cat` (`id`, `name`, `desc`, `kw`, `parent`, `cat`, `ord`, `logo`, `
 (26, 'گیره کمری', '', '', 1, 'cat', 0, '', 0, 1),
 (27, 'محافظ کارت', '', '', 1, 'cat', 0, '', 0, 1),
 (28, 'جاکارتی', '', '', 1, 'cat', 0, '', 0, 1),
-(29, 'کلاه', '', '', 2, 'cat', 0, '', 0, 1),
-(30, 'تیشرت', '', '', 2, 'cat', 0, '', 0, 1),
-(31, 'پیراهن', '', '', 2, 'cat', 0, '', 0, 1),
-(32, 'شال', '', '', 2, 'cat', 0, '', 0, 1),
-(33, 'لباس کار', '', '', 2, 'cat', 0, '', 0, 1),
+(29, 'Hat', '', '', 2, 'cat', 0, '', 0, 1),
+(30, 'T-Shirt', '', '', 2, 'cat', 0, '', 0, 1),
+(31, 'Shirt', '', '', 2, 'cat', 0, '', 0, 1),
+(32, 'Scarf', '', '', 2, 'cat', 0, '', 0, 1),
+(33, 'Uniforms', '', '', 2, 'cat', 0, '', 0, 1),
 (34, 'بانک شارژ', '', '', 3, 'cat', 0, '', 0, 1),
 (35, 'اسپیکر ', '', '', 3, 'cat', 0, '', 0, 1),
 (36, 'چراغ قوه', '', '', 3, 'cat', 0, '', 0, 1),
@@ -112,10 +113,10 @@ INSERT INTO `cat` (`id`, `name`, `desc`, `kw`, `parent`, `cat`, `ord`, `logo`, `
 (67, 'پروژه های انجام شده', '', '', 0, 'slide', 0, '', 0, 1),
 (68, 'محصول جدید', '', '', 0, 'slide', 0, '', 0, 1),
 (69, 'کاتالوگ محصول', '', '', 0, 'slide', 0, '', 0, 1),
-(70, '5 تا 10 هزار تومان', '', '', 0, 'price', 0, '', 0, 1),
-(71, '10 تا 20 هزار تومان', '', '', 0, 'price', 0, '', 0, 1),
-(72, '20 تا 50 هزار تومان', '', '', 0, 'price', 0, '', 0, 1),
-(73, '50 تا 100 هزار تومان', '', '', 0, 'price', 0, '', 0, 1);
+(70, '5 to 10 dollars', '', '', 0, 'price', 0, '', 0, 1),
+(71, '10 to 20 dollars', '', '', 0, 'price', 0, '', 0, 1),
+(72, '20 to 50 dollars', '', '', 0, 'price', 0, '', 0, 1),
+(73, '50 to 100 dollars', '', '', 0, 'price', 0, '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -123,16 +124,25 @@ INSERT INTO `cat` (`id`, `name`, `desc`, `kw`, `parent`, `cat`, `ord`, `logo`, `
 -- Table structure for table `contact`
 --
 
-CREATE TABLE `contact` (
-  `id` int(11) NOT NULL COMMENT 'شناسه',
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'نام کاربر',
-  `email_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'ایمیل کاربر',
-  `cell_number` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'شماره همراه',
-  `to` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'مقصد',
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه',
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'نام ',
+  `email_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'ایمیل',
+  `cell_number` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'تلفن',
+  `to` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'به',
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'متن پیام',
-  `date` int(11) NOT NULL COMMENT 'زمان',
-  `hide` int(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `date` int(11) NOT NULL COMMENT 'تاریخ',
+  `hide` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email_address`, `cell_number`, `to`, `content`, `date`, `hide`) VALUES
+(1, 'meysam', 'taghipoor.meysam@gmail.com', '09119026756', 'info@tasvireno.com', 'd', 1466535186, 0),
+(2, 'meysam', 'taghipoor.meysam@gmail.com', '09119026756', 'info@tasvireno.com', 'd', 1466535255, 0);
 
 -- --------------------------------------------------------
 
@@ -140,11 +150,12 @@ CREATE TABLE `contact` (
 -- Table structure for table `faq`
 --
 
-CREATE TABLE `faq` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `faq` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_persian_ci NOT NULL,
-  `text` text COLLATE utf8_persian_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `text` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `faq`
@@ -161,30 +172,31 @@ INSERT INTO `faq` (`id`, `name`, `text`) VALUES
 -- Table structure for table `linkify`
 --
 
-CREATE TABLE `linkify` (
-  `id` int(11) NOT NULL COMMENT 'شناسه',
+CREATE TABLE IF NOT EXISTS `linkify` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه',
   `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'عنوان پیوند',
   `url` text COLLATE utf8_persian_ci NOT NULL COMMENT 'آدرس پیوند',
   `pic` text COLLATE utf8_persian_ci NOT NULL COMMENT 'عکس',
   `flag` int(11) NOT NULL COMMENT 'وضعیت',
   `prio` int(11) NOT NULL COMMENT 'موقعیت',
   `parent` int(11) NOT NULL COMMENT 'معرف',
-  `cat` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'موقعیت'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `cat` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'موقعیت',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `linkify`
 --
 
 INSERT INTO `linkify` (`id`, `name`, `url`, `pic`, `flag`, `prio`, `parent`, `cat`) VALUES
-(2, 'هدایا', './?page=102&cats=1', '', 1, 1, 0, 'header'),
-(3, 'ارتباط با ما', './contact', '', 1, 7, 0, 'header'),
-(4, 'درباره ما', './about', '', 1, 8, 0, 'header'),
-(5, 'برند', './?page=102&brands=1', '', 1, 2, 0, 'header'),
-(6, 'زمینه', './?page=102&fields=1', '', 1, 3, 0, 'header'),
-(7, 'کاتالوگ', './Catalog', '', 1, 4, 0, 'header'),
-(8, 'خدمات', './services', '', 1, 5, 0, 'header'),
-(9, 'پروژه ها', './project', '', 1, 6, 0, 'header');
+(2, 'Gifts', './?page=102&cats=1', '', 1, 1, 0, 'header'),
+(3, 'contact us', './contact', '', 1, 7, 0, 'header'),
+(4, ' about us', './about', '', 1, 8, 0, 'header'),
+(5, 'Brands', './?page=102&brands=1', '', 1, 2, 0, 'header'),
+(6, 'Fields', './?page=102&fields=1', '', 1, 3, 0, 'header'),
+(7, 'Catalog', './Catalog', '', 1, 4, 0, 'header'),
+(8, 'Services', './services', '', 1, 5, 0, 'header'),
+(9, 'Project', './project', '', 1, 6, 0, 'header');
 
 -- --------------------------------------------------------
 
@@ -192,10 +204,12 @@ INSERT INTO `linkify` (`id`, `name`, `url`, `pic`, `flag`, `prio`, `parent`, `ca
 -- Table structure for table `newsletter`
 --
 
-CREATE TABLE `newsletter` (
-  `id` int(11) NOT NULL COMMENT 'شناسه',
-  `email` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'ایمیل'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci COMMENT='ایمیل های خبرنانه';
+CREATE TABLE IF NOT EXISTS `newsletter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه',
+  `email` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'ایمیل',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci COMMENT='ایمیل های خبرنانه' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -203,36 +217,27 @@ CREATE TABLE `newsletter` (
 -- Table structure for table `orders`
 --
 
-CREATE TABLE `orders` (
-  `id` int(11) NOT NULL COMMENT 'شناسه سفارش',
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه سفارش',
   `product_id` int(11) NOT NULL COMMENT 'شناسه کالا',
-  `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'نام ',
-  `company` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'نام شرکت',
-  `tell` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'تلفن',
-  `cell` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'همراه',
-  `number` bigint(20) NOT NULL COMMENT 'تعداد',
-  `email` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'ایمیل',
-  `details` text COLLATE utf8_persian_ci NOT NULL COMMENT 'توضیحات',
-  `date_created` int(11) NOT NULL COMMENT 'تاریخ'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'name',
+  `company` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'Company Name',
+  `tell` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'Phone',
+  `cell` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'mobile',
+  `number` bigint(20) NOT NULL COMMENT 'Order number',
+  `email` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'email',
+  `details` text COLLATE utf8_persian_ci NOT NULL COMMENT 'Description',
+  `date_created` int(11) NOT NULL COMMENT 'Date',
+  PRIMARY KEY (`id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `product_id`, `name`, `company`, `tell`, `cell`, `number`, `email`, `details`, `date_created`) VALUES
-(4, 7, 'meysam', 'sam', '01143140758', '09119026756', 9118979803, 'taghipoor.meysam@gmail.com', '000', 1464107614),
-(5, 10, 'ابرام', 'zX', '01143140758', '09119026756', 55, 'mtaghipoor13@gmail.com', '555555555', 1464125303),
-(6, 7, 'meysam', '55', '55', '55', 9118979803, 'taghipoor.meysam@gmail.com', '5555', 1464125394),
-(8, 10, 'meysam', 'sam', '01143140758', '09119026756', 21222222, 'taghipoor.meysam@gmail.com', 'خریدارم', 1464208394),
-(17, 14, 'ttt', 'tt', '44', '44', 44, 'taghipoor.meysam@gmail.com', '44', 1464597620),
-(18, 10, 'meysam', 'sam', '01143140758', '33333', 33, 'mtaghipoor13@gmail.com', '333', 1464605251),
-(19, 10, 'meysam', 'sam', '01143140758', '0911', 21222222, 'mtaghipoor13@gmail.com', 'خریدارم', 1464606068),
-(20, 10, 'meysam', 'asas', '01143140758', '33', 9118979803, 'mtaghipoor13@gmail.com', '3333', 1464606325),
-(21, 11, 'meysam', 'sam', '01143140758', '222222', 2222, 'taghipoor.meysam@gmail.com', '2222', 1465169043),
-(22, 13, 'meysam', 'sam', '01143140758', '33', 333, 'taghipoor.meysam@gmail.com', '3333333', 1465402108),
-(23, 12, 'meysam', 'sam', '01143140758', '3', 3, 'taghipoor.meysam@gmail.com', '33', 1465588806),
-(24, 12, 'meysam', 'sam', '01143140758', '09119026756', 50, 'mtaghipoor13@gmail.com', 'خریدارم', 1465720388);
+(1, 25, 'meysam', 'sam', '09119020000', '09119020000', 333, 'taghipoor.meysam@gmail.com', 'yes', 1466509414);
 
 -- --------------------------------------------------------
 
@@ -240,13 +245,14 @@ INSERT INTO `orders` (`id`, `product_id`, `name`, `company`, `tell`, `cell`, `nu
 -- Table structure for table `page`
 --
 
-CREATE TABLE `page` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `page` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_persian_ci NOT NULL DEFAULT '',
   `meta_title` text COLLATE utf8_persian_ci NOT NULL COMMENT 'عنوان صفحه',
   `meta_kw` text COLLATE utf8_persian_ci NOT NULL COMMENT 'کلمات کلیدی',
-  `meta_desc` text COLLATE utf8_persian_ci NOT NULL COMMENT 'توضیحات'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `meta_desc` text COLLATE utf8_persian_ci NOT NULL COMMENT 'توضیحات',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=122 ;
 
 --
 -- Dumping data for table `page`
@@ -283,8 +289,8 @@ INSERT INTO `page` (`id`, `name`, `meta_title`, `meta_kw`, `meta_desc`) VALUES
 -- Table structure for table `page_layer`
 --
 
-CREATE TABLE `page_layer` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `page_layer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `page_id` int(6) NOT NULL DEFAULT '0',
   `prio` int(6) NOT NULL DEFAULT '0',
   `func` varchar(250) COLLATE utf8_persian_ci NOT NULL DEFAULT '',
@@ -292,39 +298,40 @@ CREATE TABLE `page_layer` (
   `name` varchar(250) COLLATE utf8_persian_ci NOT NULL DEFAULT '',
   `data` text COLLATE utf8_persian_ci NOT NULL,
   `framed` int(6) NOT NULL DEFAULT '0',
-  `flag` int(6) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `flag` int(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=123 ;
 
 --
 -- Dumping data for table `page_layer`
 --
 
 INSERT INTO `page_layer` (`id`, `page_id`, `prio`, `func`, `type`, `name`, `data`, `framed`, `flag`) VALUES
-(3, 3, 1, 'layout_post', 'HTML', 'درباره ما', '<div class="block boxborder"><strong><span style="font-family: Tahoma; font-size: 16px;">در سال 1385 با نام <span style="color: #ff3300;">آژانس تبلیغاتی تصویر نو</span> و با هدف تحول و رفع خلا موجود در بازار کشور شروع به فعالیت نمودیم تا بتوانیم با نگاهی تازه به صنعت تبلیغات گامی بلند در جهت پیشرفت ایران عزیزمان برداریم . باور داشتیم هنگامی که ریشه های همت آدمی در خاک تخصص آمیخته شده و آفتاب لطف پروردگار بر آن بتابد ، شاهد جوانه ای خواهیم بود که آینده ی یک درخت سبز و استوار را نوید می دهد.</span></strong></div>\r\n<div class="block boxborder"><strong> </strong></div>\r\n<div class="block boxborder">\r\n<div dir="rtl"><strong><span style="font-size: 16px;"><span style="font-family: Tahoma;">در کنار عرضه هدایای تبلیغاتی</span> <span style="font-family: Tahoma;">در سال 1389 توانستیم با همکاری شما عزیزان <span style="color: #ff3300;">چاپخانه هدایای تبلیغاتی</span></span></span><span style="font-size: 16px;"><span style="font-family: Tahoma;"> را در محیطی بسیار زیبا و کادری مجرب و متخصص راه اندازی نماییم تا علاوه بر رفع نیاز چاپ محصولات خود، پاسخگوی چاپ محصولات تبلیغاتی همکاران گرامی در سطح کشور نیز باشیم.</span></span> </strong></div>\r\n<div dir="rtl"><strong><span style="font-size: 16px;"> </span></strong></div>\r\n<div dir="rtl"><strong><span style="font-family: Tahoma; font-size: 15px;"><span style="font-family: Tahoma;"><span style="font-size: 16px;">در سال 1394 تصویر نو با استفاده از نیرو های متخصص توانست با اخذ نمایندگی از شرکت های خارجی و بالابردن توان تولیدی خود ، موفق به عرضه بیش از 200 عنوان محصول تبلیغی جدید در کشور شده و  خود را عنوان مرکز تخصصی هدایای تبلیغاتی کشور معرفی نمود.</span><br /></span></span></strong></div>\r\n<div dir="rtl"><strong><span style="font-family: Tahoma; font-size: 16px;"><span style="font-family: Tahoma;"> </span></span></strong></div>\r\n<div dir="rtl"><strong><span style="font-family: Tahoma; font-size: 16px;"><span style="font-family: Tahoma;">امروز به لطف خداوند آماده پذیرش کلیه سفارشات و پروژه های تبلیغاتی شرکت ها شامل طراحی ، تولید  ، واردات ،  پخش و یا اجرا می باشد.</span></span></strong></div>\r\n</div>', 1, 1),
+(3, 3, 1, 'layout_post', 'HTML', 'about us', '<div class="block boxborder"><strong><span style="font-family: Tahoma; font-size: 16px;">در سال 1385 با نام <span style="color: #ff3300;">آژانس تبلیغاتی تصویر نو</span> و با هدف تحول و رفع خلا موجود در بازار کشور شروع به فعالیت نمودیم تا بتوانیم با نگاهی تازه به صنعت تبلیغات گامی بلند در جهت پیشرفت ایران عزیزمان برداریم . باور داشتیم هنگامی که ریشه های همت آدمی در خاک تخصص آمیخته شده و آفتاب لطف پروردگار بر آن بتابد ، شاهد جوانه ای خواهیم بود که آینده ی یک درخت سبز و استوار را نوید می دهد.</span></strong></div>\r\n<div class="block boxborder"><strong> </strong></div>\r\n<div class="block boxborder">\r\n<div dir="rtl"><strong><span style="font-size: 16px;"><span style="font-family: Tahoma;">در کنار عرضه هدایای تبلیغاتی</span> <span style="font-family: Tahoma;">در سال 1389 توانستیم با همکاری شما عزیزان <span style="color: #ff3300;">چاپخانه هدایای تبلیغاتی</span></span></span><span style="font-size: 16px;"><span style="font-family: Tahoma;"> را در محیطی بسیار زیبا و کادری مجرب و متخصص راه اندازی نماییم تا علاوه بر رفع نیاز چاپ محصولات خود، پاسخگوی چاپ محصولات تبلیغاتی همکاران گرامی در سطح کشور نیز باشیم.</span></span> </strong></div>\r\n<div dir="rtl"><strong><span style="font-size: 16px;"> </span></strong></div>\r\n<div dir="rtl"><strong><span style="font-family: Tahoma; font-size: 15px;"><span style="font-family: Tahoma;"><span style="font-size: 16px;">در سال 1394 تصویر نو با استفاده از نیرو های متخصص توانست با اخذ نمایندگی از شرکت های خارجی و بالابردن توان تولیدی خود ، موفق به عرضه بیش از 200 عنوان محصول تبلیغی جدید در کشور شده و  خود را عنوان مرکز تخصصی هدایای تبلیغاتی کشور معرفی نمود.</span><br /></span></span></strong></div>\r\n<div dir="rtl"><strong><span style="font-family: Tahoma; font-size: 16px;"><span style="font-family: Tahoma;"> </span></span></strong></div>\r\n<div dir="rtl"><strong><span style="font-family: Tahoma; font-size: 16px;"><span style="font-family: Tahoma;">امروز به لطف خداوند آماده پذیرش کلیه سفارشات و پروژه های تبلیغاتی شرکت ها شامل طراحی ، تولید  ، واردات ،  پخش و یا اجرا می باشد.</span></span></strong></div>\r\n</div>', 1, 1),
 (4, 4, 1, 'post', 'HTML', 'راهنمای سایت', 'درحال آماده سازی ...', 1, 1),
 (5, 5, 1, 'post', 'HTML', 'آموزش', 'درحال آماده سازی ...', 1, 1),
-(6, 6, 1, 'post', 'HTML', 'قوانین و مقرارت', 'درحال آماده سازی ...', 1, 1),
-(7, 7, 1, 'post', 'HTML', 'ضوابط حفظ حریم خصوصی', 'درحال آماده سازی ...', 1, 1),
+(6, 6, 1, 'layout_post', 'PHP5', 'Rules and Regulations', '<div class="blocktext">\r\n<div class="block-html-content"><br /><br /><center class="tx1">This page is being designed</center><br /><br /></div>\r\n</div>\r\n', 1, 1),
+(7, 7, 1, 'layout_post', 'PHP5', 'Privacy policy', '<div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div>', 1, 1),
 (101, 1, 6, 'brand_vw_list2', 'HTML', 'لیست برندها', '', 1, 1),
 (103, 1, 5, 'cat_vw_list', 'HTML', 'لیست هدایا', '', 1, 1),
 (106, 102, 1, 'product_vw_list', 'HTML', 'لیست محصولات', '', 1, 1),
 (105, 104, 1, 'order_form', 'HTML', 'فرم سفارش', '', 1, 1),
 (107, 103, 1, 'product_vw_view', 'HTML', 'نمایش محصول', '', 1, 1),
 (108, 105, 1, 'shearch', 'HTML', 'جستجو', '', 1, 1),
-(109, 109, 1, 'layout_post', 'PHP5', 'کاتالوگ', '<div class="block boxborder">\r\n<div class="blockhead boxborder">خدمات</div>\r\n\r\n<div class="blocktext">\r\n<div class="block-html-content"><center class="tx1">این صفحه در حال طراحی میباشد</center></div>\r\n</div>\r\n\r\n<div class="blockfooter"> </div>\r\n</div>', 0, 1),
-(110, 108, 1, 'layout_post', 'PHP5', 'کاتالوگ', '<div class="block boxborder">\r\n<div class="blockhead boxborder">کاتالوگ</div>\r\n\r\n<div class="blocktext">\r\n<div class="block-html-content"><center class="tx1">این صفحه در حال طراحی میباشد</center></div>\r\n</div>\r\n\r\n<div class="blockfooter"> </div>\r\n</div>', 0, 1),
+(109, 109, 1, 'layout_post', 'PHP5', 'services', '<div class="block-html-content"><center class="tx1">This page is being designed</center></div>\r\n', 1, 1),
+(110, 108, 1, 'layout_post', 'PHP5', 'Catalog', '<div class="block-html-content"><center class="tx1">This page is being designed</center></div>\r\n', 1, 1),
 (112, 111, 1, 'project_vw_list', 'HTML', 'لیست پروژه ها', '', 1, 1),
 (2, 2, 1, 'contact_vw_form', '', 'ارتباط با ما', '', 1, 1),
 (113, 1, 4, 'slide', 'HTML', 'اسلایدر', '', 1, 1),
-(114, 113, 1, 'layout_post', 'PHP5', 'وبلاگ', '<p><div class="layout-post"><br /> <div class="header">وبلاگ</div><br /> <div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">این صفحه در حال طراحی میباشد</center><br><br></div></div><br /> <div class="blockfooter"></div><br /></div></p>', 0, 1),
-(115, 114, 1, 'layout_post', 'PHP5', 'اخبار', '<div class="layout-post">\r\n	<div class="header">تصویر نو در اخبار</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">این صفحه در حال طراحی میباشد</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
-(116, 115, 1, 'layout_post', 'PHP5', 'روش کار', '<div class="layout-post">\r\n	<div class="header">تصویر نو چگونه کار میکندت</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">این صفحه در حال طراحی میباشد</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
-(117, 116, 1, 'layout_post', 'PHP5', 'دریافت نمایندگی', '<div class="layout-post">\r\n	<div class="header">دریافت نمایندگی</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">این صفحه در حال طراحی میباشد</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
-(118, 117, 1, 'layout_post', 'PHP5', 'تصویر نو برای کسب و کار شما', '<div class="layout-post">\r\n	<div class="header">تصویر نو برای کسب و کار شما</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">این صفحه در حال طراحی میباشد</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
-(119, 118, 1, 'layout_post', 'PHP5', 'تماس با واحد پشتیبانی', '<div class="layout-post">\r\n	<div class="header">تماس با واحد پشتیبانی</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">این صفحه در حال طراحی میباشد</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
-(120, 119, 1, 'layout_post', 'PHP5', 'امور مشتریان', '<div class="layout-post">\r\n	<div class="header">امور مشتریان</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">این صفحه در حال طراحی میباشد</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
-(121, 120, 1, 'layout_post', 'PHP5', 'راهنمای پرداخت آنلاین', '<div class="layout-post">\r\n	<div class="header">راهنمای پرداخت آنلاین</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">این صفحه در حال طراحی میباشد</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
-(20, 20, 1, 'faq_display', '', 'سوالات متداول', '', 1, 1);
+(114, 113, 1, 'layout_post', 'PHP5', 'وبلاگ', '<p><div class="layout-post"><div class="header">blog</div><br /> <div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div></div><br /> <div class="blockfooter"></div><br /></div></p>', 0, 1),
+(115, 114, 1, 'layout_post', 'PHP5', 'اخبار', '<div class="layout-post">\r\n	<div class="header">tasvireno In the News</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
+(116, 115, 1, 'layout_post', 'PHP5', 'روش کار', '<div class="layout-post">\r\n	<div class="header">tasvireno how it works</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
+(117, 116, 1, 'layout_post', 'PHP5', 'دریافت نمایندگی', '<div class="layout-post">\r\n	<div class="header">Get Agent</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
+(118, 117, 1, 'layout_post', 'PHP5', 'تصویر نو برای کسب و کار شما', '<div class="layout-post">\r\n	<div class="header">tasvireno For Your Business</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
+(119, 118, 1, 'layout_post', 'PHP5', 'تماس با واحد پشتیبانی', '<div class="layout-post">\r\n	<div class="header">Contact Support</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
+(120, 119, 1, 'layout_post', 'PHP5', 'امور مشتریان', '<div class="layout-post">\r\n	<div class="header">Customer service</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
+(121, 120, 1, 'layout_post', 'PHP5', 'راهنمای پرداخت آنلاین', '<div class="layout-post">\r\n	<div class="header">Online Payment Guide</div>\r\n	<div class="blocktext"><div class="block-html-content"><br><br><center class="tx1">This page is being designed</center><br><br></div></div>\r\n	<div class="blockfooter"></div>\r\n</div>', 0, 1),
+(20, 20, 1, 'faq_display', '', 'common questions', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -332,8 +339,8 @@ INSERT INTO `page_layer` (`id`, `page_id`, `prio`, `func`, `type`, `name`, `data
 -- Table structure for table `product`
 --
 
-CREATE TABLE `product` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `brand_id` int(11) NOT NULL COMMENT 'برند',
   `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'نام محصول',
   `code` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'کد محصول',
@@ -345,19 +352,21 @@ CREATE TABLE `product` (
   `photos_large` text COLLATE utf8_persian_ci NOT NULL COMMENT 'عکس بزرگ',
   `description` text COLLATE utf8_persian_ci NOT NULL COMMENT 'توضیحات',
   `prio` int(11) NOT NULL,
-  `flag` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `flag` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `brand_id` (`brand_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `brand_id`, `name`, `code`, `size`, `printing_Type`, `min_order`, `price`, `photo_medium`, `photos_large`, `description`, `prio`, `flag`) VALUES
-(23, 9, 'تیشرت  تبلیغاتی  آستین کوتاه', '2705', 'M-L-XL-XXL', 'دیجیتال ، گلدوزی', 200, 71, 'data/product_photo_medium/23/0-1465805885-mardane-yaghe-gerd---s.jpg', 'data/product_photos_large/23/0-1465805453-mardaneyaghegerd.jpg', 'تیشرت آستین کوتاه مردانه یقه گرد ، امکان تولید در رنگهای اختصاصی\r\nامکان گلدوزی و چاپ طرح شما بدون محدودیت رنگ و سایز\r\nدر سایز های مختلف', 0, 1),
-(24, 19, 'کلاه نقابدار تبلیغاتی', '5474', 'بزرگسال', 'دیجیتال ، گلدوزی', 200, 70, 'data/product_photo_medium/24/0-1465806427-cap--s.jpg', 'data/product_photos_large/24/0-1465806427-cap.jpg', 'کلاه تبلیغاتی نقابدار ، در رنگ های مختلف ، جنس کتان ، درجه یک\r\nامکان چاپ و گلدوزی طرح شما بدون محدودیت سایز و رنگ', 0, 1),
-(25, 19, 'سایبان تبلیغاتی', '5487', 'بزرگسال', 'دیجیتال ، گلدوزی', 200, 70, 'data/product_photo_medium/25/0-1465806562-sayeban--s.jpg', 'data/product_photos_large/25/0-1465806562-sayeban.jpg', 'سایبان زنانه تبلیغاتی ، جنس کتان ، در رنگ های مختلف\r\nامکان چاپ و گادوزی طرح شما بدون محدودیت سایز و رنگ', 0, 1),
-(26, 21, 'جاکلیدی تبلیغاتی', 'ws0022', '', 'لیزر - ژله ای', 200, 70, 'data/product_photo_medium/26/0-1465806927-WS0022.jpg', 'data/product_photos_large/26/0-1465806927-WS0022.jpg', '', 0, 1),
-(27, 0, 'خودکار تبلیغاتی', 'NEXT', '', 'تامپو', 200, 70, 'data/product_photo_medium/27/0-1465807279-nextc-s.jpg', 'data/product_photos_large/27/0-1465807279-nextc.jpg', '', 0, 1);
+(23, 9, 'T-shirts with short sleeves', '2705', 'M-L-XL-XXL', 'Digital, embroidery', 200, 71, 'data/product_photo_medium/23/0-1465805885-mardane-yaghe-gerd---s.jpg', 'data/product_photos_large/23/0-1465805453-mardaneyaghegerd.jpg', 'Mens round neck short sleeve t-shirt, can produce specific colors\r\nThe possibility of embroidery and printing color and size of your design without limits\r\nIn different sizes', 0, 1),
+(24, 19, 'Advertising caps', '5474', 'Adult', 'Digital, embroidery', 200, 70, 'data/product_photo_medium/24/0-1465806427-cap--s.jpg', 'data/product_photos_large/24/0-1465806427-cap.jpg', 'Promotional caps masked, in different colors, linen, classy\r\nSize and color scheme you unrestricted access to printing and embroidery', 0, 1),
+(25, 19, 'Advertising awnings', '5487', 'Adult', 'Digital, embroidery', 200, 70, 'data/product_photo_medium/25/0-1465806562-sayeban--s.jpg', 'data/product_photos_large/25/0-1465806562-sayeban.jpg', 'Womens shelters advertising, linen, in different colors\r\nYou can print your design without limits and Gadvzy size and color', 0, 1),
+(26, 21, 'Promotional key chains', 'ws0022', '', 'Laser - Jelly', 200, 70, 'data/product_photo_medium/26/0-1465806927-WS0022.jpg', 'data/product_photos_large/26/0-1465806927-WS0022.jpg', '', 0, 1),
+(27, 0, 'Pens', 'NEXT', '', 'Tampv', 200, 70, 'data/product_photo_medium/27/0-1465807279-nextc-s.jpg', 'data/product_photos_large/27/0-1465807279-nextc.jpg', '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -365,11 +374,12 @@ INSERT INTO `product` (`id`, `brand_id`, `name`, `code`, `size`, `printing_Type`
 -- Table structure for table `product_cat_id`
 --
 
-CREATE TABLE `product_cat_id` (
-  `id` int(11) NOT NULL COMMENT 'شناسه',
+CREATE TABLE IF NOT EXISTS `product_cat_id` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه',
   `product_id` int(11) NOT NULL COMMENT 'شناسه کالا',
-  `cat_id` int(11) NOT NULL COMMENT 'دسته بندی'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `cat_id` int(11) NOT NULL COMMENT 'دسته بندی',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=50 ;
 
 --
 -- Dumping data for table `product_cat_id`
@@ -432,11 +442,12 @@ INSERT INTO `product_cat_id` (`id`, `product_id`, `cat_id`) VALUES
 -- Table structure for table `product_field_id`
 --
 
-CREATE TABLE `product_field_id` (
-  `id` int(11) NOT NULL COMMENT 'شناسه',
+CREATE TABLE IF NOT EXISTS `product_field_id` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه',
   `product_id` int(11) NOT NULL COMMENT 'شناسه کالا',
-  `field_id` int(11) NOT NULL COMMENT 'زمینه'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `field_id` int(11) NOT NULL COMMENT 'زمینه',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `product_field_id`
@@ -482,14 +493,15 @@ INSERT INTO `product_field_id` (`id`, `product_id`, `field_id`) VALUES
 -- Table structure for table `project`
 --
 
-CREATE TABLE `project` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `project` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'نام ',
   `image` text COLLATE utf8_persian_ci NOT NULL COMMENT 'تصویر',
   `description` text COLLATE utf8_persian_ci NOT NULL COMMENT 'توضیحات',
   `prio` int(11) NOT NULL,
-  `flag` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `flag` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=64 ;
 
 --
 -- Dumping data for table `project`
@@ -555,11 +567,12 @@ INSERT INTO `project` (`id`, `name`, `image`, `description`, `prio`, `flag`) VAL
 -- Table structure for table `setting`
 --
 
-CREATE TABLE `setting` (
+CREATE TABLE IF NOT EXISTS `setting` (
   `slug` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `component` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `component` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`slug`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -570,15 +583,15 @@ INSERT INTO `setting` (`slug`, `name`, `text`, `component`) VALUES
 ('contact_tell', 'شماره ثابت', '(21) 22777320', ''),
 ('contact_cell', 'شماره همراه', '(+98) 9331055544', ''),
 ('contact_fax', 'شماره فکس', '(21) 22775175', ''),
-('contact_address', 'آدرس دفتر', 'تهران ، پاسدارن ، میدان هروی', ''),
+('contact_address', 'آدرس دفتر', 'Tehran, pasdaran,Heravi Square', ''),
 ('contact_email_address_0', '', 'info@tasvireno.com', ''),
-('tiny_title', 'نام سایت', 'تصویر نو', ''),
+('tiny_title', 'نام سایت', 'tasvireno', ''),
 ('main_title', 'عنوان سایت', 'آژانس تبلیغاتی تصویر نو', ''),
 ('money_unit', 'واحد پولی', 'تومان', ''),
 ('template', 'قالب سایت', 'Default', ''),
 ('websitedescription', 'فعالیت سایت', 'مرکز تخصصی هدایای تبلیغاتی', ''),
 ('keywords', 'کلمات کلیدی', 'هدایا ، گیفت تبلیغاتی ، هدایای تبلیغاتی ، ', ''),
-('html_footer_copyright', 'کپی رایت پایین سایت', 'کلیه حقوق وبسایت برای تصویر نو محفوظ است', ''),
+('html_footer_copyright', 'کپی رایت پایین سایت', 'All rights reserved site for a tasvireno', ''),
 ('webstatus_main', 'وضعیت سایت', '1', ''),
 ('html_extra_tags', 'تگ های اضافی', 'تصویر نو ,ماگ شیشه ای,لیوان سرامیکی , خودکار تبلیغاتی , آویز کلید,کلاه تبلیغاتی تیشرت ,فلش مموری,فولدر,دفترچه یادداشت,زیرلیوانی,ساک دستی,ست های رومیزی,ساعت های دیواری,گنجینه,خودکار ، چاپ ', ''),
 ('page', '', 'admin', ''),
@@ -595,14 +608,15 @@ INSERT INTO `setting` (`slug`, `name`, `text`, `component`) VALUES
 -- Table structure for table `slideshow`
 --
 
-CREATE TABLE `slideshow` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `slideshow` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_persian_ci NOT NULL COMMENT 'نام ',
   `slide_id` int(11) NOT NULL COMMENT 'دسته اسلایدشو',
   `link` text COLLATE utf8_persian_ci NOT NULL COMMENT 'لینک',
   `description` text COLLATE utf8_persian_ci NOT NULL COMMENT 'توضیحات',
-  `pic` text COLLATE utf8_persian_ci NOT NULL COMMENT 'تصویر'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `pic` text COLLATE utf8_persian_ci NOT NULL COMMENT 'تصویر',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `slideshow`
@@ -624,13 +638,15 @@ INSERT INTO `slideshow` (`id`, `name`, `slide_id`, `link`, `description`, `pic`)
 -- Table structure for table `texty`
 --
 
-CREATE TABLE `texty` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `texty` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'عنوان لاتین',
   `name_fa` text COLLATE utf8_persian_ci NOT NULL COMMENT 'عنوان فارسی',
   `title` varchar(1024) COLLATE utf8_persian_ci NOT NULL COMMENT 'عنوان پیام',
-  `content` text COLLATE utf8_persian_ci NOT NULL COMMENT 'محتوا'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `content` text COLLATE utf8_persian_ci NOT NULL COMMENT 'محتوا',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `texty`
@@ -649,8 +665,8 @@ INSERT INTO `texty` (`id`, `name`, `name_fa`, `title`, `content`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'آدرس ایمیل',
   `password` varchar(255) COLLATE utf8_persian_ci NOT NULL DEFAULT '' COMMENT 'کلمه عبور',
   `permission` int(12) NOT NULL DEFAULT '0',
@@ -664,8 +680,10 @@ CREATE TABLE `users` (
   `im_a` int(11) NOT NULL COMMENT 'حرفه/شغل',
   `work_at` int(11) NOT NULL COMMENT 'محل کار',
   `gender` int(11) NOT NULL COMMENT 'جنسیت',
-  `auth` text COLLATE utf8_persian_ci NOT NULL COMMENT 'اطلاعات ثبت نام مجازی'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+  `auth` text COLLATE utf8_persian_ci NOT NULL COMMENT 'اطلاعات ثبت نام مجازی',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
@@ -674,190 +692,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `password`, `permission`, `name`, `tell`, `cell`, `wallet_credit`, `position_region_id`, `address`, `profile_pic`, `im_a`, `work_at`, `gender`, `auth`) VALUES
 (1, 'admin', 'admin', 2, 'مدیریت سایت', '02166936950', '09127744129', 0, 0, '', '', 0, 0, 0, '');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cat`
---
-ALTER TABLE `cat`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `contact`
---
-ALTER TABLE `contact`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `faq`
---
-ALTER TABLE `faq`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `linkify`
---
-ALTER TABLE `linkify`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `newsletter`
---
-ALTER TABLE `newsletter`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id` (`product_id`);
-
---
--- Indexes for table `page`
---
-ALTER TABLE `page`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `page_layer`
---
-ALTER TABLE `page_layer`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `brand_id` (`brand_id`);
-
---
--- Indexes for table `product_cat_id`
---
-ALTER TABLE `product_cat_id`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `product_field_id`
---
-ALTER TABLE `product_field_id`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `project`
---
-ALTER TABLE `project`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `setting`
---
-ALTER TABLE `setting`
-  ADD PRIMARY KEY (`slug`);
-
---
--- Indexes for table `slideshow`
---
-ALTER TABLE `slideshow`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `texty`
---
-ALTER TABLE `texty`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cat`
---
-ALTER TABLE `cat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
---
--- AUTO_INCREMENT for table `contact`
---
-ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه';
---
--- AUTO_INCREMENT for table `faq`
---
-ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `linkify`
---
-ALTER TABLE `linkify`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `newsletter`
---
-ALTER TABLE `newsletter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه';
---
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه سفارش', AUTO_INCREMENT=25;
---
--- AUTO_INCREMENT for table `page`
---
-ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
---
--- AUTO_INCREMENT for table `page_layer`
---
-ALTER TABLE `page_layer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
---
--- AUTO_INCREMENT for table `product_cat_id`
---
-ALTER TABLE `product_cat_id`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=50;
---
--- AUTO_INCREMENT for table `product_field_id`
---
-ALTER TABLE `product_field_id`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'شناسه', AUTO_INCREMENT=33;
---
--- AUTO_INCREMENT for table `project`
---
-ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
---
--- AUTO_INCREMENT for table `slideshow`
---
-ALTER TABLE `slideshow`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `texty`
---
-ALTER TABLE `texty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
