@@ -13,6 +13,9 @@ function product_filter_cat()
 			if ($brand_id = $_REQUEST['brand_id']) {
 				
 				$q_brand="AND `brand_id` ='$brand_id'";
+			}else if ($brand_id = $_REQUEST['brand']) {
+				
+				$q_brand="AND `brand_id` ='$brand_id'";
 			}
 
 			$name=table("cat", $cat_id2, "name");
