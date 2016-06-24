@@ -278,7 +278,6 @@
 .p_img_vw{
     width:49%;
     margin:20px auto;
-    background-color:#777;
     display:inline-block;
     vertical-align:top;
     direction:rtl;
@@ -412,9 +411,6 @@
     width:75%;
     margin-left:15%;
 
-    }
-    .p_img_vw img{
-        
     }
     .p_vw{
         width:100%;
