@@ -84,8 +84,7 @@ function breadcrumb(){
 	}
 ?>
 
-		<div class="back">
-		&nbsp;&nbsp;  
+		<div class="back"> 
 		<i class="fa fa-th-large" aria-hidden="true"></i> 
 		&nbsp;
 		<a href="./?page=102">هدایای شرکت</a>
@@ -184,10 +183,8 @@ function breadcrumb_product(){
 	}
 ?>
 
-		<div class="back">
-		&nbsp;&nbsp;  
-		<i class="fa fa-th-large" aria-hidden="true"></i> 
-		&nbsp;
+		<div class="back">  
+		<i class="fa fa-th-large" aria-hidden="true"></i>
 		<a href="./?page=102">هدایای شرکت</a>
 		<?=$cat_link_p?>		
 		<?=$cat_link?>

@@ -84,10 +84,9 @@ function breadcrumb(){
 	}
 ?>
 
-		<div class="back">
-		&nbsp;&nbsp;  
+		<div class="back">  
 		<i class="fa fa-th-large" aria-hidden="true"></i> 
-		&nbsp;
+		
 		<a href="./?page=102">Corporate Gifts</a>
 		<?=$cat_link_p?>
 		<?=$cat_link?>
@@ -184,8 +183,7 @@ function breadcrumb_product(){
 	}
 ?>
 
-		<div class="back">
-		&nbsp;&nbsp;&nbsp;  
+		<div class="back">  
 		<i class="fa fa-th-large" aria-hidden="true"></i> 
 		<a href="./?page=102">Corporate Gifts</a>
 		<?=$cat_link_p?>		
