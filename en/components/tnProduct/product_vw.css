@@ -373,17 +373,14 @@
     background-color:#ccc;
     color:#000;
 }
-/* .zoomLens{
-    
-    opacity:0.1!important;
-}*/
-.zoomWindowContainer{
- float:left !important;
- position:relative !important;
- top:0px !important;
-/*  right:211% !important; */
- width:200px !important;
-} 
+.zoomWindow{
+
+border-width:2px !important;
+border-style:dashed !important;
+border-color:#e84e0f !important ;
+border-radius:5px;
+
+}
 /***********************************************************/  
 @media only screen and (max-width : 959px) {
     .product-grid-spesc{
@@ -401,15 +398,15 @@
     }
     .back >a{
     
-    font: normal 10px IRANSans
+        font: normal 10px IRANSans
     }
     .back >i{
     
     font-size:14px;
     }
     .p_img_vw{
-    width:75%;
-    margin-left:15%;
+        width:75%;
+        margin-left:15%;
 
     }
     .p_vw{
