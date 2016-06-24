@@ -421,7 +421,7 @@
 @media only screen and (max-width : 420px) {
     .product-grid-spesc{
         width:85%!important;
-        margin-right:5%;
+        margin-right:7.5%;
     }
     .product_list > .product-grid {
     padding: 0px 0px 0 0;
