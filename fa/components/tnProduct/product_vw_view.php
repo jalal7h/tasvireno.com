@@ -75,37 +75,11 @@ function product_vw(){
 		<img class="zoom img-responsive" src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>"  data-zoom-image="<?=img_product_src($photo_medium);?>" >
 	</div>
 	<script>
-	if ($(window).width() > 943) {
 	$(".zoom").elevateZoom({     
 
-        cursor: "crosshair",
-        zoomWindowFadeIn: 500,
-        zoomWindowFadeOut: 500,
-        lensFadeIn: 500,
-        lensFadeOut: 500,
-       	
+        cursor: "crosshair",       	
 		lensShape:"round",
 		scrollZoom:true
-
-	});
-
-	}
-	$(window).resize(function(){
-	if ($(window).width() > 943) {
-	$(".zoom").elevateZoom({     
-
-        cursor: "crosshair",
-        zoomWindowFadeIn: 500,
-        zoomWindowFadeOut: 500,
-        lensFadeIn: 500,
-        lensFadeOut: 500,
-       	
-		lensShape:"round",
-		scrollZoom:true
-
-	});
-
-	}
 
 	});
 	</script>
