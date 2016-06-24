@@ -13,8 +13,10 @@ function product_filter_cat()
 			if ($brand_id = $_REQUEST['brand_id']) {
 				
 				$q_brand="AND `brand_id` ='$brand_id'";
+			}else if ($brand_id = $_REQUEST['brand']) {
+				
+				$q_brand="AND `brand_id` ='$brand_id'";
 			}
-
 			$name=table("cat", $cat_id2, "name");
 			echo '<h2>'.$name.'</h2>';
 			$query = " SELECT * FROM `cat` WHERE `cat`='cat' AND `parent`='$cat_id2' ORDER BY `id` ASC  ";
