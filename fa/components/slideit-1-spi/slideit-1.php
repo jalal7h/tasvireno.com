@@ -12,7 +12,7 @@
 	slideit( $table , 2000 );
 */
 
-function slideit( $path , $time=1000 , $class="" ){
+function slideit( $path , $time=1000 , $class="",$alt="slide" ){
 	
 	if($class){
 		$elem_class = $class;
@@ -44,7 +44,7 @@ function slideit( $path , $time=1000 , $class="" ){
 	$c.= '<div class="'.$elem_class.'">';
 	foreach ($file_list as $k => $file) {
 		$c.= ( $file_link[$k]? "<a target='_blank' href='".$file_link[$k]."' >\n" :"<b>" );
-		$c.= "<img class='img_slideit' src='".$file."' />\n";
+		$c.= "<img class='img_slideit' src='".$file."' alt='".$alt."' />\n";
 		$c.= ( $file_link[$k]? "</a>\n" :"</b>" );
 	}
 	$c.= '</div>';

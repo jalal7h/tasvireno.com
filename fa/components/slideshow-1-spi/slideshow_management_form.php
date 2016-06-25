@@ -2,7 +2,7 @@
 
 function slideshow_management_form(){
 	if(!$id = $_REQUEST['id']){
-		;//
+		//
 	} else if(!$tSlideshow = table("slideshow",$id)){
 		echo "err - ".__LINE__;
 	}

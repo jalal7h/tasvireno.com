@@ -57,7 +57,7 @@ function tabmenu_chap(){
 					<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive hvr-round" >
 				</div>
 					<div class="tabmenu_chap_name">
-					<h2 style="height: 35px;"> <?=$name;?></h2>
+					<h2> <?=$name;?></h2>
 				</div>
 			</a>
 			
@@ -85,8 +85,8 @@ function tabmenu_rast_cat(){
 				
 				?>
 				<li class="">							
-					<a href="./?page=102&cat_id=<?=$rw['id']?>" class="">
-					    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
+					<a href="./?page=102&cat_id=<?=$rw['id']?>">
+					    <span data-mh="tile-category"> <?=$cat_name;?></span>
 					</a>
 				</li>
 <?	 
@@ -116,8 +116,8 @@ function tabmenu_rast_brand(){
 				$id=$rw['id'];
 				?>
 				<li class="">
-					<a href="<?=tasvir_brand_link( table("cat", $id) );?>" class="">
-					    <span data-mh="tile-category" style="height: 35px;"> <?=$cat_name;?></span>
+					<a href="<?=tasvir_brand_link( table("cat", $id) );?>">
+					    <span data-mh="tile-category"> <?=$cat_name;?></span>
 					</a>
 				</li>
 	<?	 
@@ -145,8 +145,8 @@ function tabmenu_rast_field(){
 				$id=$rw['id'];
 				?>
 			<li class="">
-				<a href="<?=tasvir_field_link( table("cat", $id) );?>" class="">
-				    <span data-mh="tile-category" style="height: 35px;"> <?=$field_name;?></span>
+				<a href="<?=tasvir_field_link( table("cat", $id) );?>">
+				    <span data-mh="tile-category"> <?=$field_name;?></span>
 				</a>
 			</li>
 <?	 

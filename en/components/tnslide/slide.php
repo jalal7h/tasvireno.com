@@ -18,7 +18,7 @@ function slide(){
 		} else while( $rw = dbf($rs) ){
 			$path[]=$rw;
 		}
-		echo slideit( $path , 3000,"p");
+		echo slideit( $path , 3000,"p",Completed_Projects);
 	
 		?>
 	</div>
@@ -36,7 +36,7 @@ function slide(){
 		} else while( $rw = dbf($rs) ){
 			$path2[]=$rw;
 		}
-		echo slideit( $path2 , 3000 ,newslider);
+		echo slideit( $path2 , 3000 ,newslider,new_Product);
 	
 		?>
 	</div>
@@ -54,7 +54,7 @@ function slide(){
 		} else while( $rw = dbf($rs) ){
 			$path3[]=$rw;
 		}
-		echo slideit( $path3 , 3000 ,Catalog);
+		echo slideit( $path3 , 3000 ,Catalog,Product_Catalog);
 	
 		?>
 	</div>

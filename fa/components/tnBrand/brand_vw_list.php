@@ -5,7 +5,7 @@ function brand_vw_list2(){
 	?>
 <div class="brand"> 
 <div class="row"> 
-	<h2>برندهای هدایا</h2>
+	<h1>برندهای هدایا</h1>
 	<ul class="brand-grid">
 	<?
 	if(! $brands = cat_display( "brand" , $is_array=true , $parent=0 , $str="") ){

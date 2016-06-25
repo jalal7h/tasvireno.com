@@ -5,7 +5,7 @@ function cat_vw_list(){
 	?>
 <div class="cat_vw_list"> 
 <div class="row">
-<div class="h-cat"><h2>View our leading product categories</h2></div>
+<div class="h-cat"><h1>View our leading product categories</h1></div>
 	
 	<ul class="cat-grid">
 	<?
