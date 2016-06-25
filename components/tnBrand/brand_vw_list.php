@@ -15,7 +15,7 @@ function brand_vw_list2(){
 			?>
 			<li class="flip-card">
 			<a href="<?=tasvir_brand_link( table("cat", $brand_id) );?>" class="tile-shopbrand">
-			        <img src="<?=img_brand_src( table("cat", $brand_id) );?>" alt="" class="img-responsive" style="">
+			        <img src="<?=img_brand_src( table("cat", $brand_id) );?>" alt="<?=brand_name( table("cat", $brand_id) );?>" class="img-responsive" style="">
 			</a>
 			</li>
 	<?	 
@@ -31,5 +31,8 @@ function img_brand_src( $rw ){
 
 	$link = _URL."/".$rw['logo'];
 	return $link;
+}
+function brand_name( $rw ){
+	return $rw['name'];
 }
 

@@ -52,6 +52,7 @@ function product_vw(){
 	$min_order=$rw1['min_order'];
 	$id=$rw1['id'];
 	$price=$rw1['price'];
+	$printing_Type=$rw1['printing_Type']; 
 
 	$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
 	if(! $rs = dbq($query) ){
@@ -87,12 +88,15 @@ function product_vw(){
 	</script>
 	<div class="p_vw">	
 		<div class="p_vw_name"> 
-			<h2 data-mh="img-responsive" style="height: 35px;"><?=$name;?></h2>
+			<h2><?=$name;?></h2>
 		</div> 
 		<div class="p_vw_cat">
-			<h2 data-mh="img-responsive" style="height: 35px;">Category :&nbsp;&nbsp; <?=$catname;?></h2>
+			<h2>Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; <?=$catname;?></h2>
 		</div> 
-		<?= $brand ? '<div class="p_vw_cat"><h2 data-mh="img-responsive" style="height: 35px;">Brand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h2></div> ' : ''; 
+		<?= $brand ? '<div class="p_vw_cat"><h2>Brand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h2></div> ' : ''; 
+						        
+		?>
+		<?= $printing_Type ? '<div class="p_vw_cat"><h2>Printing Type&nbsp;&nbsp;:&nbsp;&nbsp; '.$printing_Type.'</h2></div> ' : ''; 
 						        
 		?>
 		<div class="table-responsive">

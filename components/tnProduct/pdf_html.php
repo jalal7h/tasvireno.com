@@ -19,12 +19,18 @@ function pdf_html(){
 		$description=$rw1['description'];
 		$min_order=$rw1['min_order'];
 		$price=$rw1['price'];
+		$printing_Type=$rw1['printing_Type']; 
 		$id=$rw1['id'];
 		if ($brand) {
 			$brand2='<div class="brand">
 				<h3>برند&nbsp;&nbsp;:&nbsp;&nbsp; '.cat_translate($brand).'</h3>
 			</div>';
 		}else{$brand2="";}
+		if ($printing_Type) {
+			$printing_Type2='<div class="cat">
+				<h3>نوع چاپ:&nbsp;&nbsp; '.$printing_Type.'</h3>
+			</div>';
+		}else{$printing_Type2="";}
 		
 		$query = " SELECT * FROM `product_cat_id` WHERE  `product_id`='$id' ";
 		if(! $rs = dbq($query) ){
@@ -124,6 +130,8 @@ $html='
 				<h3>دسته :&nbsp;&nbsp; '.$catname.'</h3>
 			</div> 
 			 '.$brand2.'
+			 <br>
+			 '.$printing_Type2.'
 			<div class="txt" style="">
 				<p>'.nl2br($rw1['description']).'</p>
 			</div>
