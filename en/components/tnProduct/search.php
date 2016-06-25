@@ -59,13 +59,13 @@ function shearch_product_list(){
 						<img src="<?=img_product_src($photo_medium);?>" alt="<?=$name;?>" title="<?=$name;?>" class="img-responsive" >
 					    <a href="<?=tasvir_product_link($rw1);?>" class="img-responsive">
 					       
-					        <h2 data-mh="img-responsive" style="height: 40px;"><?=$name;?></h2>
+					        <h2><?=$name;?></h2>
 					        <div class="p_w_h"> 
-						        <h3 data-mh="img-responsive" style="height: 25px;"><span>کد &nbsp;&nbsp;&nbsp;: </span><?=$code;?></h3>
-						        <h3 data-mh="img-responsive" style="height: 35px;">
+						        <h3 class="product_wl_h3"><span>Code &nbsp;&nbsp;:&nbsp;</span><?=$code;?></h3>
+						        <h3>
 							        <?=
 							         
-										$size ? '<span>سایز : </span>'.$size	: ''; 
+										$size ? '<span>Size &nbsp;: &nbsp;</span>'.$size	: ''; 
 										        
 									?>
 								</h3>
