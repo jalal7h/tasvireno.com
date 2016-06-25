@@ -1,8 +1,7 @@
-codec
-codec.d
-data
-allow.inc
-config.php
-components/*/*.inc.php
+/codec
+/codec.d
+/data
+/allow.inc
+/config.php
 error_log
 *.inc.php
