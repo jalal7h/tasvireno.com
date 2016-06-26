@@ -1,13 +1,12 @@
 
-// 2016/06/25
+// 2016/06/26
 
 $(document).ready(function($) {
 		
 	// lmfe_isNeeded
 	$('.lmfe_isNeeded').closest("form").on('submit', function(e){		
 		$(this).find('.lmfe_isNeeded').each(function( index ) {
-  			cl( $(this).val() + ' --0 ' );
-  			if( parseInt($(this).val())==0 ){
+  			if( $(this).val()=='' || $(this).val()==0 ){
   				$(this).focus();
 				e.preventDefault();
   				return false;
