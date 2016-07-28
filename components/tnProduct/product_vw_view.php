@@ -93,7 +93,7 @@ function product_vw(){
 		<?= $brand ? '<div class="p_vw_cat"><h2>برند&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:&nbsp;&nbsp;'.cat_translate($brand).'</h2></div> ' : ''; 
 						        
 		?>
-		<?= $printing_Type ? '<div class="p_vw_cat"><h2>نوع چاپ&nbsp;&nbsp;:&nbsp;&nbsp; '.$printing_Type.'</h2></div> ' : ''; 
+		<?= $printing_Type ? '<div class="p_vw_cat"><h2>نوع چاپ&nbsp;&nbsp;:&nbsp;&nbsp;'.$printing_Type.'</h2></div> ' : ''; 
 						        
 		?>
 		<div class="table-responsive">
@@ -115,7 +115,7 @@ function product_vw(){
 		<div class="p_vw_btn">
 			<a href="<?=tasvir_order_link($rw1); ?>" class="tasvir_button" target="_blank"> سفارش</a>
 			<a target="_blank" href="./?do_action=pdf_html&product=<?=$rw1['id'];?>" class="tasvir_button"><i class="fa fa-download" aria-hidden="true"></i> دانلود</a>
-			<span id="share" class="tasvir_button"><i class="fa fa-share" aria-hidden="true"></i> اشتراک</span>
+			<span id="<?=$rw1['id']?>" class="tasvir_button shares"><i class="fa fa-share" aria-hidden="true"></i> اشتراک</span>
 		</div>
 	</div>
 

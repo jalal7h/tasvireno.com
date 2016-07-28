@@ -5,7 +5,7 @@ function share_ajax(){
 		
 	#
 	# find it
-	if(! $product_id = $_SESSION['product_id'] ){
+	if(! $product_id = $_REQUEST['id'] ){
 		/*e( __FUNCTION__ , __LINE__ );*/
 		?>
 			<div class="errors"><h1>موردی برای درخواست شما یافت نشد.</h1></div>

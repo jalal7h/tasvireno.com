@@ -118,7 +118,7 @@ function product_vw(){
 		<div class="p_vw_btn">
 			<a href="<?=tasvir_order_link($rw1); ?>" class="tasvir_button" target="_blank"> Order</a>
 			<a target="_blank" href="./?do_action=pdf_html&product=<?=$rw1['id'];?>" class="tasvir_button"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
-			<span id="share" class="tasvir_button"><i class="fa fa-share" aria-hidden="true"></i> Share</span>
+			<span id="<?=$rw1['id']?>" class="tasvir_button shares"><i class="fa fa-share" aria-hidden="true"></i> Share</span>
 		</div>
 	</div>
 

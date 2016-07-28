@@ -22,8 +22,11 @@ function order_form1(){
 	
 	<?
 	back();
-	if ($_SESSION['product_id']) {
-		$id=$_SESSION['product_id'];
+	if ($_REQUEST['order_id']) {
+		$id=$_REQUEST['order_id'];
+				
+	}else{
+		$id=$_REQUEST['product_id'];
 	}
 
 	$query1 = " SELECT * FROM `product` WHERE `id`='$id' ";
@@ -124,7 +127,7 @@ function order_form1(){
 		['email:email*','inDiv'],
 		['number:number*','inDiv'],
         '<hr>',
-        '<input type="hidden" name="product_id" value='.$_SESSION['product_id'].'>',
+        '<input type="hidden" name="product_id" value='.$id.'>',
         /*'<input type="text" name="test"  value='.$_POST['name'] .' >',*/
 		['textarea:details*','inDiv'],
 
