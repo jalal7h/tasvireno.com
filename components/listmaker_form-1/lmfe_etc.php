@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/04/21
-# Version 1.0
+# 2016/07/30
+# Version 1.1
 
 
 function lmfe_moreButton__nsf( $info , $c ){
@@ -28,6 +28,10 @@ function lmfe_moreButton__nsf( $info , $c ){
 
 function lmfe_tnit( $info, $skip_title=false ){
 	
+	if( $info['type']=="hidden" ){
+		return "";
+	}
+
 	#
 	# title skip flag, if its already done	
 	if( $GLOBALS[ 'lmfe_tnit-skip-'.$info['name'] ] ){
@@ -52,7 +56,10 @@ function lmfe_inDiv_cover( $c_main , $info ){
 }
 function lmfe_inDiv_open( $info ){
 	
-	if( $info['inDiv'] ){
+	if( $info['type']=="hidden" ){
+		return "";
+	
+	} else if( $info['inDiv'] ){
 		
 		$c = "<div ".
 			
@@ -72,7 +79,10 @@ function lmfe_inDiv_open( $info ){
 
 function lmfe_inDiv_close( $info ){
 	
-	if( $info['inDiv'] ){
+	if( $info['type']=="hidden" ){
+		return "";
+	
+	} else if( $info['inDiv'] ){
 		$c = "</div>";
 	}
 

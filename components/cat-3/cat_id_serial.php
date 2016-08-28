@@ -1,7 +1,9 @@
 <?
 
-function cat_id_serial( $superChild ){
+// child to parent
 
+function cat_id_serial( $superChild ){
+	
 	while( 1 ){
 
 		$serial[] = $superChild;

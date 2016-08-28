@@ -23,7 +23,8 @@ function setting( $slug=null, $text=null ){
 	
 	#
 	# wants some specific record
-	} else if(! $text ){
+	} else if( $text===null ){
+		
 		if(! $rs = dbq(" SELECT `text` FROM `setting` WHERE `slug`='$slug' LIMIT 1 ")){
 			e(__FUNCTION__,__LINE__,dbe());
 		

@@ -7,6 +7,7 @@ function setting_mg_main(){
 	switch ($_REQUEST['do']) {
 		case 'save':
 			foreach( $_REQUEST as $k => $r ){
+				// echo "$k => $r <br>";
 				setting( $k, $r );
 			}
 			break;
@@ -39,8 +40,9 @@ function setting_mg_main(){
 		[setting_rw('keywords')['name'], 'text:keywords','inDiv'],
 		[setting_rw('websitedescription')['name'], 'text:websitedescription','inDiv'],
 		[setting_rw('money_unit')['name'], 'text:money_unit','inDiv'],
-		[setting_rw('html_extra_tags')['name'], 'textarea:html_extra_tags','inDiv'],
 		[setting_rw('webstatus_main')['name'], 'toggle:webstatus_main','inDiv'],
+		[setting_rw('html_extra_tags')['name'], 'textarea:html_extra_tags','inDiv'],
+		[setting_rw('webstatus_main_content')['name'], 'textarea:webstatus_main_content','inDiv'],
 		"<hr>",
 		['submit:ثبت.submit_button','inDiv'],
 	]);
