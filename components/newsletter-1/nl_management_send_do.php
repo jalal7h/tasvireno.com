@@ -1,5 +1,7 @@
 <?
 
+$GLOBALS['mss_list']['nl_management_send_do'] = 'خبرنامه';
+
 function nl_management_send_do(){
 
 	if(! $subject = trim($_REQUEST['subject']) ){
