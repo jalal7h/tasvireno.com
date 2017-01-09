@@ -4,6 +4,9 @@
 # 2016/03/07
 # Version 1.2.0
 
+# -spi- tasvireno
+define( '_PAGE', ( $_GET['page'] ? $_GET['page'] : 1 ) );
+
 #
 # php version check
 if(file_exists('components/.codec')and((!function_exists('zend_version'))or(version_compare(phpversion(),'5.4.99', '>')))){

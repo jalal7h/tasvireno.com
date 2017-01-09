@@ -39,7 +39,12 @@ function slideit( $path , $time=1000 , $class="",$alt="slide" ){
 		return false;
 	}
 
-	$fs = getimagesize($file_list[0]);
+	if(! file_exists($file_list[0]) ){
+		return e( __FUNCTION__ , __LINE__ );
+
+	} else {
+		$fs = getimagesize($file_list[0]);
+	}
 
 	$c.= '<div class="'.$elem_class.'">';
 	foreach ($file_list as $k => $file) {

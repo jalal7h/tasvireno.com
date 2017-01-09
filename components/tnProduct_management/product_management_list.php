@@ -56,9 +56,9 @@ function product_management_list(){
 	);
 	
 	$list['paging_select'] = array(
-		/*'cat_id' => "<option value=''>.. دسته بندی ..</option>".cat_display('cat',$is_array=false,$parent=0,$optionPreStr=""),		
-		'field_id' => "<option value=''>.. زمینه ..</option>".cat_display('field',$is_array=false,$parent=0,$optionPreStr=""),
-		'brand_id' => "<option value=''>.. برند..</option>".cat_display('brand',$is_array=false,$parent=0,$optionPreStr=""),*/
+		'brand_id' => "<option value=''>.. برند ..</option>".cat_display('brand',$is_array=false),
+		// 'field_id' => "<option value=''>.. زمینه ..</option>".cat_display('field',$is_array=false,$parent=0,$optionPreStr=""),
+		// 'brand_id' => "<option value=''>.. برند..</option>".cat_display('brand',$is_array=false,$parent=0,$optionPreStr=""),
 			
 	);
 	
