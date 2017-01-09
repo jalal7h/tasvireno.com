@@ -2,8 +2,7 @@
 
 function contact_vw_send(){
 
-	if(! captcha_check( captcha , $_REQUEST['captcha'] ) ) {
-			
+	if(! captcha_check( captcha , $_REQUEST['captcha'] ) ) {	
 		echo "<div class='errors'><h2 style=\"font-size: 18px;\">کد امنیتی اشتباه است</h2></div>";
 				
 	} else if(! $_REQUEST['to'] = $_REQUEST['to'] ){
