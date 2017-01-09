@@ -18,7 +18,8 @@ function contact_vw_send(){
 		texty_msg( 
 			"admin", "admin_contactMessageReceived" , 
 			array(
-				"name"=>$_REQUEST['name'], 
+				"name" => $_REQUEST['name'], 
+				'message' => $_REQUEST['content'],
 			)
 		);
 		echo "<div class='convbox contact_vw_send'>پیام شما ثبت شد</div>";
