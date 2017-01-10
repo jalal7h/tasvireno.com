@@ -21,6 +21,7 @@ function contact_vw_send(){
 		texty_msg( 
 			"admin", "admin_contactMessageReceived" , 
 			array(
+				"_URL" => _URL, 
 				"name" => $_REQUEST['name'], 
 				'message' => $_REQUEST['content'],
 			)
