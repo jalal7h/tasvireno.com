@@ -2,8 +2,10 @@
 
 function contact_vw_send(){
 
-	if(! captcha_check( captcha , $_REQUEST['captcha'] ) ) {
-			
+	if(! token_check() ){
+		e(__FUNCTION__,__FILE__);
+
+	} else if(! captcha_check( captcha , $_REQUEST['captcha'] ) ) {
 		echo "<div class='errors'><h2 style=\"font-size: 18px;\">The security code is wrong</h2></div>";
 				
 	} else if(! $_REQUEST['to'] = $_REQUEST['to'] ){
@@ -19,7 +21,9 @@ function contact_vw_send(){
 		texty_msg( 
 			"admin", "admin_contactMessageReceived" , 
 			array(
-				"name"=>$_REQUEST['name'], 
+				"_URL" => _URL, 
+				"name" => $_REQUEST['name'], 
+				'message' => $_REQUEST['content'],
 			)
 		);
 		echo "<div class='convbox contact_vw_send'>Your message was successfully registered</div>";

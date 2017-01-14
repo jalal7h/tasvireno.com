@@ -9,6 +9,9 @@
 	</div>
 
 	<form method="post" action="./?page={page}&do=send" id="contact_display" >
+
+	{token_make}
+
 	<fieldset>
 		<legend>
 		<select name="to">
@@ -24,7 +27,7 @@
 		<textarea placeholder="message ..." name="content" >{content}</textarea>
 		<br>
 		<input placeholder="Security code" type="text" name="captcha" value="{captcha}" class="chaptcha"  autocomplete="off">
-		<div class="captcha"><img src="{_URL}/?do_action=captcha_build&captcha_name=captcha&nocache=<?=rand(10000000,99999999)?>"></div>
+		<div class="captcha"><img src="{_URL}/captcha-contact.png?nocache=<?=rand(10000000,99999999)?>"></div>
 		<input type="submit" value="Send" class="submit_button"  >
 		{map}
 		</div>
