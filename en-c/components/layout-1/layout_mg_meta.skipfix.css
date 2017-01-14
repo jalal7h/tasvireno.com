@@ -1,0 +1,10 @@
+
+/*admin*/
+/*skipfix*/
+
+.layout_mg_meta_form textarea {
+	direction: ltr;
+}
+.layout_mg_meta_form .slug_div input {
+	direction: ltr;
+}

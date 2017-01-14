@@ -5,3 +5,9 @@
 /config.php
 error_log
 *.inc.php
+
+/en/codec
+/en/codec.d
+/en/data
+/en/allow.inc
+/en/config.php

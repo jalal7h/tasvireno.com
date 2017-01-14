@@ -1,0 +1,137 @@
+
+/*2016/08/16*/
+
+.lmtl {
+	width: 548px;
+}
+.lmtl .top {
+
+}
+.lmtl .top .layout_mg_this_layer {
+	width: 100%;
+}
+.lmtl .middle {
+	
+}
+.lmtl .middle > div {
+	display: inline-block;
+	vertical-align: top;
+}
+.lmtl .middle .right {
+	
+}
+.lmtl .middle .center {
+
+}
+.lmtl .middle .left {
+
+}
+.lmtl .bottom {
+	
+}
+.lmtl .bottom .layout_mg_this_layer {
+	width: 100%;
+}
+
+.layout_mg .the_layers {
+	
+}
+.layout_mg .the_layers > a.new {
+	background-color: #777777;
+    color: #EEEEEE;
+    border-radius: 0 0 4px 4px;
+    padding: 5px 5px 1px 6px;
+    font-size: 8px;
+    margin: -10px 0px 0 0;
+    display: inline-block;
+    opacity: 0.0;
+    transition: all 0.2s;
+}
+.layout_mg .this:hover .the_layers > a.new {
+	opacity: 0.5;
+}
+.layout_mg .the_layers > a.new:hover {
+	opacity: 1.0 !important;
+    /* padding: 5px 15px 1px 16px; */
+}
+.layout_mg .the_layers > a.new:before {
+	content: "\f02b";
+	font-family: FontAwesome;
+	margin-left: 5px;
+}
+
+.layout_mg_this_layer {
+	width: 180px;
+	max-height: 25px;
+	overflow: hidden;
+	box-shadow: 0 0 10px #ddd;
+	padding: 5px;
+	margin: 5px 0;
+	background-color: #FDFFF7;
+	color: #999;
+	border-radius: 5px;
+	position: relative; z-index: 1;
+}
+.layout_mg_this_layer > .name {
+	display: inline-block;
+	cursor: default;
+	font-size: 10px;
+	transition: all 0.2s;
+}
+.layout_mg_this_layer > .tools {
+	/* background-color: #FDFFF7; */
+	float: left;
+	display: inline-block;
+	transition: all 0.2s;
+	padding-right: 5px;
+}
+.lmtl .middle .layout_mg_this_layer > .tools {
+	opacity: 0.0;
+	position: absolute; top: 4px; left: -94px;
+}
+.lmtl .middle .layout_mg_this_layer:hover > .tools {
+	opacity: 1.0;
+	left: 4px;
+}
+.lmtl .middle .layout_mg_this_layer:hover > .name {
+	opacity: 0.0;
+}
+
+.layout_mg_this_layer > .tools > a {
+	display: inline-block;
+	margin-left: 3px;
+	font-size: 14px;
+}
+.layout_mg_this_layer > .tools > a.form icon:before {
+	content: "\f044";
+}
+.layout_mg_this_layer > .tools > a.prio_up icon:before {
+	content: "\f062";
+}
+.layout_mg_this_layer > .tools > a.prio_down icon:before {
+	content: "\f063";
+}
+.layout_mg_this_layer > .tools > a.flag icon:before {
+	content: "\f204";
+	cursor: pointer;
+}
+.layout_mg_this_layer > .tools > a.flag.off icon:before {
+	content: "\f205";
+}
+.layout_mg_this_layer > .tools > a.remove icon:before {
+	content: "\f00d";
+	cursor: pointer;
+}
+
+.layout_mg_this_layer_off {
+	background-color: #FFF1F1;
+}
+
+.alone .layout_mg_this_layer {
+	width: 380px;
+}
+
+
+
+
+
