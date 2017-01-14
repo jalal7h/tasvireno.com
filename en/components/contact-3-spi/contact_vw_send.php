@@ -5,7 +5,7 @@ function contact_vw_send(){
 	if(! token_check() ){
 		e(__FUNCTION__,__FILE__);
 
-	} else if(! captcha_check( captcha , $_REQUEST['captcha'] ) ) {
+	} else if(! captcha_check( 'contact' , $_REQUEST['captcha'] ) ) {
 		echo "<div class='errors'><h2 style=\"font-size: 18px;\">The security code is wrong</h2></div>";
 				
 	} else if(! $_REQUEST['to'] = $_REQUEST['to'] ){
