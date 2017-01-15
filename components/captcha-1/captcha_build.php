@@ -15,17 +15,15 @@ function captcha_build( $numb=4 ){
 
 		#
 		# the code
-		$rand = rand(1000,9999);
-		error_log("session before write : ".$_SESSION['captcha-'.$captcha_name] );
+		$rand = rand(10000,99999);
 		$_SESSION['captcha-'.$captcha_name] = $rand;
-		error_log("session after write : ".$_SESSION['captcha-'.$captcha_name] );
 
 		#
 		# select the color
 		$color_R = rand(180,230);
 		$color_G = rand(180,230);
-		$color_B = 255 + 240 - $color_R - $color_G;
-		// $color_B = rand(180,230);
+		// $color_B = 255 + 240 - $color_R - $color_G;
+		$color_B = rand(180,230);
 
 	} else {
 		$rand = "OVER";		
@@ -37,7 +35,7 @@ function captcha_build( $numb=4 ){
 	# build the image
 	$im = imagecreatefrompng( imgp('captcha'.rand(1,4).'.png') );
 	$cl = imagecolorallocate( $im , $color_R , $color_G , $color_B );
-	imagestring($im,24,8,2,$rand,$cl);
+	imagestring($im,24,3,2,$rand,$cl);
 	
 	#
 	# print the captcha
