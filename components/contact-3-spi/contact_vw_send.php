@@ -2,6 +2,8 @@
 
 function contact_vw_send(){
 
+	$ip = $_SERVER['REMOTE_ADDR'];
+
 	if(! token_check() ){
 		e(__FUNCTION__,__FILE__);
 
@@ -14,7 +16,7 @@ function contact_vw_send(){
 	} else if(! $_REQUEST['to'] = setting($_REQUEST['to']) ){
 		e(__FUNCTION__,__FILE__);
 	
-	} else if(! dbs('contact', ['name','email_address','cell_number','to','content','date'=>U(),'captcha'] ) ){
+	} else if(! dbs('contact', ['name','email_address','cell_number','to','content','date'=>U(),'captcha','ip'=>$ip] ) ){
 		e(__FUNCTION__,__FILE__);
 
 	} else {
