@@ -1,6 +1,5 @@
 <?php
-
-/***************************************************************/
+   /***************************************************************/
    /* PhpCaptcha - A visual and audio CAPTCHA generation library
    
       Software License Agreement (BSD License)
@@ -489,4 +488,3 @@
       }
    }
 ?>
-
