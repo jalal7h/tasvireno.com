@@ -22,7 +22,7 @@
 }
 .contact_vw_form img {
 	display: inline-block;
-	width: 49%;
+	width: 120px;
 	margin-right: 1%;
 	border-radius: 8px;
 }
@@ -67,11 +67,11 @@
 	width: auto !important;
 }
 .contact_vw_form .captcha{
-	width:200px;
+	width: 200px;
 
 }
 .contact_vw_form .captcha img{
-	float:none;
+	float: none;
 
 }
 @media screen and (max-width: 600px) {
@@ -83,7 +83,7 @@
 		display: block;
 	}
 	.contact_vw_form .captcha img{
-	display:block;
+	display: block;
 
 	}
 
