@@ -86,8 +86,11 @@ function captcha_build_math(){
 			break;
 	}
 
+	if( $number < 1 ){
+		return captcha_build_math();
+	}
+
 	$operation = ( strlen($numb1)==1 ? " ".$numb1 : $numb1 )." ".$op." ".( strlen($numb2)==1 ? $numb2." " : $numb2);
-	// $operation = "12+12";
 
 	return [ $operation, $number ];
 
