@@ -22,10 +22,10 @@
 	display: inline-block;
 	width: 49%;
 }
-.contact_vw_form img {
+.contact_vw_form img.handshaking {
 	display: inline-block;
-	width: 120px;
-	margin-right: 1%;
+	width: 50%;
+	margin-left: 1%;
 	border-radius: 8px;
 }
 
