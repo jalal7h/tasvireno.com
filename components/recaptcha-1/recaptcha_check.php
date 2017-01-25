@@ -7,90 +7,28 @@
 function recaptcha_check(){
 	
 	if(! $response = trim($_REQUEST['g-recaptcha-response']) ){
-		e();
+		e(__FUNCTION__, __LINE__);
 
-	} else if(! $res = fsocket( 'https://www.google.com/recaptcha/api/siteverify', [
-		'secret'=>'6LfrMRMUAAAAAO0FHbrI4pOVTenGnp1AoW6FLEV1', 
-		'response' => $response
+	} else if(! $res = curl( 'https://www.google.com/recaptcha/api/siteverify', [
+		'secret'	=> recaptcha_secred_key , 
+		'response'	=> $response
 	] ) ){
-		e();
+		e(__FUNCTION__, __LINE__);
 
 	} else {
-		echo $res;
-		die();
-	}
 
-}
+		$res = json_decode($res, true);
 
-
-function fsocket( $url, $params=null, $method="POST" ){
-
-
-	#####################
-	# fix url and port
-	#
-	if( substr( $url, 0, 8) == 'https://' ){
-		$url = substr($url,8);
-		$port = 443;
-	
-	} else if( substr( $url, 0, 7 ) == 'http://' ){
-		$url = substr($url,7);
-		$port = 80;
-	
-	} else {
-		$port = 80;
-	}
-	#
-	######################
-
-
-	# 
-	# fix params
-	if( sizeof($params) ){
-		$params = http_build_query($params);
-
-		if( strstr( $url, '?') ){
-			$url.= "&".$params;
-		
-		} else if( substr($url,-1) == '/' ){
-			$url.= '?'.$params;
-		
-		} else {
-			$url.= '/?'.$params;			
+		if( $res['success'] === true ){
+			return true;
 		}
 
 	}
 
-
-	#
-	# fix method
-	$method = strtoupper($method);
-
-
-	# 
-	# run it
-	if(! $fp = fsockopen($url, $port, $errno, $errstr, 10) ){
-		echo "$errstr ($errno)<br />\n";
-		
-	} else {
-		
-		$out = "$method / HTTP/1.1\r\n";
-		$out .= "Host: $url\r\n";
-		$out .= "Connection: Close\r\n\r\n";
-		
-		fwrite($fp, $out);
-		
-		while (! feof($fp) ) {
-			$c.= fgets($fp, 128);
-		}
-		
-		fclose($fp);
-
-	}
-
-
-	#
-	# return the result
-	return $c;
+	return false;
 
 }
+
+
+
+

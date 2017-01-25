@@ -26,8 +26,9 @@
 		<input placeholder="Email Address" type="email" name="email_address" value="{email_address}">
 		<textarea placeholder="Message ..." name="content" >{content}</textarea>
 		<br>
-		<input placeholder="Security code" type="text" name="captcha" value="{captcha}" class="chaptcha"  autocomplete="off">
-		<div class="captcha"><img src="{_URL}/captcha-contact.png?nocache=<?=rand(10000000,99999999)?>"></div>
+
+		{recaptcha}
+
 		<input type="submit" value="Send" class="submit_button"  >
 		{map}
 		</div>

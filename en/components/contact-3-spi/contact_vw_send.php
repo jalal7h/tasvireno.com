@@ -5,16 +5,17 @@ function contact_vw_send(){
 	if(! token_check() ){
 		e(__FUNCTION__,__FILE__);
 
-	} else if(! captcha_check( 'contact' , $_REQUEST['captcha'] ) ) {
-		echo "<div class='errors'><h2 style=\"font-size: 18px;\">The security code is wrong</h2></div>";
-				
+	// } else if(! captcha_check( 'contact' , $_REQUEST['captcha'] ) ) {
+	} else if(! recaptcha_check() ){
+		echo "<div class='errors'><h2 style=\"font-size: 18px;\">Wrong captcha code.</h2></div>";
+			
 	} else if(! $_REQUEST['to'] = $_REQUEST['to'] ){
 		e(__FUNCTION__,__LINE__);
 	
 	} else if(! $_REQUEST['to'] = setting($_REQUEST['to']) ){
 		e(__FUNCTION__,__FILE__);
 	
-	} else if(! dbs('contact', ['name','email_address','cell_number','to','content','date'=>U()] ) ){
+	} else if(! dbs('contact', [ 'name','email_address','cell_number','to','content','date'=>U() ] ) ){
 		e(__FUNCTION__,__FILE__);
 
 	} else {
@@ -26,7 +27,7 @@ function contact_vw_send(){
 				'message' => $_REQUEST['content'],
 			)
 		);
-		echo "<div class='convbox contact_vw_send'>Your message was successfully registered</div>";
+		echo "<div class='convbox contact_vw_send'>Your message was successfully sent</div>";
 	}
 
 }

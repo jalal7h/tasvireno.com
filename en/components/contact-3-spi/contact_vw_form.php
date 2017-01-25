@@ -18,12 +18,14 @@ function contact_vw_form(){
 	} else while( $rw = dbf($rs) ){
 		$vars['email_select_option'].= '<option value="'.$rw['slug'].'">'.str_replace('@','[at]',$rw['text']).'</option>';		
 	}
-	$vars['map']=google_maps([
+
+	$vars['map'] = google_maps([
 		'width' => '100%', // arz e kadr
 		'height' => '265px', // ertefa e kadr
 		'x,y' => '35.767146,51.476297', // mogheyat e joghrafiai
 		'disable_marker' => true,
 		]);
+	
 	echo template_engine('contact', $vars);
 
 }
