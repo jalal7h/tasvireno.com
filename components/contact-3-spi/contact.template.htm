@@ -26,8 +26,9 @@
 		<input placeholder="ایمیل" type="email" name="email_address" value="{email_address}">
 		<textarea placeholder="متن پیام ..." name="content" >{content}</textarea>
 		<br>
-		<input placeholder="کد امنیتی" type="text" name="captcha" value="{captcha}" class="chaptcha"  autocomplete="off">
-		<div class="captcha"><img src="{_URL}/captcha-contact.png?nocache=<?=rand(10000000,99999999)?>"></div>
+
+		{recaptcha}
+
 		<input type="submit" value="ارسال" class="submit_button"  >
 		{map}
 		</div>
